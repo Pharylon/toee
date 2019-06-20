@@ -1,0 +1,144 @@
+PCGVERSION:2.0
+
+# System Information
+CAMPAIGN:MP - Book of Eldritch Might - Source Book|CAMPAIGN:MP - Book of Eldritch Might II - Source Book|CAMPAIGN:MP - Demon God's Fane - Source Book|CAMPAIGN:MP - Monte Cook - Web Enhancements|CAMPAIGN:WotC - DnD Core Rulebook I - PHB|CAMPAIGN:WotC - DnD Core Rulebook II - DMG|CAMPAIGN:WotC - DnD Core Rulebook III - MM|CAMPAIGN:WotC - DnD Magazines - Dragon Annual #5|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #174|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #247|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #248|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #249|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #250|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #274|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #275|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #276|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #277|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #278|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #279|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #280|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #281|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #282|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #283|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #284|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #285|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #286|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #287|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #289|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #290|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #291|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #292|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #293|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #297|CAMPAIGN:WotC - DnD Supplement - Defenders of the Faith|CAMPAIGN:WotC - DnD Supplement - Deities and Demigods|CAMPAIGN:WotC - DnD Supplement - Enemies and Allies|CAMPAIGN:WotC - DnD Supplement - Manual of the Planes|CAMPAIGN:WotC - DnD Supplement - Masters of the Wild|CAMPAIGN:WotC - DnD Supplement - Psionics Handbook|CAMPAIGN:WotC - DnD Supplement - Song and Silence|CAMPAIGN:WotC - DnD Supplement - Sword and Fist|CAMPAIGN:WotC - DnD Supplement - Tome and Blood|CAMPAIGN:WotC - DnD Web Enhancements|CAMPAIGN:WotC - Forgotten Realms - Campaign Source Book|CAMPAIGN:WotC - Forgotten Realms - Lords of Darkness|CAMPAIGN:WotC - Forgotten Realms - Magic of Faerun|CAMPAIGN:WotC - Forgotten Realms - Monsters Of Faerun|CAMPAIGN:WotC - Greyhawk - Living Greyhawk Gazetteer|CAMPAIGN:WotC - Oriental Adventures Campaign Sourcebook|CAMPAIGN:Zach's Extras
+VERSION:4.2.0
+ROLLMETHOD:1|EXPRESSION:roll(4,6,[2,3,4])
+PURCHASEPOINTS:N|TYPE:
+POOLPOINTS:30
+GAMEMODE:DnD
+TABLABEL:0
+AUTOSPELLS:Y
+
+# Character Bio
+CHARACTERNAME:Meepo
+TABNAME:
+PLAYERNAME:
+HEIGHT:0
+WEIGHT:0
+AGE:0
+GENDER:Male
+HANDED:Right
+SKINCOLOR:
+EYECOLOR:
+HAIRCOLOR:
+HAIRSTYLE:
+LOCATION:
+CITY:
+BIRTHPLACE:
+PERSONALITYTRAIT1:
+PERSONALITYTRAIT2:
+SPEECHPATTERN:
+PHOBIAS:
+INTERESTS:
+CATCHPHRASE:
+PORTRAIT:
+
+# Character Attributes
+STAT:STR|SCORE:12
+STAT:DEX|SCORE:14
+STAT:CON|SCORE:12
+STAT:INT|SCORE:8
+STAT:WIS|SCORE:12
+STAT:CHA|SCORE:20
+ALIGN:NG
+RACE:Kobold
+
+# Character Class(es)
+CLASS:Sorcerer (Zach's)|SUBCLASS:None|LEVEL:10|SKILLPOOL:0|SPELLBASE:CHA|CANCASTPERDAY:6,6,6,6,5,3|PROHIBITED:None
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=1|HITPOINTS:4
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=2|HITPOINTS:2
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=3|HITPOINTS:3
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=4|HITPOINTS:2
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=5|HITPOINTS:3
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=6|HITPOINTS:2
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=7|HITPOINTS:3
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=8|HITPOINTS:2
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=9|HITPOINTS:3
+CLASSABILITIESLEVEL:Sorcerer (Zach's)=10|HITPOINTS:2
+
+# Character Experience
+EXPERIENCE:0:0
+
+# Character Templates
+
+# Character Region
+
+# Character Skills
+SKILL:Concentration|OUTPUTORDER:1|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:12.0|COST:1|CLASSSKILL:Y]
+SKILL:Diplomacy|SYNERGY:Bluff=5=2,Sense Motive=5=2|OUTPUTORDER:2|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Hide|OUTPUTORDER:3|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Knowledge (Arcana)|OUTPUTORDER:4|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:11.0|COST:1|CLASSSKILL:Y]
+SKILL:Move Silently|OUTPUTORDER:5|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Sense Motive|OUTPUTORDER:6|
+SKILL:Speak Language|OUTPUTORDER:7|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:1.0|COST:2|CLASSSKILL:N]|ASSOCIATEDDATA:Common
+SKILL:Spellcraft|OUTPUTORDER:8|CLASSBOUGHT:[CLASS:Sorcerer (Zach's)|RANKS:13.0|COST:1|CLASSSKILL:Y]
+
+# Character Languages
+LANGUAGE:Common|LANGUAGE:Draconic
+
+# Character Feats
+FEAT:Daylight Adaptation|TYPE:GENERAL|DESC:You have learned to endure the painful sunlight of the surface world.
+FEAT:Empower Spell|TYPE:METAMAGIC|DESC:See Text
+FEAT:Spell Focus|APPLIEDTO:Evocation|TYPE:GENERAL|DESC:See Text
+FEATPOOL:1
+
+# Character Weapon proficiencies
+WEAPONPROF:[WEAPON:Blowgun|WEAPON:Club|WEAPON:Crossbow (Heavy)|WEAPON:Crossbow (Light)|WEAPON:Dagger|WEAPON:Dagger (Punching)|WEAPON:Dagger (Thrown)|WEAPON:Dart|WEAPON:Dizzy-Boff Stick|WEAPON:Gauntlet]
+WEAPONPROF:[WEAPON:Gauntlet (Spiked)|WEAPON:Halfspear|WEAPON:Javelin|WEAPON:Mace (Heavy)|WEAPON:Mace (Light)|WEAPON:Morningstar|WEAPON:Quarterstaff|WEAPON:Shortspear|WEAPON:Sickle|WEAPON:Sling]
+WEAPONPROF:[WEAPON:Unarmed Strike]
+
+# Character Equipment
+MONEY:0.00
+EQUIPNAME:Halfspear|OUTPUTORDER:1|COST:1|WT:3.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Hand (Both)
+EQUIPNAME:Amulet of Health +2|OUTPUTORDER:2|COST:4000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Cloak of Resistance +1|OUTPUTORDER:3|COST:1000|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Headband of Intellect +2|OUTPUTORDER:4|COST:4000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Familiar (Rat)|OUTPUTORDER:5|COST:100|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPSET:Default Set|ID:0.1
+
+# Character Deity/Domain
+
+# Character Spells Information
+SPELLNAME:Aganazzar's Scorcher|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:2|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Arcane Bolt|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Arcane Mark|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Blur|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:2|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Burning Hands|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Cat's Grace|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:2|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Detect Magic|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Dispel Magic|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Eagle's Splendor|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:2|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Explosive Cascade|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:4|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Fireball|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Flare|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Fly|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Forcewave|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Light|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Mage Armor|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Mage Hand|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Mending|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Open/Close|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Open/Close|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Read Magic|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Shield|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Silent Portal|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:0|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Thunderlance|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:4|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLNAME:Ghostform|TIMES:1|CLASS:Sorcerer (Zach's)|BOOK:Known Spells|SPELLLEVEL:5|SOURCE:[TYPE:CLASS|NAME:Wizard]
+SPELLLIST:Sorcerer (Zach's)|Wizard
+
+# Character Description/Bio/History
+CHARACTERBIO:
+CHARACTERDESC:
+CHARACTERCOMP:
+CHARACTERASSET:
+CHARACTERMAGIC:
+
+# Character Master/Follower
+
+# Character Notes Tab
+NOTE:New Item|ID:0|PARENTID:-1|VALUE:New Value
+
+# Kits
+
+# Chosen Armor Profs

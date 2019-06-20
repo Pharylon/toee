@@ -1,0 +1,150 @@
+PCGVERSION:2.0
+
+# System Information
+CAMPAIGN:MP - Book of Eldritch Might - Source Book|CAMPAIGN:MP - Book of Eldritch Might II - Source Book|CAMPAIGN:MP - Demon God's Fane - Source Book|CAMPAIGN:MP - Monte Cook - Web Enhancements|CAMPAIGN:WotC - DnD Core Rulebook I - PHB|CAMPAIGN:WotC - DnD Core Rulebook II - DMG|CAMPAIGN:WotC - DnD Core Rulebook III - MM|CAMPAIGN:WotC - DnD Magazines - Dragon Annual #5|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #174|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #247|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #248|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #249|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #250|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #274|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #275|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #276|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #277|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #278|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #279|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #280|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #281|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #282|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #283|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #284|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #285|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #286|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #287|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #289|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #290|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #291|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #292|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #293|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #297|CAMPAIGN:WotC - DnD Supplement - Defenders of the Faith|CAMPAIGN:WotC - DnD Supplement - Deities and Demigods|CAMPAIGN:WotC - DnD Supplement - Enemies and Allies|CAMPAIGN:WotC - DnD Supplement - Manual of the Planes|CAMPAIGN:WotC - DnD Supplement - Masters of the Wild|CAMPAIGN:WotC - DnD Supplement - Psionics Handbook|CAMPAIGN:WotC - DnD Supplement - Song and Silence|CAMPAIGN:WotC - DnD Supplement - Sword and Fist|CAMPAIGN:WotC - DnD Supplement - Tome and Blood|CAMPAIGN:WotC - DnD Web Enhancements|CAMPAIGN:WotC - Forgotten Realms - Campaign Source Book|CAMPAIGN:WotC - Forgotten Realms - Lords of Darkness|CAMPAIGN:WotC - Forgotten Realms - Magic of Faerun|CAMPAIGN:WotC - Forgotten Realms - Monsters Of Faerun|CAMPAIGN:WotC - Greyhawk - Living Greyhawk Gazetteer|CAMPAIGN:WotC - Oriental Adventures Campaign Sourcebook|CAMPAIGN:Zach's Extras
+VERSION:4.2.0
+ROLLMETHOD:1|EXPRESSION:roll(4,6,[2,3,4])
+PURCHASEPOINTS:N|TYPE:
+POOLPOINTS:2
+GAMEMODE:DnD
+TABLABEL:0
+AUTOSPELLS:Y
+
+# Character Bio
+CHARACTERNAME:Mewn Riverflow
+TABNAME:
+PLAYERNAME:
+HEIGHT:63
+WEIGHT:115
+AGE:124
+GENDER:Male
+HANDED:Right
+SKINCOLOR:
+EYECOLOR:
+HAIRCOLOR:
+HAIRSTYLE:
+LOCATION:
+CITY:
+BIRTHPLACE:
+PERSONALITYTRAIT1:
+PERSONALITYTRAIT2:
+SPEECHPATTERN:
+PHOBIAS:
+INTERESTS:
+CATCHPHRASE:
+PORTRAIT:
+
+# Character Attributes
+STAT:STR|SCORE:14
+STAT:DEX|SCORE:18
+STAT:CON|SCORE:14
+STAT:INT|SCORE:16
+STAT:WIS|SCORE:11
+STAT:CHA|SCORE:17
+ALIGN:NG
+RACE:Elf
+
+# Character Class(es)
+CLASS:Rogue|SUBCLASS:None|LEVEL:7|SKILLPOOL:0|PROHIBITED:None
+CLASS:Whirling Dervish|SUBCLASS:None|LEVEL:3|SKILLPOOL:0|PROHIBITED:None
+CLASSABILITIESLEVEL:Rogue=1|HITPOINTS:6
+CLASSABILITIESLEVEL:Rogue=2|HITPOINTS:2
+CLASSABILITIESLEVEL:Rogue=3|HITPOINTS:6
+CLASSABILITIESLEVEL:Rogue=4|HITPOINTS:2
+CLASSABILITIESLEVEL:Rogue=5|HITPOINTS:6
+CLASSABILITIESLEVEL:Rogue=6|HITPOINTS:2
+CLASSABILITIESLEVEL:Rogue=7|HITPOINTS:6
+CLASSABILITIESLEVEL:Whirling Dervish=1|HITPOINTS:4
+CLASSABILITIESLEVEL:Whirling Dervish=2|HITPOINTS:6
+CLASSABILITIESLEVEL:Whirling Dervish=3|HITPOINTS:4
+
+# Character Experience
+EXPERIENCE:0:0
+
+# Character Templates
+
+# Character Region
+
+# Character Skills
+SKILL:Balance|SYNERGY:Tumble=5=2|OUTPUTORDER:1|CLASSBOUGHT:[CLASS:Rogue|RANKS:5.0|COST:1|CLASSSKILL:Y]CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Bluff|OUTPUTORDER:2|CLASSBOUGHT:[CLASS:Rogue|RANKS:8.0|COST:1|CLASSSKILL:Y]
+SKILL:Disable Device|OUTPUTORDER:3|CLASSBOUGHT:[CLASS:Rogue|RANKS:8.0|COST:1|CLASSSKILL:Y]
+SKILL:Disguise|OUTPUTORDER:4|CLASSBOUGHT:[CLASS:Rogue|RANKS:2.0|COST:1|CLASSSKILL:Y]
+SKILL:Escape Artist|OUTPUTORDER:5|CLASSBOUGHT:[CLASS:Rogue|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Gather Information|OUTPUTORDER:6|CLASSBOUGHT:[CLASS:Rogue|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Hide|OUTPUTORDER:7|CLASSBOUGHT:[CLASS:Rogue|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Jump|SYNERGY:Tumble=5=2|OUTPUTORDER:8|CLASSBOUGHT:[CLASS:Rogue|RANKS:5.0|COST:1|CLASSSKILL:Y]
+SKILL:Listen|OUTPUTORDER:9|CLASSBOUGHT:[CLASS:Rogue|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Move Silently|OUTPUTORDER:10|CLASSBOUGHT:[CLASS:Rogue|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Open Lock|OUTPUTORDER:11|CLASSBOUGHT:[CLASS:Rogue|RANKS:5.0|COST:1|CLASSSKILL:Y]
+SKILL:Pick Pocket|SYNERGY:Bluff=5=2|OUTPUTORDER:12|CLASSBOUGHT:[CLASS:Rogue|RANKS:5.0|COST:1|CLASSSKILL:Y]
+SKILL:Read Lips|OUTPUTORDER:13|CLASSBOUGHT:[CLASS:Rogue|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Search|OUTPUTORDER:14|CLASSBOUGHT:[CLASS:Rogue|RANKS:10.0|COST:1|CLASSSKILL:Y]CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Sense Motive|OUTPUTORDER:15|CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:2.0|COST:1|CLASSSKILL:Y]
+SKILL:Spot|OUTPUTORDER:16|CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Tumble|SYNERGY:Jump=5=2|OUTPUTORDER:17|CLASSBOUGHT:[CLASS:Rogue|RANKS:10.0|COST:1|CLASSSKILL:Y]CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Use Magic Device|OUTPUTORDER:18|CLASSBOUGHT:[CLASS:Rogue|RANKS:10.0|COST:1|CLASSSKILL:Y]CLASSBOUGHT:[CLASS:Whirling Dervish|RANKS:3.0|COST:1|CLASSSKILL:Y]
+
+# Character Languages
+LANGUAGE:Common|LANGUAGE:Elven
+
+# Character Feats
+FEAT:Minor Skill Mastery|APPLIEDTO:Bluff|TYPE:WHIRLINGDERVISH|DESC:Take 10 on listed skills
+FEAT:Minor Skill Mastery|APPLIEDTO:Use Magic Device|TYPE:WHIRLINGDERVISH|DESC:Take 10 on listed skills
+FEAT:Minor Skill Mastery|APPLIEDTO:Tumble|TYPE:WHIRLINGDERVISH|DESC:Take 10 on listed skills
+FEAT:Dodge|TYPE:GENERAL.FIGHTER.CRAB.CRANE.MONK|DESC:See Text
+FEAT:Mobility|TYPE:GENERAL.FIGHTER.CRAB.CRANE.MONK|DESC:See Text
+FEAT:Quicker Than the Eye|TYPE:GENERAL|DESC:Improved Bluff - Your hands can move so quickly that observers don't see what you've done
+FEAT:Elven Longsword Finesse|TYPE:GENERAL.FIGHTER|DESC:You gain the benefits of weapon finesse with a longsword, albeit with a -1 penalty to attack rolls.
+FEATPOOL:0
+
+# Character Weapon proficiencies
+WEAPONPROF:[WEAPON:Club|WEAPON:Crossbow (Hand)|WEAPON:Crossbow (Heavy)|WEAPON:Crossbow (Light)|WEAPON:Dagger|WEAPON:Dagger (Punching)|WEAPON:Dart|WEAPON:Longbow|WEAPON:Longbow (Composite)|WEAPON:Mace (Heavy)]
+WEAPONPROF:[WEAPON:Mace (Light)|WEAPON:Morningstar|WEAPON:Quarterstaff|WEAPON:Rapier|WEAPON:Sap|WEAPON:Shortbow|WEAPON:Shortbow (Composite)|WEAPON:Sword (Long)|WEAPON:Sword (Short)]
+WEAPONPROF:[WEAPON:Sword (Long)]|SOURCE:[TYPE:RACE|NAME:Elf]
+
+# Character Equipment
+MONEY:33980.50
+EQUIPNAME:Amulet of Natural Armor +1|OUTPUTORDER:1|COST:2000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Potion (Cure Light Wounds)|OUTPUTORDER:2|COST:50|WT:0.0|QUANTITY:2.0|CARRIED:2.0|EQUIPPED:N|LOCATION:Belt (Potion/Masterwork)
+EQUIPNAME:Potion (Cure Moderate Wounds)|OUTPUTORDER:3|COST:300|WT:0.0|QUANTITY:2.0|CARRIED:2.0|EQUIPPED:N|LOCATION:Belt (Potion/Masterwork)
+EQUIPNAME:Handy Haversack|OUTPUTORDER:5|COST:2000|WT:5.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None|CONTAINS:[EQUIPNAME:Wand (Lightning Bolt/5th level caster)|EQUIPNAME:Wand (Fireball/5th level caster)|EQUIPNAME:Wand (Bull's Strength)|EQUIPNAME:Wand (Shield/Wizard/1st/Medium)|EQUIPNAME:Wand (Cat's Grace/Wizard/3rd/Medium)|EQUIPNAME:Tanglefoot Bag|EQUIPNAME:Thunderstone|EQUIPNAME:Thieves' Tools]|TOTALWT:6.0
+EQUIPNAME:Dagger|OUTPUTORDER:4|COST:2|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:None
+EQUIPNAME:Dagger (Masterwork)|OUTPUTORDER:6|COST:302.0|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:None|CUSTOMIZATION:[BASEITEM:Dagger|DATA:NAME=Dagger (Masterwork)$EQMOD=WEAPMW]
+EQUIPNAME:Potion (Invisibility)|OUTPUTORDER:7|COST:300|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:Hand (Primary)
+EQUIPNAME:Wand (Fireball/5th level caster)|OUTPUTORDER:8|COST:11250|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Wand (Lightning Bolt/5th level caster)|OUTPUTORDER:9|COST:11250|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Ring (Protection +1)|OUTPUTORDER:10|COST:2000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Wand (Bull's Strength)|OUTPUTORDER:11|COST:4500|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Goggles of Night|OUTPUTORDER:12|COST:8000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Wand (Shield/Wizard/1st/Medium)|OUTPUTORDER:13|COST:750.0|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack|CUSTOMIZATION:[BASEITEM:Wand|DATA:NAME=Wand (Shield/Wizard/1st/Medium)$EQMOD=SE_50TRIGGER&pipe;SPELLNAME&lbracket;Shield&rbracket;CASTER&lbracket;Wizard&rbracket;SPELLTYPE&lbracket;Arcane&rbracket;SPELLLEVEL&lbracket;1&rbracket;CASTERLEVEL&lbracket;1&rbracket;CHARGES&lbracket;50&rbracket;]
+EQUIPNAME:Wand (Cat's Grace/Wizard/3rd/Medium)|OUTPUTORDER:14|COST:4500.0|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack|CUSTOMIZATION:[BASEITEM:Wand|DATA:NAME=Wand (Cat's Grace/Wizard/3rd/Medium)$EQMOD=SE_50TRIGGER&pipe;SPELLNAME&lbracket;Cat's Grace&rbracket;CASTER&lbracket;Wizard&rbracket;SPELLTYPE&lbracket;Arcane&rbracket;SPELLLEVEL&lbracket;2&rbracket;CASTERLEVEL&lbracket;3&rbracket;CHARGES&lbracket;50&rbracket;]
+EQUIPNAME:Charm of Perfection (Disable Device)|OUTPUTORDER:15|COST:80.0|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:None|CUSTOMIZATION:[BASEITEM:Amulet|DATA:NAME=Charm of Perfection (Disable Device)$EQMOD=SKILLBONUS2&pipe;Disable Device=+2$SPROP=(Amulet (Disable Device +2/Medium))]
+EQUIPNAME:Potion (Cure Serious Wounds)|OUTPUTORDER:16|COST:750|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Belt (Potion/Masterwork)
+EQUIPNAME:Belt (Potion/Masterwork)|OUTPUTORDER:17|COST:60|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None|CONTAINS:[EQUIPNAME:Potion (Cure Moderate Wounds)|EQUIPNAME:Potion (Cure Light Wounds)|EQUIPNAME:Potion (Cure Serious Wounds)]|TOTALWT:0.0
+EQUIPNAME:Tanglefoot Bag|OUTPUTORDER:18|COST:50|WT:4.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Thunderstone|OUTPUTORDER:19|COST:30|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Thieves' Tools|OUTPUTORDER:20|COST:30|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:Handy Haversack
+EQUIPNAME:Chain Shirt +1 (Mithral/Medium)|OUTPUTORDER:21|COST:2250.0|WT:12.5|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None|CUSTOMIZATION:[BASEITEM:Chain Shirt|DATA:NAME=Chain Shirt +1 (Mithral/Medium)$EQMOD=ARMR+1.ARMRMITL.ARMRMW]
+EQUIPNAME:Gloves of Dexterity +2|OUTPUTORDER:22|COST:4000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Sword (Long/Adamantine)|OUTPUTORDER:23|COST:9315.0|WT:4.0|QUANTITY:1.0|CARRIED:0.0|EQUIPPED:N|LOCATION:None|CUSTOMIZATION:[BASEITEM:Sword (Long)|DATA:NAME=Sword (Long/Adamantine)$EQMOD=WEAPADAM]
+EQUIPSET:Default Set|ID:0.1
+
+# Character Deity/Domain
+
+# Character Spells Information
+
+# Character Description/Bio/History
+CHARACTERBIO:
+CHARACTERDESC:
+CHARACTERCOMP:
+CHARACTERASSET:
+CHARACTERMAGIC:
+
+# Character Master/Follower
+
+# Character Notes Tab
+
+# Kits
+
+# Chosen Armor Profs

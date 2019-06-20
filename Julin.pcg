@@ -1,0 +1,140 @@
+PCGVERSION:2.0
+
+# System Information
+CAMPAIGN:MP - Book of Eldritch Might - Source Book|CAMPAIGN:MP - Book of Eldritch Might II - Source Book|CAMPAIGN:MP - Demon God's Fane - Source Book|CAMPAIGN:MP - Monte Cook - Web Enhancements|CAMPAIGN:WotC - DnD Core Rulebook I - PHB|CAMPAIGN:WotC - DnD Core Rulebook II - DMG|CAMPAIGN:WotC - DnD Core Rulebook III - MM|CAMPAIGN:WotC - DnD Magazines - Dragon Annual #5|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #174|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #247|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #248|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #249|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #250|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #274|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #275|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #276|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #277|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #278|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #279|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #280|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #281|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #282|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #283|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #284|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #285|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #286|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #287|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #289|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #290|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #291|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #292|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #293|CAMPAIGN:WotC - DnD Magazines - Dragon Issue #297|CAMPAIGN:WotC - DnD Supplement - Defenders of the Faith|CAMPAIGN:WotC - DnD Supplement - Deities and Demigods|CAMPAIGN:WotC - DnD Supplement - Enemies and Allies|CAMPAIGN:WotC - DnD Supplement - Manual of the Planes|CAMPAIGN:WotC - DnD Supplement - Masters of the Wild|CAMPAIGN:WotC - DnD Supplement - Psionics Handbook|CAMPAIGN:WotC - DnD Supplement - Song and Silence|CAMPAIGN:WotC - DnD Supplement - Sword and Fist|CAMPAIGN:WotC - DnD Supplement - Tome and Blood|CAMPAIGN:WotC - DnD Web Enhancements|CAMPAIGN:WotC - Forgotten Realms - Campaign Source Book|CAMPAIGN:WotC - Forgotten Realms - Lords of Darkness|CAMPAIGN:WotC - Forgotten Realms - Magic of Faerun|CAMPAIGN:WotC - Forgotten Realms - Monsters Of Faerun|CAMPAIGN:WotC - Greyhawk - Living Greyhawk Gazetteer|CAMPAIGN:Zach's Extras
+VERSION:4.2.0
+ROLLMETHOD:1|EXPRESSION:roll(4,6,[2,3,4])
+PURCHASEPOINTS:N|TYPE:
+POOLPOINTS:2
+GAMEMODE:DnD
+TABLABEL:0
+AUTOSPELLS:Y
+
+# Character Bio
+CHARACTERNAME:Julin Sandar
+TABNAME:
+PLAYERNAME:Jerod
+HEIGHT:0
+WEIGHT:0
+AGE:0
+GENDER:Male
+HANDED:Right
+SKINCOLOR:
+EYECOLOR:
+HAIRCOLOR:
+HAIRSTYLE:
+LOCATION:
+CITY:
+BIRTHPLACE:
+PERSONALITYTRAIT1:
+PERSONALITYTRAIT2:
+SPEECHPATTERN:
+PHOBIAS:
+INTERESTS:
+CATCHPHRASE:
+PORTRAIT:
+
+# Character Attributes
+STAT:STR|SCORE:10
+STAT:DEX|SCORE:16
+STAT:CON|SCORE:10
+STAT:INT|SCORE:13
+STAT:WIS|SCORE:8
+STAT:CHA|SCORE:20
+ALIGN:CG
+RACE:Human (Rhennee)
+
+# Character Class(es)
+CLASS:Bard (Zach's)|SUBCLASS:None|LEVEL:10|SKILLPOOL:0|SPELLBASE:CHA|CANCASTPERDAY:0,9,0,4|PROHIBITED:None
+CLASSABILITIESLEVEL:Bard (Zach's)=1|HITPOINTS:6
+CLASSABILITIESLEVEL:Bard (Zach's)=2|HITPOINTS:4
+CLASSABILITIESLEVEL:Bard (Zach's)=3|HITPOINTS:3
+CLASSABILITIESLEVEL:Bard (Zach's)=4|HITPOINTS:4
+CLASSABILITIESLEVEL:Bard (Zach's)=5|HITPOINTS:4
+CLASSABILITIESLEVEL:Bard (Zach's)=6|HITPOINTS:4
+CLASSABILITIESLEVEL:Bard (Zach's)=7|HITPOINTS:4
+CLASSABILITIESLEVEL:Bard (Zach's)=8|HITPOINTS:3
+CLASSABILITIESLEVEL:Bard (Zach's)=9|HITPOINTS:3
+CLASSABILITIESLEVEL:Bard (Zach's)=10|HITPOINTS:3
+
+# Character Experience
+EXPERIENCE:0:0
+
+# Character Templates
+
+# Character Region
+
+# Character Skills
+SKILL:Balance|SYNERGY:Tumble=5=2|OUTPUTORDER:1|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Bluff|OUTPUTORDER:2|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:10.0|COST:1|CLASSSKILL:Y]
+SKILL:Concentration|OUTPUTORDER:3|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:12.0|COST:1|CLASSSKILL:Y]
+SKILL:Diplomacy|SYNERGY:Bluff=5=2,Sense Motive=5=2|OUTPUTORDER:4|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Disguise|OUTPUTORDER:5|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Escape Artist|OUTPUTORDER:6|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Gather Information|OUTPUTORDER:7|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:10.0|COST:1|CLASSSKILL:Y]
+SKILL:Hide|OUTPUTORDER:8|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Knowledge (Nobility and Royalty)|OUTPUTORDER:9|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:1.0|COST:1|CLASSSKILL:Y]
+SKILL:Move Silently|OUTPUTORDER:10|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Perform|OUTPUTORDER:11|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:13.0|COST:1|CLASSSKILL:Y]
+SKILL:Pick Pocket|SYNERGY:Bluff=5=2|OUTPUTORDER:12|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:3.0|COST:1|CLASSSKILL:Y]
+SKILL:Search|OUTPUTORDER:13|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:0.5|COST:2|CLASSSKILL:N]
+SKILL:Sense Motive|OUTPUTORDER:14|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:12.0|COST:1|CLASSSKILL:Y]
+SKILL:Tumble|SYNERGY:Jump=5=2|OUTPUTORDER:15|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:5.0|COST:1|CLASSSKILL:Y]
+SKILL:Use Magic Device|OUTPUTORDER:16|CLASSBOUGHT:[CLASS:Bard (Zach's)|RANKS:13.0|COST:1|CLASSSKILL:Y]
+
+# Character Languages
+LANGUAGE:Common|LANGUAGE:Rhopan
+
+# Character Feats
+FEAT:Intensify Song|TYPE:GENERAL|DESC:You increase your spellsong's damage
+FEAT:Sustain Song|TYPE:GENERAL|DESC:You increase your spellsong's duration
+FEAT:Weapon Finesse|APPLIEDTO:Rapier|TYPE:GENERAL.FIGHTER|DESC:See Text
+FEATPOOL:2
+
+# Character Weapon proficiencies
+WEAPONPROF:[WEAPON:Blowgun|WEAPON:Club|WEAPON:Crossbow (Heavy)|WEAPON:Crossbow (Light)|WEAPON:Dagger|WEAPON:Dagger (Punching)|WEAPON:Dagger (Thrown)|WEAPON:Dart|WEAPON:Dizzy-Boff Stick|WEAPON:Gauntlet]
+WEAPONPROF:[WEAPON:Gauntlet (Spiked)|WEAPON:Halfspear|WEAPON:Javelin|WEAPON:Mace (Heavy)|WEAPON:Mace (Light)|WEAPON:Morningstar|WEAPON:Quarterstaff|WEAPON:Rapier|WEAPON:Shortspear|WEAPON:Sickle]
+WEAPONPROF:[WEAPON:Sling|WEAPON:Unarmed Strike]
+WEAPONPROF:[WEAPON:Rapier]|SOURCE:[TYPE:PCCLASS|NAME:Bard (Zach's)]
+
+# Character Equipment
+MONEY:1125.00
+EQUIPNAME:Rapier +1|OUTPUTORDER:1|COST:2320.0|WT:3.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:Hand (Primary)|CUSTOMIZATION:[BASEITEM:Rapier|DATA:NAME=Rapier +1$EQMOD=WEAP+1.WEAPMW]
+EQUIPNAME:Crossbow (Light)|OUTPUTORDER:2|COST:35|WT:6.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:N|LOCATION:None
+EQUIPNAME:Bolts (Crossbow/10)|OUTPUTORDER:3|COST:1|WT:1.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Ring (Sustenance)|OUTPUTORDER:4|COST:2500|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Amulet of Health +2|OUTPUTORDER:5|COST:4000|WT:0.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Coin (Gold)|OUTPUTORDER:6|COST:1|WT:0.02|QUANTITY:8097.0|CARRIED:0.0|EQUIPPED:N|LOCATION:None
+EQUIPNAME:Coin (Silver)|OUTPUTORDER:7|COST:0.1|WT:0.02|QUANTITY:55.0|CARRIED:55.0|EQUIPPED:Y|LOCATION:None
+EQUIPNAME:Buckler +1 (Medium)|OUTPUTORDER:8|COST:1165.0|WT:5.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:Hand (Off-hand)|CUSTOMIZATION:[BASEITEM:Buckler|DATA:NAME=Buckler +1 (Medium)$EQMOD=ARMR+1.ARMRMW]
+EQUIPNAME:Chain Shirt +2 (Mithral/Medium)|OUTPUTORDER:9|COST:5250.0|WT:12.5|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None|CUSTOMIZATION:[BASEITEM:Chain Shirt|DATA:NAME=Chain Shirt +2 (Mithral/Medium)$EQMOD=ARMR+2.ARMRMITL.ARMRMW]
+EQUIPNAME:Wand (Cure Light Wounds/Cleric/1st/Medium)|OUTPUTORDER:10|COST:270.0|WT:0.0|QUANTITY:1.0|CARRIED:0.0|EQUIPPED:N|LOCATION:None|CUSTOMIZATION:[BASEITEM:Wand|DATA:NAME=Wand (Cure Light Wounds/Cleric/1st/Medium)$EQMOD=SE_50TRIGGER&pipe;SPELLNAME&lbracket;Cure Light Wounds&rbracket;CASTER&lbracket;Cleric&rbracket;SPELLTYPE&lbracket;Divine&rbracket;SPELLLEVEL&lbracket;1&rbracket;CASTERLEVEL&lbracket;1&rbracket;CHARGES&lbracket;18&rbracket;]
+EQUIPNAME:Lute (Masterwork/Medium)|OUTPUTORDER:11|COST:145.0|WT:5.0|QUANTITY:1.0|CARRIED:1.0|EQUIPPED:Y|LOCATION:None|CUSTOMIZATION:[BASEITEM:Lute|DATA:NAME=Lute (Masterwork/Medium)$EQMOD=INSTMW]
+EQUIPSET:Default Set|ID:0.1
+
+# Character Deity/Domain
+
+# Character Spells Information
+SPELLNAME:Deflect Blow|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLNAME:Disrupt Thoughts|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLNAME:Momentary Protection|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLNAME:Recall Tale|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLNAME:Sonic Dart|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:1|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLNAME:Swift Song|TIMES:1|CLASS:Bard (Zach's)|BOOK:Known Spells|SPELLLEVEL:3|SOURCE:[TYPE:CLASS|NAME:Bard (Monte Cook's)]
+SPELLLIST:Bard (Zach's)|Bard (Monte Cook's)
+
+# Character Description/Bio/History
+CHARACTERBIO:
+CHARACTERDESC:
+CHARACTERCOMP:
+CHARACTERASSET:
+CHARACTERMAGIC:
+
+# Character Master/Follower
+
+# Character Notes Tab
+NOTE:New Item|ID:0|PARENTID:-1|VALUE:New Value
+
+# Kits
+
+# Chosen Armor Profs

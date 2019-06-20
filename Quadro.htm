@@ -1,0 +1,1890 @@
+<html>
+<!--
+PCGen Character Sheet Template
+==============================
+ 
+Author: Richard O'Doherty-Gregg
+Email: OdGregg@bigpond.com
+Modifications by: arcady
+Email: arcady0@yahoo.com
+ 
+Version 0.9
+ 
+ 
+-->
+<head>
+<title>Quadro [0 Points]</title>
+<style TYPE="text/css">
+	.h { font-family: Arial; font-size:8pt }
+	.hs { font-family: Arial; font-size:6pt; border-top-width:1px; border-top: 1pt solid black; vertical-align:top; background: #CCCCCC; }
+	.ah { font-family: Arial; font-size:4pt; text-align:center; }
+	.ab { font-family: Arial; font-size:10pt; text-align:center; color:white; background:black; }
+	.sc { font-family: Arial; font-size: 5pt }
+	.scr { font-family: Arial; font-size: 5pt; text-align:right }
+	.scbr { font-family: Arial; font-size: 5pt;	border-right-width:1px; border-right: 1pt solid black; text-align:right}
+	.hph { font-family: Arial; font-size: 7pt;	text-align:center; vertical-align:bottom;}
+	.ach { font-family: Arial; font-size: 7pt;	text-align:center; vertical-align:middle;}
+ 	.acb { font-family: Arial; font-size: 9pt; font-weight:bold; text-align:center; vertical-align:middle; border: 1px solid black;}
+ 	.hphs { font-family: Arial; font-size: 5pt;	text-align:center; vertical-align:bottom;}
+	.hpb { font-family: Arial; font-size: 9pt; font-weight:bold; text-align:center; vertical-align:middle; border: 1px solid black;}
+	.hpbb { font-family: Arial; font-size: 9pt; font-weight:bold; color:white; background:black; text-align:center; vertical-align:middle; border: 1px solid black;}
+	.abb { font-family: Arial; font-size:10pt; text-align:center; font-weight:bold; border: 1px solid black;}
+	.abt { font-family: Arial; font-size:10pt; text-align:center; font-weight:bold; border: 5px solid lightgray;}
+	.sptab { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:center;font-size:8pt;}
+	.spname { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:left;font-size:8pt;}
+	.sptop { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:center;font-size:8pt; color:white;}
+	.splevel {  font-family: Arial; background:black; text-align:center;font-size:9pt; color:white;}
+	.sphead {  font-family: Arial; background:black; text-align:center;font-size:12pt; color:white;}
+	.spcomp { font-family: Arial; vertical-align:top; text-align:left;font-size:6pt;}
+	.spch { font-family:Wingdings; vertical-align:top; text-align:right;font-size:7pt;}
+	.spch2 { font-family:Wingdings; vertical-align:top; text-align:right;font-size:5pt;}
+	.spcomp2 { font-family: Arial; vertical-align:top; text-align:left;font-size:5pt;}
+	.spch3 { font-family:Wingdings; vertical-align:top; text-align:right;font-size:9pt;}
+	.spcomp3 { font-family: Arial; vertical-align:top; text-align:left;font-size:9pt;}
+   	.topline {
+   		font-family: Arial; 
+   		background: #CCCCCC;
+		border-top-width:1px;
+		border-top: 1pt solid black;
+	}
+	.border {
+		font-family: Arial; 
+		border: 1px solid black;
+	}
+	.tempborder {
+		font-family: Arial; 
+		border: 5px solid lightgray;
+	}
+	.borderbottom {
+		font-family: Arial; 
+		border-bottom-width:1px;
+		border-bottom: 1pt solid black;
+	}
+	.borderright {
+		font-family: Arial; 
+		border-right-width:1px;
+		border-right: 1pt solid black;
+	.c, .wbc {
+		font-family: Arial; 
+		text-align: center;
+	}
+	TD {
+		font-family: Arial
+	}
+	BODY {
+		font-family: Arial; font-size:6pt
+	}
+	.breakhere {page-break-after: always}
+ 
+</style>
+</head>
+<script language="javascript"><!--
+ 
+function FirstChar(s)
+{
+	return s.substr(0,1);
+}
+function StripZero(s)
+{
+	return s.replace(/\.0$/,'');
+}
+ 
+function Comprehensive()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'none';
+	document.getElementById('WeaponsComprehensive').style.display = 'inline';
+	document.getElementById('ArmourCompact').style.display = 'none';
+	document.getElementById('ArmourComprehensive').style.display = 'inline';
+	document.getElementById('BioComprehensive').style.display = 'inline';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'inline';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'inline';
+	document.getElementById('WeaponsExtra').style.display = 'inline';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+	
+};
+function TwoPage()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('FeatsCompact').style.display = 'inline';
+	document.getElementById('FeatsComprehensive').style.display = 'none';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'inline';
+	
+};
+function ThreePage()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('ThirdPage').style.display = 'inline';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'inline';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+	
+};
+function Compact()
+{
+	document.getElementById('FullHeader').style.display = 'none';
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'none';
+	document.getElementById('SkillsCompact').style.display = 'inline';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'inline';
+	document.getElementById('DomainsCompact').style.display = 'inline';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'none';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'none';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+	
+};
+function MyPrint()
+{
+	document.getElementById('Config').style.display = 'none';
+	window.print();
+	document.getElementById('Config').style.display = 'block';
+};
+//--></script>
+<body onload="Compact();" onbeforeprint="document.getElementById('Config').style.display = 'none';" onafterprint="document.getElementById('Config').style.display = 'block';">
+ 
+<TABLE ID="Config" WIDTH="100%" BORDER=0 CELLSPACING=1 CELLPADDING=1>
+	<TR>
+		<TD align="center"><INPUT id=button3 type=button value="1 Page" name=button3 onclick="Compact();">&nbsp;<INPUT id=button2 type=button value="2 Page" name=button2 onclick="TwoPage();">&nbsp;<INPUT id=button2 type=button value="3-4 Page" name=button2 onclick="ThreePage();">&nbsp;<INPUT id=button1 type=button value="4 Page+" name=button1 onclick="Comprehensive();">&nbsp;<INPUT id=button4 type=button value="Print" name=button4 onclick="MyPrint();"></TD>
+	</TR>
+</TABLE>
+ 
+<SPAN></SPAN>
+ 
+<font style="font-size:6pt">
+<table id="FullHeader" cellpadding="0" cellspacing="4" border="0" width="100%">
+<tr>
+<td colspan="2" class="h"><B><FONT style="font-size:12pt">Quadro</font></B></td>
+<td colspan="2" class="h">Scott Setola</td>
+<td class="h">Neutral Good</td>
+<td class="h">Moradin</td>
+<td class="h">0</td>
+<td id="CharacterImage" rowspan="7" align="center" width="1%" class="border"><font style="font-size:10pt"><A HREF="#Bio"><IMG SRC="Quadro.jpg" height="100" ALT="Click for Bio" BORDER="0" onerror="document.getElementById('CharacterImage').style.display = 'none';"></A><br /></font></td>
+</tr>
+<tr>
+<td colspan="2" class="hs">CHARACTER NAME</td>
+<td colspan="2" class="hs">PLAYER</td>
+<td class="hs">ALIGNMENT</td>
+<td class="hs">DEITY</td>
+<td class="hs">POINTS</td>
+</tr>
+<tr>
+<td colspan="1" class="h">Transmuter5 Fighter1</td>
+<td colspan="1" class="h">16976</td>
+<td colspan="1" class="h">Dwarf</td>
+<td class="h">M</td>
+<td class="h">4&#39; 11&quot;</td>
+<td class="h">170 lbs</td>
+<td class="h">Darkvision (60&#39;)</td>
+</tr>
+<tr>
+<td class="hs">CLASS</td>
+<td class="hs">EXPERIENCE</td>
+<td class="hs">RACE</td>
+<td class="hs">SIZE</td>
+<td class="hs">HEIGHT</td>
+<td class="hs">WEIGHT</td>
+<td class="hs">VISION</td>
+</tr>
+<tr>
+<td class="h">6</td>
+<td class="h">21000</td>
+<td class="h">60</td>
+<td class="h">M</td>
+<td class="h">Blue</td>
+<td class="h">Brown, In Ponytail</td>
+<td class="h">0</td>
+</tr>
+<tr>
+<td class="hs">LEVEL</td>
+<td class="hs">NEXT LEVEL</td>
+<td class="hs">AGE</td>
+<td class="hs">GENDER</td>
+<td class="hs">EYES</td>
+<td class="hs">HAIR</td>
+<td class="hs">TURNS/DAY</td>
+</tr>
+<tr><td colspan="7"></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td rowspan="2" valign="top">
+<table>
+<tr>
+<td width="20%" class="ah">ABILITY<br />NAME</td>
+<td width="20%" class="ah">ABILITY<br />SCORE</td>
+<td width="20%" class="ah">ABILITY<br />MODIFIER</td>
+<td width="20%" class="ah">TEMPORARY<br />SCORE</td>
+<td width="20%" class="ah">TEMPORARY<br />MODIFIER</td>
+</tr>
+<tr>
+<td class="ab"><b>STR</b><font style="font-size:5pt"><br />Strength</font></td>
+<td class="abb">14</td>
+<td class="abb">+2</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+<tr>
+<td class="ab"><b>DEX</b><font style="font-size:5pt"><br />Dexterity</font></td>
+<td class="abb">16</td>
+<td class="abb">+3</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+<tr>
+<td class="ab"><b>CON</b><font style="font-size:5pt"><br />Constitution</font></td>
+<td class="abb">20</td>
+<td class="abb">+5</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+<tr>
+<td class="ab"><b>INT</b><font style="font-size:5pt"><br />Intelligence</font></td>
+<td class="abb">18</td>
+<td class="abb">+4</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+<tr>
+<td class="ab"><b>WIS</b><font style="font-size:5pt"><br />Wisdom</font></td>
+<td class="abb">10</td>
+<td class="abb">+0</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+<tr>
+<td class="ab"><b>CHA</b><font style="font-size:5pt"><br />Charisma</font></td>
+<td class="abb">10</td>
+<td class="abb">+0</td>
+<td class="abt"><br /></td>
+<td class="abt"><br /></td>
+</tr>
+</table>
+</td>
+<td colspan="2" valign="top">
+<table>
+<tr>
+<td align="center" width="50"></td>
+<td width="25" class="hph">TOTAL</td>
+<td></td>
+<td width="119" class="hphs"><br />WOUNDS/CURRENT HP</td>
+<td></td>
+<td width="119" class="hphs"><br />SUBDUAL DAMAGE</td>
+<td></td>
+<td width="60" class="hphs"><br />DAMAGE<br />REDUCTION</td>
+<td></td>
+<td width="60" class="hphs"><br />SPEED</td>
+</tr>
+<tr>
+<td class="hpbb">HP<font style="font-size:5pt"><br />Hit Points</font></td>
+<td class="hpb">51</td>
+<td align="center"><br /></td>
+<td class="hpb"><br /></td>
+<td align="center"><br /></td>
+<td class="hpb"><br /></td>
+<td align="center"><br /></td>
+<td class="hpb"><br /></td>
+<td align="center"><br /></td>
+<td class="hpb">Walk 15&#39;</td>
+</tr>
+</table><table>
+<tr>
+<td class="hpbb"><b>AC</b></font><font style="font-size:5pt" color="white"><br />Armour Class</font></td>
+<!-- Thomas Behr 13-02-02: replaced old tokens with new ones -->
+<!-- <td class="acb"><b>18</b></font></td> -->
+<td class="acb"><b>18</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" style="border: 0px solid black"><font style="font-size: 9pt"><b>10</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td class="acb"><b>5</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td class="acb"><b>3</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td class="acb"><b>0</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td class="acb"><b>0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<!-- Thomas Behr 13-02-02: you don't want to count size mod twice :-) -->
+<!-- <td class="acb"><b>0<br /></b></font></td> -->
+<td class="acb"><b>0<br /></b></font></td>
+<td align="center" width="5"><font style="font-size: 7pt"><b>&nbsp;</b></font></td>
+<!-- <td class="acb"><b>13<br /></b></font></td> -->
+<td class="acb"><b>13<br /></b></font></td>
+<td class="ach"><b></b></font></td>
+<td class="acb"><b>10</b></font></td>
+<td class="ach"><b></b></font></td>
+<td class="acb"><b>0</b></font></td>
+<td class="ach"><b></b></font></td>
+<td class="acb"><b>+6</b></font></td>
+<td class="ach"><b></b></font></td>
+<td class="acb"><b><br /></b></font></td>
+</tr>
+<tr>
+<td align="center" width="50"><font style="font-size: 6pt"></font></td>
+<td align="center" width="25" valign="top"><font style="font-size: 6pt">TOTAL</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td align="center" width="15"><font style="font-size: 4pt"></font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">ARMOR<br />BONUS</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">STAT<br />BONUS</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">SIZE<br />BONUS</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">NATURAL<br />ARMOR</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">MISC<br />BONUS</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">TOUCH<br />AC</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">ARCANE<br />FAILURE</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">ARMOR<br />CHECK</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">MAX<br />DEX</font></td>
+<td align="center"><font style="font-size: 6pt"><b></b></font></td>
+<td width="25" class="ah">SPELL<br />RESIST.</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<table width="100%">
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:9pt" color="white"><b>INITIATIVE</b></font><font style="font-size:5pt" color="white"><br />Modifier</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3
+</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0</b></font></td>
+</tr>
+<tr>
+<td align="center" width="50"><font style="font-size: 7pt"></font></td>
+<td align="center" width="25" valign="top"><font style="font-size: 7pt">TOTAL</font></td>
+<td class="ach"><b></b></font></td>
+<td align="center" width="25"><font style="font-size: 5pt">DEX<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td align="center" width="25"><font style="font-size: 5pt">MISC<br />MODIFIER</font></td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:9pt" color="white"><b>BASE ATTACK</b></font><font style="font-size:5pt" color="white"><br />Bonus</font></td>
+<td align="center" width="94" class="border"><font style="font-size: 10pt"><b>+3<br /></b></font></td>
+</tr>
+</table>
+</td>
+<td rowspan="2" valign="top" width="50%"><TABLE id="SkillsCompact" cellpadding="0" cellspacing="0" border="0"><TR><TD><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="3" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>SKILLS</b></font>
+</td>
+</tr>
+<tr>
+ 
+ 
+<td align="left" class="border" valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<TR><TD align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD></TR>
+<TR><TD class="sc">&nbsp;Alchemy</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('5.0'));</SCRIPT></TD><TD class="scbr">9&nbsp;</TD><TD class="sc">&nbsp;Jump</TD><TD class="sc">STR</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('6.0'));</SCRIPT></TD><TD class="scbr">15&nbsp;</TD><TD class="sc">&nbsp;Move Silently</TD><TD class="sc">DEX</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">0&nbsp;</TD></TR><TR><TD class="sc">&nbsp;Climb</TD><TD class="sc">STR</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">-1&nbsp;</TD><TD class="sc">&nbsp;Jump (Leap into the Saddle)</TD><TD class="sc">STR</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">-1&nbsp;</TD><TD class="sc">&nbsp;Search</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('2.0'));</SCRIPT></TD><TD class="scbr">6&nbsp;</TD></TR><TR><TD class="sc">&nbsp;Climb (Swarm Huge Monster)</TD><TD class="sc">STR</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">-1&nbsp;</TD><TD class="sc">&nbsp;Knowledge (Arcana)</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></TD><TD class="scbr">8&nbsp;</TD><TD class="sc">&nbsp;Search (Stash Item)</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">4&nbsp;</TD></TR><TR><TD class="sc">&nbsp;Concentration</TD><TD class="sc">CON</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('9.0'));</SCRIPT></TD><TD class="scbr">14&nbsp;</TD><TD class="sc">&nbsp;Knowledge (Undead)</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('2.0'));</SCRIPT></TD><TD class="scbr">6&nbsp;</TD><TD class="sc">&nbsp;Spellcraft</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('9.0'));</SCRIPT></TD><TD class="scbr">13&nbsp;</TD></TR><TR><TD class="sc">&nbsp;Craft (Stoneworking)</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></TD><TD class="scbr">10&nbsp;</TD><TD class="sc">&nbsp;Knowledge (Weaponry)</TD><TD class="sc">INT</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('1.0'));</SCRIPT></TD><TD class="scbr">5&nbsp;</TD><TD class="sc">&nbsp;Spot</TD><TD class="sc">WIS</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">0&nbsp;</TD></TR><TR><TD class="sc">&nbsp;Hide</TD><TD class="sc">DEX</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></TD><TD class="scbr">0&nbsp;</TD><TD class="sc">&nbsp;Listen</TD><TD class="sc">WIS</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('1.0'));</SCRIPT></TD><TD class="scbr">1&nbsp;</TD><TD class="sc">&nbsp;Tumble</TD><TD class="sc">DEX</TD><TD class="scr"><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></TD><TD class="scbr">6&nbsp;</TD></TR>
+</table>
+ 
+</td>
+ 
+ 
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>SPECIAL ABILITIES</b></font></td>
+</tr>
+<tr><td align="left" width="100%" class="border"><font style="font-size: 7pt">Summon Familiar,Stonecunning,save +2 vs. poison,save +2 vs spells,+4 dodge vs giants,+1 to hit trollkin,+2 on Appraise of stone/metal items,+2 on stone/metal Craft check</font></td></tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="1" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>FEATS</b></font>
+</td>
+</tr>
+<tr>
+<td align="left" width="100%" class="border"><font style="font-size: 7pt">Armor Proficiency (Heavy) (1x),Armor Proficiency (Light) (1x),Armor Proficiency (Medium) (1x),Combat Casting,Craft Wondrous Item,Expertise,Extend Spell,Martial Weapon Proficiency,Scribe Scroll,Shield Proficiency,Simple Weapon Proficiency,Weapon Focus (Greataxe)</font></td>
+</tr>
+</table>
+ 
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>LANGUAGES</b></font></td>
+</tr>
+<tr>
+<td valign="top" width="100%" class="border"><font style="font-size: 7pt">Common, Cygnaran, Draconic, Dwarven, Literacy, Orc, Rhulic, Terran, Undercommon<br /></font></td>
+</tr>
+</table>
+ 
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td></tr>
+</tr></table>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="white" colspan="2" class="border"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Wizard</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td></tr>
+<tr><td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 14 + Spell Level</font></td>
+ <td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">3+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">2+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td> 
+</tr></table></td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">0:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp2">Animate Animal</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Arcane Mark</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Cause Minor Damage</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Chill/Warmth</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Clean</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Dancing Lights</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Daze</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Detect Dead</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Detect Magic</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Detect Poison</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Detect Precious Metals</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Detect Temporal Disturbance</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Disrupt Undead</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Distort Shadow</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Distraction</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Dowsing</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Electric Jolt</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Enchanting Flavor</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Enumerate</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Flare</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Ghost Sound</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Horizikaul's Cough</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Identify Undead</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Launch Bolt</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Light</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Mage Hand</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Mending</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Mental Alarm</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Minor Ward</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Open/Close</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Phantasmal Whisperer</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Prestidigitation</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Quick Boost</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Quick Sober</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Read Magic</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Repair Minor Damage</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Resistance</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Set Traps</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Silent Portal</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Skull Snare</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Sneeze</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Spark</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Steal Sleep</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Tongue of Angels</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Tongue of Fiends</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">1:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp2">Animate Vermin</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Burning Hands</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Color Spray</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Enlarge</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Expeditious Retreat</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Feather Fall</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Identify</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Jump</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Magic Missile</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Magic Weapon</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Predict Weather</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Protection from Evil</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Ray of Enfeeblement</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Shield</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Shocking Grasp</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Sleep</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">True Strike</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Wisdom of the Ivory Emperor</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">2:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp2">*Bladesong</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Blur</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Bull's Strength</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Cat's Grace</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Flaming Sphere</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Invisibility</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">*Knock</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Levitate</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Life Bolt</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">3:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp2">Fireball</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Haste</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">Ice Burst</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2">Sharing the Ancient Lore</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Slow</TD><TD class="spch2">ooo&nbsp;</TD><TD width="27%" class="spcomp2">*Water Breathing</TD><TD class="spch2">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp2"></TR>
+</table>
+</td></tr>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+</tr></table>
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+</td></tr></table>
+<table id="SkillsComprehensive" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="10" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>SKILLS</b></font>
+</td>
+</tr>
+<tr>
+<td align="center" width="40%" class="border"><font style="font-size: 4pt">SKILL NAME</font></td>
+<td align="center" width="5%" class="border"><font style="font-size: 4pt">ABILITY</font></td>
+<td align="center" width="15%" colspan="1" class="border"><font style="font-size: 4pt">SKILL<br />MODIFIER</font></td>
+<td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">ABILITY<br />MODIFIER</font></td>
+<td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">RANKS</font></td>
+<td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">MISC<br />MODIFIER</font></td>
+</tr>
+<tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Alchemy</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">9</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('5.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Climb</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">STR</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">-1</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>2</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-3</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Climb (Swarm Huge Monster)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">STR</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">-1</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>2</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-3</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Concentration</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">CON</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">14</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>5</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('9.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Craft (Stoneworking)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">10</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>2</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Hide</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">DEX</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">0</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>3</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-3</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Jump</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">STR</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">15</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>2</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('6.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>7</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Jump (Leap into the Saddle)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">STR</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">-1</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>2</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-3</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Knowledge (Arcana)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">8</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Knowledge (Undead)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">6</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('2.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Knowledge (Weaponry)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">5</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('1.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Listen</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">WIS</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">1</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('1.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Move Silently</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">DEX</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">0</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>3</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-3</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Search</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">6</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('2.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Search (Stash Item)</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">4</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Spellcraft</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">INT</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">13</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>4</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('9.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Spot</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">WIS</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">0</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('0.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>0</b><br /></font></td></tr><tr><td align="left" width="40%"><font face="Arial" style="font-size: 8pt">Tumble</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">DEX</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">6</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>3</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b><SCRIPT language="Javascript">document.write(StripZero('4.0'));</SCRIPT></b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>-1</b><br /></font></td></tr>
+</table>
+ 
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+<table width="100%">
+<tr>
+<td align="center"><font style="font-size: 4pt">SAVING THROWS</font></td>
+<td width="25" class="ah">TOTAL</font></td>
+<td align="center"><font style="font-size: 4pt"><b></b></font></td>
+<td width="25" class="ah">BASE<br />SAVE</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">ABILITY<br />MODIFIER</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">MAGIC<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">MISC<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">TEMPORARY<br />MODIFIER</font></td>
+<td align="left" valign="top" width="63" rowspan="4" class="border"><font style="font-size: 4pt">CONDITIONAL<br />MODIFIERS</font></td>
+</tr>
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>Fortitude</b></font><font style="font-size:5pt" color="white"><br />Constitution</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+8</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+5</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="tempborder"><font style="font-size: 5pt"><br /></font></td>
+</tr>
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>Reflex</b></font><font style="font-size:5pt" color="white"><br />Dexterity</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+4</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+1</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="tempborder"><font style="font-size: 5pt"><br /></font></td>
+</tr>
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>Will</b></font><font style="font-size:5pt" color="white"><br />Wisdom</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+4</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+4</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="tempborder"><font style="font-size: 5pt"><br /></font></td>
+</tr>
+</table>
+<table width="100%">
+<tr>
+<td align="center"><font style="font-size: 4pt"></font></td>
+<td align="center" width="60"><font style="font-size: 4pt">TOTAL</font></td>
+<td align="center"><font style="font-size: 4pt"><b></b></font></td>
+<td align="center" width="60"><font style="font-size: 4pt">BASE ATTACK BONUS</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">STR<br />MODIFIER</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">SIZE<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">MISC<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">TEMPORARY<br />MODIFIER</font></td>
+</tr>
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>MELEE</b></font><font style="font-size:5pt" color="white"><br />ATTACK BONUS</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+5</b></font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+2</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b><br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="tempborder"><font style="font-size: 5pt"><br /></font></td>
+</tr>
+<tr>
+<td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>RANGED</b></font><font style="font-size:5pt" color="white"><br />ATTACK BONUS</font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+6</font></td>
+<td class="ach"><b>=</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+3</b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b>+0<br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="border"><font style="font-size: 10pt"><b><br /></b></font></td>
+<td class="ach"><b>+</b></font></td>
+<td align="center" class="tempborder"><font style="font-size: 5pt"><br /></font></td>
+</tr>
+<tr>
+<td align="center"><font style="font-size: 4pt"></font></td>
+<td align="center" width="60"><font style="font-size: 4pt">TOTAL</font></td>
+<td align="center"><font style="font-size: 4pt"><b></b></font></td>
+<td align="center" width="60"><font style="font-size: 4pt">BASE ATTACK BONUS</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">DEX<br />MODIFIER</font></td>
+<td align="center"><font style="font-size: 5pt"><b></b></font></td>
+<td width="25" class="ah">SIZE<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">MISC<br />MODIFIER</font></td>
+<td class="ach"><b></b></font></td>
+<td width="25" class="ah">TEMPORARY<br />MODIFIER</font></td>
+</tr>
+</table>
+<table id="Unarmed" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="25" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>UNARMED</b></font></td><td align="center" bgcolor="black" width="110" height="15"><font style="font-size:6pt" color="white"><b>TOTAL ATTACK BONUS</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>DAMAGE</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>CRITICAL</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+5<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>1d3+2<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>20/x2<br /></b></font></td></tr></table>
+<div id="WeaponsCompact">
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+<tr><td bgcolor="black"><font style="font-size:7pt" color="white"><b>WEAPON<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>+HIT<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>DAMAGE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CRITICAL<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>HAND<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>RANGE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SIZE<br /></b></font></td></tr>
+ <tr><td colspan="8" class="topline"><font style="font-size:8pt" color="black"><b>*Greataxe +1</b></font></td></tr><tr><td></td><td align="center"><font style="font-size:8pt" color="black"><b>+7<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>1d12+4<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>20/x3<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><SCRIPT language="Javascript">document.write(FirstChar('Both'));</SCRIPT><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>0&#39;<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>S<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>L<br /></b></font></td></tr><tr><td colspan="8"><center><font style="font-size:6pt" color="black"></font></center></td></tr> 
+</table></div>
+<div id="ArmourCompact">
+<table cellpadding="0" width="100%" cellspacing="0" border="0">
+<tr><td bgcolor="black"><font style="font-size:7pt" color="white"><b>ARMOR<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>MAXDEX<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CHECK<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SPELL FAILURE<br /></b></font></td></tr>
+ <tr><td><font style="font-size:8pt" color="black"><b>*Chain Shirt +1 (Mithral)<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>Light<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+5<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+6<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+0<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>10<br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr> 
+<tr><td bgcolor="black"><font style="font-size:7pt" color="white"><b>SHIELD<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CHECK<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SPELL FAILURE<br /></b></font></td></tr>
+ <tr><td><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr> 
+<tr><td bgcolor="black"><font style="font-size:7pt" color="white"><b>ITEMS<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td></tr>
+ <tr><td><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr> 
+</table></div>
+<div id="WeaponsComprehensive">
+<br/><table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td align="center" height="25" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>*Greataxe +1<br /></b></font></td><td align="center" bgcolor="black" width="110" height="15"><font style="font-size:6pt" color="white"><b>TOTAL ATTACK BONUS</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>DAMAGE</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>CRITICAL</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+7<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>1d12+4<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>20/x3<br /></b></font></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="50"><font style="font-size:6pt" color="white"><b>HAND</b></font></td><td align="center" height="15" bgcolor="black" width="40"><font style="font-size:6pt" color="white"><b>RANGE</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td><td align="center" bgcolor="black" width="40" height="15"><font style="font-size:6pt" color="white"><b>SIZE</b></font></td><td align="center" bgcolor="black" width="167" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>Both<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>0&#39;<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>S<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>L<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr></table>
+</div>
+<div id="ArmourComprehensive">
+<br/><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td align="center" height="20" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>*Chain Shirt +1 (Mithral)<br /></b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>ARMOR BONUS</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>MAX DEX BONUS</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>Light<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+5<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+6<br /></b></font></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="60"><font style="font-size:5pt" color="white"><b>CHECK PENALTY</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:5pt" color="white"><b>SPELL FAILURE</b></font></td><td align="center" bgcolor="black" width="237" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+0<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>10<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr></table>
+</div>
+<table id="EquipmentCompact" width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>EQUIPMENT (<SCRIPT language="Javascript">document.write(StripZero('59.5 lbs'));</SCRIPT> - <SCRIPT language="Javascript">document.write(StripZero('58.0'));</SCRIPT>/<SCRIPT language="Javascript">document.write(StripZero('116.0'));</SCRIPT>/<SCRIPT language="Javascript">document.write(StripZero('175.0'));</SCRIPT>)</b></font></td>
+</tr>
+<tr>
+ 
+<td align="left" class="border">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Alchemy materials</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('2'));</SCRIPT> x Pearl of Power (1st Level)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Backpack</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('2'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('7'));</SCRIPT> x Rations (Trail/Per Day)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Belt (Potion)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Rope (Hemp/50 Ft.)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('10'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Boots of Striding and Springing</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('3'));</SCRIPT> x Water (Pint)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Greataxe +1</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('20'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Chain Shirt +1 (Mithral)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('12.5'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x Outfit (Traveler&#39;s)</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR>
+</table>
+</td>
+ 
+</tr>
+</table>
+ 
+<div id="DomainsCompact">
+
+</div>
+<font style="font-size:8pt"><center><b>AMMUNITION</b></center></font>
+<table width="100%">
+<tr>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+</tr>
+<tr>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+</tr>
+<tr>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+ 
+</tr>
+</table>
+</table>
+<BR><CENTER><font style="font-size: 7pt">PCGen template by Richard O'Doherty-Gregg. If you have any suggestions please send them to OdGregg@bigpond.com</font></CENTER>
+<div id="SecondPage">
+<br class="breakhere" />
+<table width="100%" border=0>
+<tr>
+	<td colspan=2 width="100%" valign="top">
+		<table width="100%" cellspacing="0" cellpadding="2" border=0>
+			<tr>
+				<td bgcolor="black" align="center" colspan="10"><font color="white" style="font-size: 9pt"><b>EQUIPMENT</b></font></td>
+			</tr>
+			<tr>
+				<td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>ITEM</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>LOCATION</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>QTY</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>WT.</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>GP COST</b></font></td>
+				<td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>ITEM</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>LOCATION</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>QTY</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>WT.</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>GP COST</b></font></td>
+			</tr>
+<tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Alchemy materials<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">1<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Pearl of Power (1st Level)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('2'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">1000<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Backpack<br /></font><font style="font-size: 5pt">24.0 lbs, 3.0 Water (Pint), 21.0 Rations (Trail/Per Day)</font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Carried<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('2'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">40<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Rations (Trail/Per Day)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Backpack<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('7'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">0.5<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Belt (Potion)<br /></font><font style="font-size: 5pt">0.0 lbs</font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">1<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Rope (Hemp/50 Ft.)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('10'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">1<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Boots of Striding and Springing<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">6000<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Water (Pint)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Backpack<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('3'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">0<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Greataxe +1<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('20'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">2320<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Chain Shirt +1 (Mithral)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('12.5'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">2100<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Outfit (Traveler&#39;s)<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">1<br /></font></td></tr>
+			<tr>
+				<td valign="top" width="41%" class="border" align="right" colspan="1"><font style="font-size: 8pt">TOTAL WEIGHT CARRIED/VALUE</font></td>
+				<td valign="top" width="3%" class="border" align="center" colspan="2" NOWRAP><font style="font-size: 8pt">59.5 lbs</font></td>
+				<td valign="top" width="3%" class="border" align="center" colspan="2" NOWRAP><font style="font-size: 8pt">12467.5 gp</font></td>
+			</tr>
+		</table>
+	</td>
+</tr><tr>
+<td width="50%" valign="top">
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="6"><font color="white" style="font-size: 9pt"><b>WEIGHT ALLOWANCE</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Light</B></font></td>
+<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('58.0'));</SCRIPT></font></td>
+<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Medium</B></font></td>
+<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('116.0'));</SCRIPT></font></td>
+<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Heavy</B></font></td>
+<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('175.0'));</SCRIPT></font></td>
+</tr>
+</table>
+<div id="FeatsCompact">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="1" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>FEATS</b></font>
+</td>
+</tr>
+<tr>
+<td align="left" class="border"><font style="font-size: 8pt">Armor Proficiency (Heavy) (1x),Armor Proficiency (Light) (1x),Armor Proficiency (Medium) (1x),Combat Casting,Craft Wondrous Item,Expertise,Extend Spell,Martial Weapon Proficiency,Scribe Scroll,Shield Proficiency,Simple Weapon Proficiency,Weapon Focus (Greataxe)</font></td>
+</tr>
+</table>
+</div>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>MONEY</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border"><font style="font-size: 8pt">
+
+
+</font></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>COMPANIONS</b></font></td>
+</tr>
+<tr><td valign="top" width="100%" class="border"><font style="font-size: 8pt">Numenarh Daerkwood, Mewn Riverflow, Rask the Destroyer of Evil, Julin Sandar, Meepo the Brave, Grawl the Ugly, Tyro the Druid, to be continued...</font></td></tr>
+</table>
+</table>
+<table width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>SPECIAL ABILITIES</b></font></td>
+</tr>
+<tr><td valign="top" width="100%" class="border"><font style="font-size: 8pt">Summon Familiar,Stonecunning,save +2 vs. poison,save +2 vs spells,+4 dodge vs giants,+1 to hit trollkin,+2 on Appraise of stone/metal items,+2 on stone/metal Craft check</font></td></tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>TEMPLATES</b></font></td>
+</tr>
+<tr>
+<td valign="top" width="70%" class="border"><font style="font-size: 8pt"><br /></font></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>MAGIC</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border"><font style="font-size: 8pt"></font></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>PROFICIENCIES</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border"><font style="font-size: 8pt">Aclis, Angle Knife, Ankus, Armor Spikes, Assault Blaster, Assault Carbine, Assault Laser, Assault Rifle, Automatic Crossbow, Axe, Axe (Carpenter's), Axe (Throwing), Barbed Spear (Long), Barbed Spear (Short), Battleaxe, Bayonet, Bec de Corbin, Bladed Bow, Blaster Cannon, Blaster Carbine, Blaster Pistol, Blaster Rifle, Blowgun, Club, Compound Longbow, Crossbow (Heavy), Crossbow (Light), Cutlass, Dagger, Dagger (Punching), Dagger (Thrown), Dart, Dizzy-Boff Stick, Falchion, Flail (Heavy), Flail (Light), Flamberge, Flamethrower, Flametongue, Flax, Gauntlet, Gauntlet (Spiked), Gladius, Glaive, Greataxe, Greatclub, Greathammer, Grenade (Adhesive), Grenade (Concussion), Grenade (Flash-Bang), Grenade (Frag), Grenade (Incendiary), Grenade (Nausea), Grenade (Smoke), Grenade (Stun), Grenade Launcher, Guisarme, Halberd, Half Moon Spear, Halfspear, Hammer (Light), Handaxe, Heavy AutoPistol, Heavy Machinegun, Holdout Laser, Holdout Pistol, Hoopak, Hunting Carbine, Hunting Rifle, Javelin, Karvar, Katana (2-H), Khopesh, Kusari-gama, Lance (Heavy), Lance (Light), Laser Cannon, Laser Carbine, Laser Pistol, Laser Rifle, Light AutoPistol, Light Machinegun, Longbow, Longbow (Composite), Longspear, Mace (Heavy), Mace (Light), Maul, Mind-blade, Missle Laungher, Morningstar, Nagamaki, Naginata, Pick (Heavy), Pick (Light), Pike, Pilum, Plasma Rifle, Quarterstaff, Ranseur, Rapier, Rocket Launcher, Rocket launcher (Multishot), Saber, Sap, Sawtooth, Scimitar, Screamer Pistol, Screamer Rifle, Scythe, Shieldbash, Shortbow, Shortbow (Composite), Shortspear, Shotgun, Sickle, Sickle (Stone), Sling, Sniper Rifle, Spider Throwing Knife, Spiked Helmet, Staff Sling, Straight Razor, Stun baton, Stun gauntlets, Submachine Gun, Sword (Bastard/2-H), Sword (Broad), Sword (Cane), Sword (Great), Sword (Guantlet), Sword (Long), Sword (Short), Sword (Tulwar), Sword-Pike, Taser Pistol, Trident, Unarmed Strike, Wakizashi, War Cleaver, War Rake, Waraxe (Dwarven/2-H), Warhammer<br /></font></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>PROHIBITED</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border"><font style="font-size: 8pt">Conjuration<br /></font></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr>
+<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>LANGUAGES</b></font></td>
+</tr>
+<tr>
+<td valign="top" class="border"><font style="font-size: 8pt">Common, Cygnaran, Draconic, Dwarven, Literacy, Orc, Rhulic, Terran, Undercommon<br /></font></td>
+</tr>
+</table>
+
+</td>
+<td width="50%" valign="top">
+
+<div id="SpellsSemicompact">
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td></tr>
+</tr></table>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="white" colspan="2" class="border"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Wizard</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td></tr>
+<tr><td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 14 + Spell Level</font></td>
+ <td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">3+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">2+1<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>  <td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td> 
+</tr></table></td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">0:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp">Animate Animal</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Arcane Mark</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Cause Minor Damage</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Chill/Warmth</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Clean</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Dancing Lights</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Daze</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Detect Dead</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Detect Magic</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Detect Poison</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Detect Precious Metals</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Detect Temporal Disturbance</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Disrupt Undead</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Distort Shadow</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Distraction</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Dowsing</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Electric Jolt</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Enchanting Flavor</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Enumerate</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Flare</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Ghost Sound</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Horizikaul's Cough</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Identify Undead</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Launch Bolt</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Light</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Mage Hand</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Mending</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Mental Alarm</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Minor Ward</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Open/Close</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Phantasmal Whisperer</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Prestidigitation</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Quick Boost</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Quick Sober</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Read Magic</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Repair Minor Damage</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Resistance</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Set Traps</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Silent Portal</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Skull Snare</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Sneeze</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Spark</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Steal Sleep</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Tongue of Angels</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Tongue of Fiends</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">1:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp">Animate Vermin</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Burning Hands</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Color Spray</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Enlarge</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Expeditious Retreat</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Feather Fall</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Identify</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Jump</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Magic Missile</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Magic Weapon</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Predict Weather</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Protection from Evil</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Ray of Enfeeblement</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Shield</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Shocking Grasp</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Sleep</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">True Strike</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Wisdom of the Ivory Emperor</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">2:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp">*Bladesong</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Blur</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Bull's Strength</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Cat's Grace</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Flaming Sphere</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Invisibility</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">*Knock</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Levitate</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Life Bolt</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp"></TR>
+</table>
+</td></tr>
+
+ 
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">3:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+<TR><TD width="27%" class="spcomp">Fireball</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Haste</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">Ice Burst</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Sharing the Ancient Lore</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Slow</TD><TD class="spch">ooo&nbsp;</TD><TD width="27%" class="spcomp">*Water Breathing</TD><TD class="spch">ooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp"></TR>
+</table>
+</td></tr>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+</tr></table>
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+</div>
+<div id="FeatsComprehensive">
+ 
+<table width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td bgcolor="black" align="center" colspan="2"><font color="white" style="font-size: 9pt"><b>FEATS</b></font></td>
+</tr>
+<tr>
+<td valign="top" width="30%" class="border"><font style="font-size: 8pt"><b>NAME</b></font></td>
+<td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt"><b>DESCRIPTION</b></font></td>
+</tr>
+<tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Heavy) (1x)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You are proficient with heavy armor</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Light) (1x)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You are proficient with light armor</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Medium) (1x)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You are proficient with medium armor</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Combat Casting</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You get a +4 bonus on Concentration while casting a spell on defensive</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Craft Wondrous Item</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You can create any miscellaneous item whose prerequisites you meet.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Expertise</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">In melee you can take as much -5 on your attack (max your attack bonus) and add it to your AC.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Extend Spell</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">Spells last twice as long and is one level slot higher.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Martial Weapon Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You attack with this specific weapon normally, non-proficiency incurs a -4 to hit penalty.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Scribe Scroll</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You can scribe a scroll.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Shield Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You can use shields, otherwise you suffer armor check penalty on to hit rolls and any rolls involving movement.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Simple Weapon Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">You are proficient with all simple weapons. Non-proficiency suffers -4 to hit.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Weapon Focus (Greataxe)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">With a specific weapon you&#39;re proficient in, you add +1 to attack rolls.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt"></tr>
+</table>
+</div>
+<div id="WeaponsExtra">
+<br /><table cellpadding="0" width="100%" cellspacing="0" border="0"><tr><td align="center" height="25" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b><br /></b></font></td><td align="center" bgcolor="black" width="110" height="15"><font style="font-size:6pt" color="white"><b>TOTAL ATTACK BONUS</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>DAMAGE</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>CRITICAL</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>/x<br /></b></font></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="50"><font style="font-size:6pt" color="white"><b>HAND</b></font></td><td align="center" height="15" bgcolor="black" width="40"><font style="font-size:6pt" color="white"><b>RANGE</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td><td align="center" bgcolor="black" width="40" height="15"><font style="font-size:6pt" color="white"><b>SIZE</b></font></td><td align="center" bgcolor="black" width="167" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr></table>
+</div>
+</td>
+</tr>
+</table>
+</div><div id="ThirdPage">
+
+<br class="breakhere" />
+<table width="100%" border=0>
+<tr>
+<td valign="top">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td></tr>
+</tr></table>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="white" colspan="2" class="border"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Wizard</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td></tr>
+<tr><td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 14 + Spell Level</font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">4+1<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">3+1<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">2+1<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+</tr></table></td></tr>
+
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">0:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+ 
+<TR><TD width="27%" class="spcomp3">Animate Animal</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Arcane Mark</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Cause Minor Damage</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Chill/Warmth</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Clean</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Dancing Lights</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Daze</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Detect Dead</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Detect Magic</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Detect Poison</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Detect Precious Metals</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Detect Temporal Disturbance</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Disrupt Undead</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Distort Shadow</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Distraction</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Dowsing</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Electric Jolt</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Enchanting Flavor</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Enumerate</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Flare</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Ghost Sound</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Horizikaul's Cough</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Identify Undead</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Launch Bolt</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Light</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Mage Hand</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Mending</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Mental Alarm</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Minor Ward</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Open/Close</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Phantasmal Whisperer</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Prestidigitation</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Quick Boost</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Quick Sober</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Read Magic</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Repair Minor Damage</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Resistance</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Set Traps</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Silent Portal</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Skull Snare</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Sneeze</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Spark</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Steal Sleep</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Tongue of Angels</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Tongue of Fiends</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3"></TR>
+</table>
+</td></tr>
+
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">1:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+ 
+<TR><TD width="27%" class="spcomp3">Animate Vermin</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Burning Hands</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Color Spray</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Enlarge</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Expeditious Retreat</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Feather Fall</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Identify</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Jump</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Magic Missile</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Magic Weapon</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Predict Weather</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Protection from Evil</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Ray of Enfeeblement</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Shield</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Shocking Grasp</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Sleep</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">True Strike</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Wisdom of the Ivory Emperor</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3"></TR>
+</table>
+</td></tr>
+
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">2:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+ 
+<TR><TD width="27%" class="spcomp3">*Bladesong</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Blur</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Bull's Strength</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Cat's Grace</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Flaming Sphere</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Invisibility</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">*Knock</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Levitate</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Life Bolt</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3"></TR>
+</table>
+</td></tr>
+
+
+<tr><td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">3:</font></td><td valign="top" align="left" class="borderbottom">
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td></tr>
+ 
+<TR><TD width="27%" class="spcomp3">Fireball</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Haste</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">Ice Burst</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Sharing the Ancient Lore</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Slow</TD><TD class="spch3">ooooo&nbsp;</TD><TD width="27%" class="spcomp3">*Water Breathing</TD><TD class="spch3">ooooo&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3"></TR>
+</table>
+</td></tr>
+
+
+
+
+
+
+
+ 
+
+</table>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+</td>
+</tr>
+</table>
+
+</div>
+<div id="SpellBookComprehensive">
+<br class="breakhere" />
+ 
+
+<table width="100%" cellspacing="0" cellpadding="2">
+<tr>
+<td colspan="11" class="sphead"><b>Wizard Spells</b></font></td>
+</tr>
+<tr>
+<td bgcolor="black" class="sptop"><b>LEVEL</b></td>
+<td bgcolor="black" class="sptop"><b>0</b></td>
+<td bgcolor="black" class="sptop"><b>1</b></td>
+<td bgcolor="black" class="sptop"><b>2</b></td>
+<td bgcolor="black" class="sptop"><b>3</b></td>
+<td bgcolor="black" class="sptop"><b>4</b></td>
+<td bgcolor="black" class="sptop"><b>5</b></td>
+<td bgcolor="black" class="sptop"><b>6</b></td>
+<td bgcolor="black" class="sptop"><b>7</b></td>
+<td bgcolor="black" class="sptop"><b>8</b></td>
+<td bgcolor="black" class="sptop"><b>9</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>KNOWN</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>PER DAY</b></td>
+<td class="sptab"><b>4+1</b></td>
+<td class="sptab"><b>4+1</b></td>
+<td class="sptab"><b>3+1</b></td>
+<td class="sptab"><b>2+1</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>SPELL DC</b></td>
+<td class="sptab"><b>14</b></td>
+<td class="sptab"><b>15</b></td>
+<td class="sptab"><b>16</b></td>
+<td class="sptab"><b>17</b></td>
+<td class="sptab"><b>18</b></td>
+<td class="sptab"><b>19</b></td>
+<td class="sptab"><b>20</b></td>
+<td class="sptab"><b>21</b></td>
+<td class="sptab"><b>22</b></td>
+<td class="sptab"><b>23</b></td>
+</tr>
+</table>
+ 
+<table width="100%" cellspacing="0" cellpadding="2" class="breakhere">
+<tr>
+<td class="spname"><b>NAME</b></font></td>
+<td class="sptab"><b>SCHOOL</b></font></td>
+<td class="sptab"><b>EFFECT</b></font></td>
+<td class="sptab"><b>RANGE</b></font></td>
+<td class="sptab"><b>CASTING TIME</b></font></td>
+<td class="sptab"><b>DURATION</b></font></td>
+<td class="sptab"><b>COMPs</b></font></td>
+<td class="sptab"><b>SAVE</b></font></td>
+<td class="sptab"><b>SR</b></font></td>
+<td class="sptab"><b>SOURCE</b></font></td>
+</tr>
+
+
+<tr>
+<td colspan="9" class="splevel"><b>LEVEL 0</b></font></td>
+</tr>
+<tr><td class="spname">Animate Animal<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">1 animal corpse touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 Action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.19<br /></font></td></tr><tr><td class="spname">Arcane Mark<br /></font></td><td class="sptab">Universal<br /></font></td><td class="sptab">one mark<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Permanent<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.176<br /></font></td></tr><tr><td class="spname">*Cause Minor Damage<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Contruct or object touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Will half (constructs)<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.145<br /></font></td></tr><tr><td class="spname">*Chill/Warmth<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Slowly raises or lowers temperature<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Special<br /></font></td><td class="sptab">V<br /></font></td><td class="sptab">Will negates (harmless,object)<br /></font></td><td class="sptab">Yes (harmless,object)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">*Clean<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Cleans grime and dirt from one object or person<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Reflex negates (harmelss)<br /></font></td><td class="sptab">Yes (harmless)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Dancing Lights<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">up to 4 lights within 10&#39; radius<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.190<br /></font></td></tr><tr><td class="spname">Daze<br /></font></td><td class="sptab">Enchantment<br /></font></td><td class="sptab">One person<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Will negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.191<br /></font></td></tr><tr><td class="spname">Detect Dead<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">Quarter circle emanating from caster<br /></font></td><td class="sptab">60&#39;<br /></font></td><td class="sptab">1 Action<br /></font></td><td class="sptab">Concentration/1 minute/lvl (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.23<br /></font></td></tr><tr><td class="spname">Detect Magic<br /></font></td><td class="sptab">Universal<br /></font></td><td class="sptab">Quarter Circle<br /></font></td><td class="sptab">60 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Concentration up to 1 minute/level (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.193<br /></font></td></tr><tr><td class="spname">Detect Poison<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">one creature object or 5&#39; cube<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous/10 minutes per target HD<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.193<br /></font></td></tr><tr><td class="spname">Detect Precious Metals<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">Quarter Circle<br /></font></td><td class="sptab">60 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Concentration up to 5 minutes/level (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.85<br /></font></td></tr><tr><td class="spname">Detect Temporal Disturbance<br /></font></td><td class="sptab">Universal<br /></font></td><td class="sptab">Quarter circle emanating from caster to the extreme of the range.<br /></font></td><td class="sptab">60 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Concentration, up to 1/minute/level (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Disrupt Undead<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">Ray<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.197<br /></font></td></tr><tr><td class="spname">*Distort Shadow<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Change the shape of an ordinary shadow<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">10 minutes/level (D)<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">Will negates (harmless)<br /></font></td><td class="sptab">Yes (harmless)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Distraction<br /></font></td><td class="sptab">Enchantment<br /></font></td><td class="sptab">One Person<br /></font></td><td class="sptab">25 ft +2 ft./level<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round<br /></font></td><td class="sptab">S M<br /></font></td><td class="sptab">Will negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.56<br /></font></td></tr><tr><td class="spname">Dowsing<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">Locates nearby sources of potable water<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 full round<br /></font></td><td class="sptab">Concentration<br /></font></td><td class="sptab">S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Electric Jolt<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">One creature or object<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.91<br /></font></td></tr><tr><td class="spname">*Enchanting Flavor<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">1 meal<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 round<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.13<br /></font></td></tr><tr><td class="spname">Enumerate<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">Allows caster to quickly count a number of creatures or objects<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Flare<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">Burst of light<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V<br /></font></td><td class="sptab">Fortitude negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.206<br /></font></td></tr><tr><td class="spname">Ghost Sound<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">Illusory sounds<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level (D)<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Will disbelief<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.209<br /></font></td></tr><tr><td class="spname">Horizikaul's Cough<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">One creature or object<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Will partial<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.101<br /></font></td></tr><tr><td class="spname">Identify Undead<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">Quarter circle emanating from caster<br /></font></td><td class="sptab">60&#39;<br /></font></td><td class="sptab">1 Action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.25<br /></font></td></tr><tr><td class="spname">*Launch Bolt<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One crossbow bolt in your possession<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.105<br /></font></td></tr><tr><td class="spname">Light<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">Object touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">10 minutes/level (D)<br /></font></td><td class="sptab">V M DF<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.222<br /></font></td></tr><tr><td class="spname">*Mage Hand<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Nonmagical, unattended object weighing up to 5lb<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Concentration<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.223<br /></font></td></tr><tr><td class="spname">*Mending<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One object of up to 1 pound<br /></font></td><td class="sptab">10 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Will negates (Harmless object)<br /></font></td><td class="sptab">Yes (Harmless object)<br /></font></td><td class="sptab"> p.227<br /></font></td></tr><tr><td class="spname">Mental Alarm<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">1 creature/level (max 8 creatures)<br /></font></td><td class="sptab">Close (25 ft. + 5 ft./2 levels)<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 hour/level<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.18<br /></font></td></tr><tr><td class="spname">Minor Ward<br /></font></td><td class="sptab">Abjuration<br /></font></td><td class="sptab">Object touched or up to 20 sq. ft.<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">10 minutes<br /></font></td><td class="sptab">1 day/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">See text<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.18<br /></font></td></tr><tr><td class="spname">*Open/Close<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Portal or object that can be opened or closed<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S F<br /></font></td><td class="sptab">Will negates (object)<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.233<br /></font></td></tr><tr><td class="spname">Phantasmal Whisperer<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">One allied creature<br /></font></td><td class="sptab">Close (25 ft. + 5 ft./2 levels)<br /></font></td><td class="sptab">Minimum 1 action (see text)<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Will negates (see text)<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.44-45<br /></font></td></tr><tr><td class="spname">Prestidigitation<br /></font></td><td class="sptab">Universal<br /></font></td><td class="sptab">Special<br /></font></td><td class="sptab">10 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 hour<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.238<br /></font></td></tr><tr><td class="spname">*Quick Boost<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1d4 rounds (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.XX<br /></font></td></tr><tr><td class="spname">*Quick Sober<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Cures the target of alcoholic influences<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 full round<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Fortitude negates (harmless)<br /></font></td><td class="sptab">Yes (harmless)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Read Magic<br /></font></td><td class="sptab">Universal<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">10 minutes/level<br /></font></td><td class="sptab">V S F<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.243<br /></font></td></tr><tr><td class="spname">*Repair Minor Damage<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Repair 1 point of damage to a construct<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes (harmless)<br /></font></td><td class="sptab"> p.96<br /></font></td></tr><tr><td class="spname">Resistance<br /></font></td><td class="sptab">Abjuration<br /></font></td><td class="sptab">Creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.245<br /></font></td></tr><tr><td class="spname">Set Traps<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">One<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">2 minutes<br /></font></td><td class="sptab">Permanent<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.76<br /></font></td></tr><tr><td class="spname">Silent Portal<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">Any single portal<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 hour/level<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">Will negates (object)<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.117<br /></font></td></tr><tr><td class="spname">Skull Snare<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">1 skull touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 Action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.30<br /></font></td></tr><tr><td class="spname">Sneeze<br /></font></td><td class="sptab">Enchantment<br /></font></td><td class="sptab">Causes target to sneeze<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round<br /></font></td><td class="sptab">S M<br /></font></td><td class="sptab">Fortitude negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Spark<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">Creates a tiny spark<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Reflex negates (object)<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">Steal Sleep<br /></font></td><td class="sptab">Enchantment<br /></font></td><td class="sptab">Transfers the need for sleep to target creature<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Will negates (harmless)<br /></font></td><td class="sptab">Yes (harmless)<br /></font></td><td class="sptab"> p.<br /></font></td></tr><tr><td class="spname">*Tongue of Angels<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">None (harmless)<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.22<br /></font></td></tr><tr><td class="spname">*Tongue of Fiends<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">S<br /></font></td><td class="sptab">None (harmless)<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.22<br /></font></td></tr><tr><td class="spname"></tr>
+
+
+<tr>
+<td colspan="9" class="splevel"><b>LEVEL 1</b></font></td>
+</tr>
+<tr><td class="spname">Animate Vermin<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">Temporarily animates small animal skeletons or zombies<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 day/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.106<br /></font></td></tr><tr><td class="spname">*Burning Hands<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">10&#39; radius<br /></font></td><td class="sptab">10 feet<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Reflex half<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.181<br /></font></td></tr><tr><td class="spname">Color Spray<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">Cone<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Will negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.185<br /></font></td></tr><tr><td class="spname">*Enlarge<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One creature or object/level<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Fortitude negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.200<br /></font></td></tr><tr><td class="spname">*Expeditious Retreat<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.202<br /></font></td></tr><tr><td class="spname">*Feather Fall<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Any free falling object or creature in 10&#39; radius<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">Special<br /></font></td><td class="sptab">until landing or 1 round/level<br /></font></td><td class="sptab">V<br /></font></td><td class="sptab">Will negates (object)<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.203<br /></font></td></tr><tr><td class="spname">Identify<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">Up to 1 touched object/level<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">8 hours<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.216<br /></font></td></tr><tr><td class="spname">*Jump<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level (D)<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.219<br /></font></td></tr><tr><td class="spname">Magic Missile<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">Up to 5 targets within 15&#39;<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.224<br /></font></td></tr><tr><td class="spname">*Magic Weapon<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Weapon touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level<br /></font></td><td class="sptab">V S DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.225<br /></font></td></tr><tr><td class="spname">Predict Weather<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">1 mile/level<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 minute<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.78<br /></font></td></tr><tr><td class="spname">Protection from Evil<br /></font></td><td class="sptab">Abjuration<br /></font></td><td class="sptab">Creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level (D)<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.240<br /></font></td></tr><tr><td class="spname">Ray of Enfeeblement<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">Ray<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">Fortitude negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.242<br /></font></td></tr><tr><td class="spname">Shield<br /></font></td><td class="sptab">Abjuration<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level (D)<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.251<br /></font></td></tr><tr><td class="spname">*Shocking Grasp<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Creature or object touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Permanent until discharged<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes (object)<br /></font></td><td class="sptab"> p.251<br /></font></td></tr><tr><td class="spname">Sleep<br /></font></td><td class="sptab">Enchantment<br /></font></td><td class="sptab">Living creatures within 15&#39; radius<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.252<br /></font></td></tr><tr><td class="spname">True Strike<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">You<br /></font></td><td class="sptab">Personal<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">See text<br /></font></td><td class="sptab">V F<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.267<br /></font></td></tr><tr><td class="spname">Wisdom of the Ivory Emperor<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">Special<br /></font></td><td class="sptab">Special<br /></font></td><td class="sptab">1 hour<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.77<br /></font></td></tr><tr><td class="spname"></tr>
+
+
+<tr>
+<td colspan="9" class="splevel"><b>LEVEL 2</b></font></td>
+</tr>
+<tr><td class="spname">*Bladesong<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Weapon touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">V S F<br /></font></td><td class="sptab">Will negates (harmless, object)<br /></font></td><td class="sptab">Yes (harmless, object)<br /></font></td><td class="sptab"> <br /></font></td></tr><tr><td class="spname">Blur<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 minute/level<br /></font></td><td class="sptab">V<br /></font></td><td class="sptab">Will negates (harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.181<br /></font></td></tr><tr><td class="spname">*Bull's Strength<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">one creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 hour/level<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.181<br /></font></td></tr><tr><td class="spname">*Cat's Grace<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">one creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 hour/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Will negates (harmless)<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.182<br /></font></td></tr><tr><td class="spname">Flaming Sphere<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">3&#39; radius sphere<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Reflex negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.206<br /></font></td></tr><tr><td class="spname">Invisibility<br /></font></td><td class="sptab">Illusion<br /></font></td><td class="sptab">You or a creature or object weighing no more than 100 lb/level<br /></font></td><td class="sptab">Personal or Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">10 minutes/level (D)<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.217<br /></font></td></tr><tr><td class="spname">*Knock<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One door, box or chest with an area of up to 10 sq ft/level<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.219<br /></font></td></tr><tr><td class="spname">*Levitate<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">You or one willing creature or object<br /></font></td><td class="sptab">Personal or Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">10 minutes/level (D)<br /></font></td><td class="sptab">V S F<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.222<br /></font></td></tr><tr><td class="spname">Life Bolt<br /></font></td><td class="sptab">Necromancy<br /></font></td><td class="sptab">One ray/2 levels<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.105<br /></font></td></tr><tr><td class="spname"></tr>
+
+
+<tr>
+<td colspan="9" class="splevel"><b>LEVEL 3</b></font></td>
+</tr>
+<tr><td class="spname">Fireball<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">20&#39; radius<br /></font></td><td class="sptab">Long<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Reflex half<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.203<br /></font></td></tr><tr><td class="spname">*Haste<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One creature<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Fortitude negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.212<br /></font></td></tr><tr><td class="spname">Ice Burst<br /></font></td><td class="sptab">Evocation<br /></font></td><td class="sptab">Ice chunks damage for (1d4 cold, +1 blunt)/caster level up to 10d4+10<br /></font></td><td class="sptab">Medium<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">Instantaneous<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Reflex half<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.91<br /></font></td></tr><tr><td class="spname">Sharing the Ancient Lore<br /></font></td><td class="sptab">Divination<br /></font></td><td class="sptab">One<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">20 minutes<br /></font></td><td class="sptab">Permanent<br /></font></td><td class="sptab">V S<br /></font></td><td class="sptab">None<br /></font></td><td class="sptab">No<br /></font></td><td class="sptab"> p.76<br /></font></td></tr><tr><td class="spname">*Slow<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">One creature/level within 30&#39;<br /></font></td><td class="sptab">Close<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">1 round/level<br /></font></td><td class="sptab">V S M<br /></font></td><td class="sptab">Will negates<br /></font></td><td class="sptab">Yes<br /></font></td><td class="sptab"> p.253<br /></font></td></tr><tr><td class="spname">*Water Breathing<br /></font></td><td class="sptab">Transmutation<br /></font></td><td class="sptab">Living creature touched<br /></font></td><td class="sptab">Touch<br /></font></td><td class="sptab">1 action<br /></font></td><td class="sptab">2 hours/level<br /></font></td><td class="sptab">V S M DF<br /></font></td><td class="sptab">Will negates (Harmless)<br /></font></td><td class="sptab">Yes (Harmless)<br /></font></td><td class="sptab"> p.271<br /></font></td></tr><tr><td class="spname"></tr>
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+&nbsp;
+
+</div>
+ 
+<div id="BioComprehensive"><A NAME="Bio"></A><TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD colspan="2"><font style="font-size: 14pt">Quadro</font></td></tr>
+<TR><TD id="BioImage" CLASS="border" HEIGHT="400" width="1%"><IMG SRC="Quadro_Full.jpg" HEIGHT="400" alt="Quadro's portrait" onerror="document.getElementById('BioImage').style.display = 'none';"></TD><TD valign="top" width="99%">
+<TABLE width="100%" cellspacing="0" cellpadding="2">
+<TR><TD><font style="font-size: 9pt">Dwarf<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">RACE</font></td></tr>
+<TR><TD><font style="font-size: 9pt">60<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">AGE</font></td></tr>
+<TR><TD><font style="font-size: 9pt">4&#39; 11&quot;<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">HEIGHT</font></td></tr>
+<TR><TD><font style="font-size: 9pt">170 lbs<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">WEIGHT</font></td></tr>
+<TR><TD><font style="font-size: 9pt">Blue<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">EYE COLOR</font></td></tr>
+<TR><TD><font style="font-size: 9pt">Tanned<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">SKIN COLOR</font></td></tr>
+<TR><TD><font style="font-size: 9pt">Brown<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">HAIR COLOR</font></td></tr>
+<TR><TD><font style="font-size: 9pt">In Ponytail<br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">HAIR LENGTH</font></td></tr>
+<TR><TD><font style="font-size: 9pt"><br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">PHOBIAS</font></td></tr>
+<TR><TD><font style="font-size: 9pt"> <br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">PERSONALITY TRAITS</font></td></tr>
+<TR><TD><font style="font-size: 9pt"><br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">INTERESTS</font></td></tr>
+<TR><TD><font style="font-size: 9pt">Drawl, <br/></font></td></tr>
+<TR><TD CLASS="topline"><font style="font-size: 6pt">Spoken Style</font></td></tr>
+</TABLE>
+ 
+ 
+</TD></TR>
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Description</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt">          </font>
+<TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Home</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt">, 
+<TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Biography</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt">          </font>
+</div>
+</body>
+</html>

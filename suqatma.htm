@@ -1,0 +1,4184 @@
+<html>
+<!--
+PCGen Character Sheet Template
+==============================
+ 
+Author: Richard O'Doherty-Gregg
+Email: OdGregg@bigpond.com
+Modifications by: arcady
+Email: arcady0@yahoo.com
+Revisons: Barak  10/15/02
+Email: barak@voyager.net
+Revisons: Roger Host  11/05/02  Added Barbarian options
+Email: rhost@dls.net
+Revisons: Roger Host  11/xx/02  Added Defensive fighting options
+Email: rhost@dls.net
+Revisons: Roger Host  12/30/02  Added support for non-abilities.  Changed ordering of AC to Total:Flat:Touch
+Email: rhost@dls.net
+Revisons: Roger Host   1/ 6/03  Added new spell formats.  Added max skill header.
+											Added the companion tables.  Added formatting to this HTM to make it easier
+											to follow the layout of the tables.
+Email: rhost@dls.net
+ 
+new weapon blocks.
+Customize turning table
+ 
+$Revision: 1.24 $
+$Author: barako $
+$Date: 2003/02/06 21:35:12 $
+ 
+-->
+<head>
+<title>Suq&#39;Atma [0 Points]</title>
+<style TYPE="text/css">
+	.h { font-family: Arial; font-size:8pt; vertical-align: bottom; }
+	.hs { font-family: Arial; font-size:6pt; border-top-width:1px; border-top: 1pt solid black; vertical-align:top; background: #CCCCCC; }
+	.ah { font-family: Arial; font-size:4pt; text-align:center; }
+	.ab { font-family: Arial; font-size:10pt; text-align:center; color:white; background:black; }
+	.sc { font-family: Arial; font-size: 5pt }
+	.scr { font-family: Arial; font-size: 5pt; text-align:right }
+	.scbr { font-family: Arial; font-size: 5pt;	border-right-width:1px; border-right: 1pt solid black; text-align:right}
+	.hph { font-family: Arial; font-size: 7pt;	text-align:center; vertical-align:bottom;}
+	.ach { font-family: Arial; font-size: 7pt;	text-align:center; vertical-align:middle;}
+ 	.acb { font-family: Arial; font-size: 9pt; font-weight:bold; text-align:center; vertical-align:middle; border: 1px solid black;}
+ 	.hphs { font-family: Arial; font-size: 5pt;	text-align:center; vertical-align:bottom;}
+	.hpb { font-family: Arial; font-size: 9pt; font-weight:bold; text-align:center; vertical-align:middle; border: 1px solid black;}
+	.hpbb { font-family: Arial; font-size: 9pt; font-weight:bold; color:white; background:black; text-align:center; vertical-align:middle; border: 1px solid black;}
+	.abb { font-family: Arial; font-size:10pt; text-align:center; font-weight:bold; border: 1px solid black;}
+	.abt { font-family: Arial; font-size:10pt; text-align:center; font-weight:bold; border: 5px solid lightgray; }
+	.sptab { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:center;font-size:8pt;}
+	.spname { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:left;font-size:8pt;}
+	.sptop { font-family: Arial; vertical-align:top;border: 1px solid black; text-align:center;font-size:8pt; color:white;}
+	.splevel {  font-family: Arial; background:black; text-align:center;font-size:9pt; color:white;}
+	.sphead {  font-family: Arial; background:black; text-align:center;font-size:12pt; color:white;}
+	.spcomp { font-family: Arial; vertical-align:top; text-align:left;font-size:6pt;}
+	.spch { font-family:Wingdings; vertical-align:top; text-align:right;font-size:7pt;}
+	.spch2 { font-family:Wingdings; vertical-align:top; text-align:right;font-size:5pt;}
+	.spcomp2 { font-family: Arial; vertical-align:top; text-align:left;font-size:5pt;}
+	.spch3 { font-family:Wingdings; vertical-align:top; text-align:right;font-size:9pt;}
+	.spcomp3 { font-family: Arial; vertical-align:top; text-align:left;font-size:9pt;}
+	.biodata { font-family: Arial; vertical-align:bottom; text-align:left;font-size:9pt;}
+	.skl { font-family: Arial; font-size: 9pt; font-weight:bold; text-align:center; vertical-align:middle; border: 4px solid black;}
+   	.topline {
+   		font-family: Arial;
+   		background: #CCCCCC;
+		border-top-width:1px;
+		border-top: 1pt solid black;
+	}
+	.border {
+		font-family: Arial;
+		border: 1px solid black;
+	}
+	.tempborder {
+		font-family: Arial;
+		border: 5px solid lightgray;
+	}
+	.borderbottom {
+		font-family: Arial;
+		border-bottom-width:1px;
+		border-bottom: 1pt solid black;
+	}
+	.borderright {
+		font-family: Arial;
+		border-right-width:1px;
+		border-right: 1pt solid black;
+	.c, .wbc {
+		font-family: Arial;
+		text-align: center;
+	}
+	TD {
+		font-family: Arial
+	}
+	BODY {
+		font-family: Arial; font-size:6pt
+	}
+	.breakhere {page-break-after: always}
+ 
+</style>
+</head>
+<script language="javascript">
+ 
+var charName = "Suq&#39;Atma";
+var RageStatus = "Normal";
+//var StatusBgColor = "white";
+ 
+var BarbLvl = 0;
+ 
+ 
+var FALSE = 0;
+var TRUE = 1;
+ 
+ 
+// List of abilities
+var STRindex = 0;
+var DEXindex = 1;
+var CONindex = 2;
+var INTindex = 3;
+var WISindex = 4;
+var CHAindex = 5;
+var AbArr = new Array();
+ 
+// List of supported character states
+var StateArr = new Array();
+ 
+// List of all weapons
+var WeapArr = new Array();
+ 
+// List of checks
+var FORTindex = 0;
+var REFindex = 1;
+var WILLindex = 2;
+var CheckArr = new Array();
+ 
+// Attack types
+var ATKArr = new Array();
+ 
+// Skills
+var SkillArr = new Array();
+ 
+// Initiative
+var Init = new InitObject(+3,+0);
+ 
+// Hits
+var HP = new HPObject( 56 );
+ 
+// AC object
+var AC = new ACObject(23,14,26,10,10,3,0,2,1);
+ 
+// List of skills forbidden to a raging Barb
+var SkillsRedList = new Array("Alchemy","Appraise","Craft","Decipher Script","Diplomacy","Disable Device","Disguise","Escape Artist","Forgery","Gather Information","Handle Animal","Heal","Hide","Innuendo","Intuit Direction","Knowledge","Move Silently","Open Lock","Perform","Pick Pocket","Profession","Read Lips","Scry","Search","Sense Motive","Spellcraft","Tumble","Use Magic Device");
+ 
+// List of the supported states a char can be in.
+StateArr[0] = new CharState( "Rage", BarbMods, BarbMods );
+StateArr[1] = new CharState( "DefFighting", DefensiveCombatMods, DefensiveCombatMods );
+ 
+// Set up the table of information about stats
+AbArr[0] = new Ability("STR","Strength","26",+8);
+AbArr[1] = new Ability("DEX","Dexterity","16",+3);
+AbArr[2] = new Ability("CON","Constitution","16",+3);
+AbArr[3] = new Ability("INT","Intelligence","15",+2);
+AbArr[4] = new Ability("WIS","Wisdom","15",+2);
+AbArr[5] = new Ability("CHA","Charisma","20",+5);
+ 
+ 
+// Weapons (including default unarmed)
+WeapArr[0] = new Weapon( -1, "HAND ATTACK", "Melee", "+14/+9", "1d3+8", "T", "0&#39;", "20", "2", "B", "T", "" );
+WeapArr[0+1] = new Weapon(0,"*Falchion +2 (Keen)","Martial-Melee","+17/+12","2d4+16", FirstChar("Both"), "0&#39;", "15-20", "2", "S", "L", "threat range doubled" );
+WeapArr[1+1] = new Weapon(1,"Shortspear","Simple-Both (Melee)","+14/+9","1d8+8", FirstChar("Carried"), "0&#39;", "20", "3", "P", "L", "" );
+WeapArr[2+1] = new Weapon(2,"Shortspear (Thrown/Thrown)","Simple-Both (Ranged)","+9/+4","1d8+8", FirstChar("Carried"), "20&#39;", "20", "3", "P", "L", "" );
+ 
+ 
+// Set up the table of information about the checks
+CheckArr[FORTindex] = new Check("Fortitude", "Constitution", +14, +6,2,+3,+0,+0,+8);
+CheckArr[REFindex] = new Check("Reflex", "Dexterity", +9, +1,1,+3,+0,+0,+8);
+CheckArr[WILLindex] = new Check("Willpower", "Wisdom", +10, +3,4,+2,+0,+0,+7);
+ 
+// Set up the attack information table
+ATKArr[0] = new ATK("Melee","+14/+9","+6/+1",STRindex,+0,+0);
+ATKArr[1] = new ATK("Ranged","+9/+4","+6/+1",DEXindex,+0,+0);
+ 
+// Now, set up the list of skills
+SkillArr[0] = new Skill("Handle Animal","CHA",14,5,9.0,0);
+SkillArr[1] = new Skill("Heal","WIS",11,2,9.0,0);
+SkillArr[2] = new Skill("Knowledge (Religion)","INT",11,2,9.0,0);
+SkillArr[3] = new Skill("Knowledge (The Planes)","INT",4,2,2.0,0);
+SkillArr[4] = new Skill("Ride","DEX",14,3,9.0,2);
+ 
+// A variable of type Ability supports the following
+// Only those marked with * should be modified after creation
+//  name           string    RW STR
+//  longname       string    RW Strength
+//  val            int       RW base value       16 or "*" (undead or construct or whatever)
+//  modifier       int??     RW base modifier     3
+// *tempvalue      int       RW modified value   18
+// *tempmodifier   int??     RW modified modifier 4
+//  hasTempMod     bool      RO true if object is in a modified (non-default) state
+//  curmodifier    int       RO gives the current modifier taking current state into account
+//  curModifierDiff int      RO gives the difference between tempmodifier and modifier
+function Ability(nName,nLongName,nValue,nMod){
+	this.name = nName;
+	this.longname = nLongName;
+	if ( nValue == "*" )
+		this.val = nValue;
+	else
+		this.val = Math.round(nValue);  // Convert to numeric form
+	this.modifier = nMod;
+	if ( this.val == "*" )
+		this.tempvalue = 0;
+	else
+		this.tempvalue = Math.round(nValue);
+	this.tempmodifier = nMod;
+	this.hasTempMod = AbFlag;
+	this.curmodifier = AbCurMod;
+	this.curModifierDiff = AbModDiff;
+}
+ 
+function AbModDiff(){
+	return ((this.hasTempMod())?this.tempmodifier-this.modifier:0)
+}
+ 
+function AbCurMod(){
+	return ((this.hasTempMod())?this.tempmodifier:this.modifier)
+}
+ 
+function AbFlag()
+{
+	if ( this.val == '*' )
+	   return FALSE;
+	return !(this.val == this.tempvalue);
+}
+ 
+ 
+// A variable of type Check supports the following
+// Only those marked with * should be modified after creation
+//  name           string  RW  Fortitude
+//  ability        string  RW  Constitution
+//  val            int     RO  current value taking everything into account
+//  total          int     RW  Total check as passed by PCGen
+//  base           int     RW  Class-defined base value
+//  statNr         int     RW  Which stat modfies this check (0=STR, 1=DEX, etc)
+//  statmodifier   int     RO  Current modifier based on current value of the appropriate stat (via Ability class in global AbArr variable)
+//  magic          int     RW  Modifier due to magic
+//  race           int     RW  Modifier due to race
+//  miscBase       int     RW  Base Modifier due to "other" factors subtracting magic and race and stat
+// *tempmodifier   int??   RW  add'l modifier due to some other factor (i.e. Barb Rage)
+//  hasTempMod     bool    RO  true if a tempmodifier is in effect
+//  statmodflag    bool    RO  true if affected by a temporary stat modifier
+function Check(nName,nAb,nValue,nBase,nStatNrForMod,nStatMod,nMagic,nRace,nMisc){
+	this.name = nName;
+	this.ability = nAb;
+	this.val = CheckValue;
+	this.total = nValue;
+	this.base = nBase;
+	this.statNr = nStatNrForMod;
+	this.statmodifier = CheckStatMod;
+	this.magic = nMagic;
+	this.race = nRace;
+	this.misc = nMisc - nStatMod - this.magic - this.race;
+	this.tempmodifier = 0;
+	this.hasTempMod = CheckFlag;
+	this.statmodflag = CheckStatModFlag;
+}
+ 
+function CheckValue(){
+	temp = (this.total+AbArr[this.statNr].curModifierDiff()+this.tempmodifier);
+	return temp;
+}
+ 
+function CheckStatMod(){
+	return AbArr[this.statNr].curmodifier();
+}
+ 
+function CheckFlag(){
+	return (this.tempmodifier != 0);
+}
+ 
+function CheckStatModFlag(){
+	return AbArr[this.statNr].hasTempMod();
+}
+ 
+ 
+// A variable of type ATK ("attack") supports the following
+// Only those marked with * should be modified after creation
+//  name           string  RW  "Melee" or "Ranged"
+//  toHitBase      string  RW  Total attack as passed from PCGen
+//  modifyToHit    string  RO Generate the possibly modified) "to hit" string
+//  base           string  RW  base attack values due to classes
+//  toHitBaseArr   string array RW base split by "/" into individual attack modifiers
+//  abilityNum     int     RW  Which stat modifies this attack (0=STR, 1=DEX, etc)
+//  statmodifier   int     RO  Current modifier based on current value of the appropriate stat (via Ability class in global AbArr variable)
+//  sizemodifier   int     RW  Attack modifier due to size
+//  miscmodifier   int     RW  Additional attack modifiers
+// *miscTHMod      int     RW  User modify TH.  This is an incremental change!!  e.g. If going from +2 to +4, put 2 here
+//  isModified     bool    RO  True if this attack is modified by a modified underlying stat or other misc change
+// *disabled       string  RW  If not empty, displays in place of "to hit" and damage.
+function ATK(nName,nValue,nBase,nStatNrForMod,nSizeMod,nMiscMod){
+	this.name = nName;
+	this.toHitBase = nValue;
+	this.modifyToHit = WeaponModToHit;
+	this.base = nBase;
+	this.toHitBaseArr = this.toHitBase.split(";");
+	this.abilityNum = nStatNrForMod;
+	this.statmodifier = ATKStatMod;
+	this.sizemodifier = nSizeMod;
+	this.miscmodifier = nMiscMod;
+	this.miscTHMod = 0;
+	this.isModified = ATKFlag;
+	this.disabled = ""
+}
+ 
+ 
+ 
+ 
+function ATKStatMod()
+{
+	return AbArr[this.abilityNum].curmodifier();
+}
+ 
+function ATKFlag()
+{
+	if ( this.miscTHMod != 0 )
+	   return TRUE;
+	return AbArr[this.abilityNum].hasTempMod();
+}
+ 
+// A variable of type Skill supports the following
+// Only those marked with * should be modified after creation
+//  name           string  RW  Spot
+//  ability        string  RW  Base stat for skill
+//  statNr         int     RO  stat number based on .ability
+//  total          int     RO  Current skill modifier based on everything
+//  statmodifier   int     RO  Modifier due to current base stat modifier (as taken from AbArr global array)
+// *rank           int     RW  Current skill ranks
+// *miscmodifier   int     RW  Current misc modifier to skill
+//  baseStatModified bool  RO  true if base stat is currently modified by something else
+//  notInRageMode  bool    RO  true if skill disallowed in Barb Rage
+function Skill(nName,nAbility,nTotal,nStatMod,nRank,nMiscMod){
+	this.name = nName;
+	this.ability = nAbility;
+	this.statNr = SkillStatModNr;
+	this.total = SkillValue;
+	this.statmodifier = SkillStatModifier;
+	this.rank = nRank;
+	this.miscmodifier = nMiscMod;
+	this.baseStatModified = SkillFlag;
+	this.notInRageMode = checkRedList;
+}
+ 
+function checkRedList() {
+	tempFlag = FALSE;
+	for (i=0;i<SkillRedList.length;i++)
+	{
+		if ( SkillRedList[i].substr(0,SkillRedList[i].length) == this.name )
+		{
+		   tempFlag = TRUE;
+		}
+	}
+	return tempFlag;
+}
+ 
+function SkillStatModNr(){
+	tempStatNR = "";
+	switch (this.ability) {
+		case "STR" :
+			tempStatNR = STRindex;
+			break;
+		case "DEX" :
+			tempStatNR = DEXindex;
+			break;
+		case "CON" :
+			tempStatNR = CONindex;
+			break;
+		case "INT" :
+			tempStatNR = INTindex;
+			break;
+		case "WIS" :
+			tempStatNR = WISindex;
+			break;
+		case "CHA" :
+			tempStatNR = CHAindex;
+			break;
+		default :
+			tempStatNR = -1;
+			break;
+	}
+	return tempStatNR;
+}
+ 
+function SkillStatModifier()
+{
+   tStatMod = this.statNr();
+   if ( tStatMod == -1 )  // Some skills have no stat base (Literacy)
+      return 0;
+   else
+   	return AbArr[tStatMod].curmodifier();
+}
+ 
+function SkillValue(){
+	return (this.statmodifier()+this.miscmodifier+this.rank);
+}
+ 
+function SkillFlag()
+{
+   tStatMod = this.statNr();
+   if ( tStatMod == -1 )  // Some skills have no stat base (Literacy)
+      return 0;
+   else
+      return AbArr[tStatMod].hasTempMod();
+ 
+}
+ 
+// A variable of type ACObject supports the following
+// Only those marked with * should be modified after creation
+//  flatBase       int     RW  Flat-footed AC
+//  flat           int     RO  Modified Flat-footed AC
+//  flatModified   bool    RO  TRUE if flat != flatBase
+//  touchBase      int     RW  touch AC
+//  touch          int     RO  Modified touch AC
+//  touchModified  bool    RO  TRUE if touch != touchBase
+//  totalBase      int     RW  total AC
+//  total          int     RO  Modified total AC
+//  totalModified  bool    RO  TRUE if total != totalBase
+//  base           int     RW  Base AC
+//  armor          int     RW  Armor AC modifier due to armor
+//  abilityBase    int     RW  AC modifier due to ability
+//  ability        int     RO  AC modifier due to ability as modified by appropriate stats
+//  abilityModified bool   RO  TRUE if ability != abilityBase
+//  size           int     RW  Current AC modifier due to size
+//  naturalarmor   int     RW  Current AC modifier due to natural armor
+//  miscBase       int     RW  Unmodified AC modifier due to other affects
+//  misc           int     RO  Current AC modifier due to other affects
+//  miscModified   bool    RO  TRUE if misc != miscBase
+//  maxdex         int     RW  Maximum dex modifier due to armor.  0 MEANS NO MAXDEX
+// *rageMod        int     RW  Current AC modifier due to rage
+// *defFightMod    int     RW  Current AC modifier due fighting defensively
+function ACObject(nFlat,nTouch,nTotal,nBase,nArmor,nAbility,nSize,nNatural,nMisc)
+{
+	this.flatBase = nFlat;
+	this.flat = ACObjFlat;
+	this.flatModified = ACObjFlatModified;
+	this.touchBase = nTouch;
+	this.touch = ACObjTouch;
+	this.touchModified = ACObjTouchModified;
+	this.totalBase = nTotal;
+	this.total = ACObjTotal;
+	this.totalModified = ACObjTotalModified;
+	this.base = nBase;
+	this.armor = nArmor;
+	this.abilityBase = nAbility;
+	this.ability = ACObjAbility;
+	this.abilityModified = ACObjAbilityModified;
+	this.size = nSize;
+	this.naturalarmor = nNatural;
+	this.miscBase = nMisc;
+	this.misc = ACObjMisc;
+	this.miscModified = ACObjMiscModified;
+	this.maxdex = Math.round(+5+10)-10;   // NOTE NOTE  the MAXDEX token can be replaced by an empty string, so have to check!
+	this.rageMod = 0;
+	this.defFightMod = 0;
+}
+ 
+function ACObjFlat()
+{
+   return this.flatBase+this.rageMod+this.defFightMod-this.abilityBase+this.ability();
+}
+ 
+function ACObjFlatModified()
+{
+   if ( this.flatBase == this.flat() )
+      return FALSE;
+   else
+      return TRUE;
+}
+ 
+function ACObjTouch()
+{
+   return this.touchBase+this.rageMod+this.defFightMod-this.abilityBase+this.ability();
+}
+ 
+ 
+function ACObjTouchModified()
+{
+   if ( this.touchBase == this.touch() )
+      return FALSE;
+   else
+      return TRUE;
+}
+ 
+ 
+function ACObjTotal()
+{
+   return this.totalBase+this.rageMod+this.defFightMod-this.abilityBase+this.ability();
+}
+ 
+ 
+function ACObjTotalModified()
+{
+   if ( this.totalBase == this.total() )
+      return FALSE;
+   else
+      return TRUE;
+}
+ 
+ 
+function ACObjAbilityModified()
+{
+   if ( this.abilityBase == this.ability() )
+      return FALSE;
+   else
+      return TRUE;
+}
+ 
+ 
+function ACObjMiscModified()
+{
+   if ( this.miscBase == this.misc() )
+      return FALSE;
+   else
+      return TRUE;
+}
+ 
+ 
+ 
+// Case 1:  Both normal stat (14) mod and modified stat (16) mod <= MAXDEX (6)
+//    NOTENOTE This is also the case when there is no MAXDEX (this.maxdex==0) NOTENOTE
+//      Ability = base - normal modifier + new modifier
+//              =  2   -        2        +     3
+// Case 2:  Normal stat (16) > MAXDEX (2) but modified stat (12) <= MAXDEX
+//      Ability = base - MAXDEX + new modifier
+//              =  2   -        2        +      1
+// Case 3:  Normal stat (14) <= MAXDEX(2) but modified stat (16) > MAXDEX
+//      Ability = base - normal modifier + MAXDEX
+//              =  2   -        2        +      2
+// Case 4:  Both normal stat (15) mod and modified stat (16) mod > MAXDEX (2)
+//      Ability = base  (no change really for AC purposes)
+function ACObjAbility()
+{
+   // TODO: Modify this to take a change to Monk wisdom!!  Sigh, it never ends.
+   tempAbil = this.abilityBase;
+ 
+   // Also need to take into account if max dex due to armor makes change moot?
+   if ( AbArr[DEXindex].hasTempMod() )  // Dex is modified?
+   {
+ 
+	  // Will dex change affect AC?
+	  // Case 1:
+	  if ( this.maxdex==0 )  // These first two cases really should be ORed, but w/o a double pipe..sigh
+         tempAbil = tempAbil + AbArr[DEXindex].curModifierDiff();
+	  else if ( AbArr[DEXindex].modifier <= this.maxdex && AbArr[DEXindex].tempmodifier <= this.maxdex )
+         tempAbil = tempAbil + AbArr[DEXindex].curModifierDiff();
+      // Case 2:
+	  else if ( this.maxdex>0 && AbArr[DEXindex].modifier > this.maxdex && AbArr[DEXindex].tempmodifier <= this.maxdex )
+      	tempAbil = tempAbil - this.maxdex + AbArr[DEXindex].tempmodifier;
+      // Case 3:
+	  else if ( this.maxdex>0 && AbArr[DEXindex].modifier <= this.maxdex && AbArr[DEXindex].tempmodifier > this.maxdex )
+      	tempAbil = tempAbil - AbArr[DEXindex].modifier + this.maxdex;
+      // Case 4:
+	  else if ( this.maxdex>0 && AbArr[DEXindex].modifier > this.maxdex && AbArr[DEXindex].tempmodifier > this.maxdex )
+      	tempAbil = tempAbil;
+   }
+ 
+   return tempAbil;
+}
+ 
+function ACObjMisc()
+{
+   return this.miscBase+this.rageMod+this.defFightMod;
+}
+ 
+ 
+ 
+// A variable of type CharState supports the following
+// Only those marked with * should be modified after creation
+//  name           string  RW  What this state is. Rage, Defencive Fighting, etc.
+//  isActive       bool    RW  Is this state currently activated?
+//  activate       int     RO  function to activate this state
+//  deactivate             RO  function to deactivate this state
+//  outputStateString string RO function to return a descriptive string
+//  internalState  string  RW  Used to record information for state
+function CharState( aname, activateFunc, deactivateFunc )
+{
+	this.name = aname;
+	this.isActive = 0;
+	this.activate = activateFunc;
+	this.deactivate = deactivateFunc;
+	this.outputStateString = CharStateOutputStateString;
+	this.internalState = ""
+}
+ 
+ 
+function CharStateOutputStateString()
+{
+	return this.internalState;
+}
+ 
+ 
+// A variable of type InitObject supports the following
+// Only those marked with * should be modified after creation
+//  initTotalBase  int     RW  Total initiative unmodified
+//  initTotal      int     RO  Initiative as modified by Dex changes
+//  initBonus      int     RW  Other initiative bonuses
+function InitObject( iBase, iBonus )
+{
+	this.initTotalBase = iBase;
+	this.initTotal = InitObjTotal;
+	this.initBonus = iBonus;
+}
+ 
+ 
+function InitObjTotal()
+{
+   tempInit = this.initTotalBase;
+ 
+   // Add/Sub any Dex changes
+   if ( AbArr[DEXindex].hasTempMod() )
+      tempInit = tempInit + AbArr[DEXindex].curModifierDiff();
+ 
+   return tempInit;
+}
+ 
+// A variable of type HPObject supports the following
+// Only those marked with * should be modified after creation
+//  HPTotalBase  int     RW  Total HP unmodified
+//  HPTotal      int     RO  HP as modified by CON changes
+function HPObject( hpTot )
+{
+	this.HPTotalBase = hpTot;
+	this.HPTotal = HPObjTotal;
+}
+ 
+ 
+function HPObjTotal()
+{
+   tempHP = this.HPTotalBase;
+ 
+   // Add/Sub any CON changes
+   if ( AbArr[CONindex].hasTempMod() )
+      tempHP = tempHP + 6*(AbArr[CONindex].curModifierDiff());
+ 
+   return tempHP;
+}
+ 
+ 
+ 
+ 
+function ABPrint()
+{
+ 
+	tempHTML ='<table><tr>';
+	tempHTML = tempHTML + '<td width="20%" class="ah">ABILITY<br />NAME</td>';
+	tempHTML = tempHTML + '<td width="20%" class="ah">ABILITY<br />SCORE</td>';
+	tempHTML = tempHTML + '<td width="20%" class="ah">ABILITY<br />MODIFIER</td>';
+	tempHTML = tempHTML + '<td width="20%" class="ah">TEMPORARY<br />SCORE</td>';
+	tempHTML = tempHTML + '<td width="20%" class="ah">TEMPORARY<br />MODIFIER</td>';
+	tempHTML = tempHTML + '</tr>';
+ 
+ 
+	for (i=0; i<AbArr.length;i++){
+		tempHTML = tempHTML+'<tr><td class="ab"><b>'+AbArr[i].name+'</b><font style="font-size:5pt"><br />'+AbArr[i].longname+'</font></td>';
+		tempHTML = tempHTML+'<td class="abb"">'+AbArr[i].val+'</td>';
+		tempHTML = tempHTML+'<td class="abb">'+modPlusMinus(AbArr[i].modifier)+'</td>';
+		if (AbArr[i].hasTempMod()) {
+			tempHTML = tempHTML+'<td class="abt" style="background: LIGHTBLUE;">'+AbArr[i].tempvalue+'</td>';
+			tempHTML = tempHTML+'<td class="abt" style="background: LIGHTBLUE;">'+modPlusMinus(AbArr[i].tempmodifier)+'</td>\n';
+		}
+		else {
+			tempHTML = tempHTML+'<td class="abt"><br/></td>';
+			tempHTML = tempHTML+'<td class="abt"><br/></td>\n';
+		}
+	}
+	tempHTML = tempHTML+'</table>';
+	document.all.AbilityDiv.innerHTML = tempHTML;
+}
+ 
+function SavesPrint(){
+	tempHTML = '<table width="100%"><tr><td align="center"><font style="font-size: 4pt">SAVING THROWS</font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">TOTAL</font></td><td align="center"><font style="font-size: 4pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">BASE<br />SAVE</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">ABILITY<br />MODIFIER</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MAGIC<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">RACE<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">OTHER<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">TEMPORARY<br />MODIFIER</font></td><td align="left" valign="top" width="63" rowspan="4" class="border"><font style="font-size: 4pt">CONDITIONAL<br />MODIFIERS</font></td></tr>\n';
+	for (i=0; i<CheckArr.length;i++){
+		tempHTML = tempHTML+'<tr><td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>'+CheckArr[i].name+'</b></font><font style="font-size:5pt" color="white"><br />'+CheckArr[i].ability+'</font></td>';
+ 
+        tempBG = "white";
+        if ( CheckArr[i].hasTempMod() )
+           tempBG = 'LIGHTBLUE';
+        if ( CheckArr[i].statmodflag() )
+           tempBG = 'LIGHTBLUE';
+ 
+		// total
+		tempHTML = tempHTML+'<td align="center" class="border" style="background: '+tempBG+';"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].val())+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+ 
+//		if (CheckArr[i].hasTempMod()) {
+//			tempHTML = tempHTML+'<td align="center" class="border" style="background: LIGHTBLUE;"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].val())+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+//		}
+//		else {
+//			if (CheckArr[i].statmodflag()) {
+//				tempHTML = tempHTML+'<td align="center" class="border" style="background: LIGHTBLUE;"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].val())+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+//			}
+//			else {
+//				tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].val())+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+//			}
+//		}
+ 
+ 
+		// base
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].base)+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+        tempBG = "white";
+        if ( CheckArr[i].statmodflag() )
+           tempBG = 'LIGHTBLUE';
+ 
+ 
+		// ability
+		tempHTML = tempHTML+'<td align="center" class="border" style="background: '+tempBG+';"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].statmodifier())+'</b></font></td>';
+//		if (CheckArr[i].statmodflag()) {
+//			tempHTML = tempHTML+'<td align="center" class="border" style="background: LIGHTBLUE;"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].statmodifier())+'</b></font></td>';
+//		}
+//		else {
+//			tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].statmodifier())+'</b></font></td>';
+//		}
+ 
+		tempHTML = tempHTML+'<td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+		// magic
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].magic)+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		// race
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].race)+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		// other
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+modPlusMinus(CheckArr[i].misc)+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+ 
+		// temp
+		tempBG = "white";
+		if ( CheckArr[i].hasTempMod() )
+		  tempBG = 'LIGHTBLUE';
+ 
+		tempHTML = tempHTML+'<td align="center" class="tempborder" style="background: '+tempBG+';"><font style="font-size: 10pt"><b>';
+		if ( CheckArr[i].hasTempMod() )
+		   tempHTML = tempHTML+modPlusMinus(CheckArr[i].tempmodifier);
+		else
+		   tempHTML = tempHTML+'<br />';
+		tempHTML = tempHTML+'</b></font></td>';
+ 
+//		if (CheckArr[i].hasTempMod()) {
+//			tempHTML = tempHTML+'<td align="center" class="tempborder" style="background: LIGHTBLUE;"><font style="font-size: 10pt"><b>'+CheckArr[i].tempmodifier+'</b></font></td>';
+//		}
+//		else {
+//			tempHTML = tempHTML+'<td align="center" class="tempborder"><font style="font-size: 10pt"><b>'+CheckArr[i].tempmodifier+'</b></font></td>';
+//		}
+		tempHTML = tempHTML+'</tr>\n';
+	}
+	tempHTML = tempHTML+'</table>';
+	document.all.SavesDiv.innerHTML = tempHTML;
+}
+ 
+function ATKPrint(){
+	tempHTML = '<table width="100%"><tr><td align="center"><font style="font-size: 4pt"></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="60"><font style="font-size: 4pt">TOTAL</font></td><td align="center"><font style="font-size: 4pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="60"><font style="font-size: 4pt">BASE ATTACK BONUS</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">STR<br />MODIFIER</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">SIZE<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MISC<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">TEMPORARY<br />MODIFIER</font></td></tr>';
+	for (i=0;i<ATKArr.length;i++){
+		tempHTML = tempHTML+'<tr><td align="center" bgcolor="black"><font style="font-size:10pt" color="white"><b>'+ATKArr[i].name+'</b></font><font style="font-size:5pt" color="white"><br />ATTACK BONUS</font></td>';
+		tempHTML = tempHTML+((ATKArr[i].isModified())?'<td align="center" class="border" style="background: LIGHTBLUE;">':'<td align="center" class="border">')+'<font style="font-size: 10pt"><b>'+ATKArr[i].modifyToHit()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>';
+		tempHTML = tempHTML+ATKArr[i].base;
+		tempHTML = tempHTML+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		tempHTML = tempHTML+((ATKArr[i].isModified())?'<td align="center" class="border" style="background: LIGHTBLUE;">':'<td align="center" class="border">')+'<font style="font-size: 10pt"><b>'+ATKArr[i].statmodifier()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+ATKArr[i].sizemodifier+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+ATKArr[i].miscmodifier+'<br /></b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+		tempHTML = tempHTML+'<td align="center" class="tempborder"><font style="font-size: 5pt">';
+		if ( ATKArr[i].miscTHMod != 0 )
+		   tempHTML = tempHTML + ATKArr[i].miscTHMod;
+		tempHTML = tempHTML + '<br /></font></td></tr>';
+	}
+	tempHTML = tempHTML+'<tr><td align="center"><font style="font-size: 4pt"></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="60"><font style="font-size: 4pt">TOTAL</font></td><td align="center"><font style="font-size: 4pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="60"><font style="font-size: 4pt">BASE ATTACK BONUS</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">DEX<br />MODIFIER</font></td><td align="center"><font style="font-size: 5pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">SIZE<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MISC<br />MODIFIER</font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">TEMPORARY<br />MODIFIER</font></td></tr></table>';
+	document.all.AttackDiv.innerHTML = tempHTML;
+}
+ 
+function ComprehensiveSkillPrint()
+{
+ 
+	tempHTML = '<table cellpadding="0" cellspacing="0" border="0" width="100%">';
+	tempHTML = tempHTML + '<tr><td height="30"  bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>SKILLS</b></font></td>';
+	tempHTML = tempHTML + '<td colspan="4" height="30"  bgcolor="black" align="center"></td>';
+	tempHTML = tempHTML + '<td height="30"  bgcolor="black" align="right" ></td>';
+	tempHTML = tempHTML + '<td height="30"  bgcolor="black" align="center"><font style="font-size: 7pt" color="white" >MAX<br />RANKS</font></td>';
+	tempHTML = tempHTML + '<td colspan="2" height="30"  bgcolor="white" align="center" class="skl"><b>9/4.5</b></font></td></tr>';
+	tempHTML = tempHTML + '<tr><td align="center" width="40%" class="border"><font style="font-size: 4pt">SKILL NAME</font></td><td align="center" width="5%" class="border"><font style="font-size: 4pt">ABILITY</font></td><td align="center" width="15%" colspan="1" class="border"><font style="font-size: 4pt">SKILL<br />MODIFIER</font></td><td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">ABILITY<br />MODIFIER</font></td><td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">RANKS</font></td><td align="center" width="15%" colspan="2" class="border"><font style="font-size: 4pt">MISC<br />MODIFIER</font></td></tr>';
+ 
+    i = 0;
+ 
+	for (i=0;i<SkillArr.length;i++){
+		notWhileRaging = 0;
+		for (j=0;j<SkillsRedList.length;j++)
+		{
+			if ((SkillArr[i].name.substr(0,SkillsRedList[j].length) == SkillsRedList[j])&&(RageStatus =="Raging")) {notWhileRaging = 1;}
+		}
+		styleTag = "";
+		if (SkillArr[i].baseStatModified()) styleTag = ' style="background: LIGHTBLUE; color: red;"';
+		if (notWhileRaging ==1) styleTag = ' style="background: #cccccc; color: #666666;"';
+ 
+		tempHTML = tempHTML + '<tr'+styleTag+'>'+'<td align="left" width="40%"><font face="Arial" style="font-size: 8pt">'+SkillArr[i].name+'</font></td><td align="center" width="5%"><font face="Arial" style="font-size: 8pt">'+SkillArr[i].ability+'</font></td><td align="center" class="borderbottom" width="15%" valign="bottom"><font style="font-size: 8pt">'+SkillArr[i].total()+'</font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>=</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>'+SkillArr[i].statmodifier()+'</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 8pt"><b>+</b></font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>'+SkillArr[i].rank+'</b><br /></font></td><td align="center" valign="bottom" width="2%"><font style="font-size: 9pt">+</font></td><td align="center" class="borderbottom" width="13%" valign="bottom"><font style="font-size: 8pt"><b>'+SkillArr[i].miscmodifier+'</b><br /></font></td></tr>';
+	}
+	tempHTML = tempHTML + '</table>';
+ 
+	document.all.SkillsComprehensive.innerHTML = tempHTML;
+ 
+	return;
+}
+ 
+ 
+function CompactSkillPrint()
+{
+	i = 0;
+ 
+	tempHTML = '<table cellpadding="0" cellspacing="0" border="0" width="100%">';
+	tempHTML = tempHTML + '<tr><td height="30"  bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>SKILLS</b></font></td>';
+	tempHTML = tempHTML + '<td colspan="6" height="30"  bgcolor="black" align="center"></td>';
+	tempHTML = tempHTML + '<td height="30"  bgcolor="black" align="right" ></td>';
+	tempHTML = tempHTML + '<td height="30"  bgcolor="black" align="center"><font style="font-size: 7pt" color="white" >MAX<br />RANKS</font></td>';
+	tempHTML = tempHTML + '<td colspan="3" height="30"  bgcolor="white" align="center" class="skl"><b>9/4.5</b></font></td></tr>';
+	tempHTML = tempHTML + '<TR><TD  align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">&nbsp;Name</FONT></TD><TD align="left" class="borderbottom"><font style="font-size: 5pt">Abb</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Rnk</FONT></TD><TD align="right" class="borderbottom"><font style="font-size: 5pt">Tot&nbsp;</FONT></TD></TR>';
+ 
+	for (i=0;i<SkillArr.length;i++){
+		notWhileRaging = 0;
+		for (j=0;j<SkillsRedList.length;j++)
+		{
+			if ((SkillArr[i].name.substr(0,SkillsRedList[j].length) == SkillsRedList[j])&&(RageStatus =="Raging")) {notWhileRaging = 1;}
+		}
+		styleTag = "";
+		if (SkillArr[i].baseStatModified()) styleTag = ' style="background: LIGHTBLUE; color: red;"';
+		if (notWhileRaging ==1) styleTag = ' style="background: #cccccc; color: #666666;"';
+ 
+        if ( (i % 3) == 0 )
+           tempHTML = tempHTML + '<TR>';
+		tempHTML = tempHTML + '<TD'+styleTag+' class="sc">&nbsp;'+SkillArr[i].name+'</TD><TD'+styleTag+' class="sc">'+SkillArr[i].ability+'</TD><TD'+styleTag+' class="scr">'+SkillArr[i].rank+'</TD><TD'+styleTag+' class="scr">'+SkillArr[i].total()+'</TD>';
+        if ( (i % 3) == 2 )
+           tempHTML = tempHTML + '</TR>';
+	}
+ 
+    // This is to take care of the case of a row started in the loop, but not enough skills to complete the whole row.
+	if ( i>0 && (i % 3)==0 )
+	   tempHTML = tempHTML + '</TR>';
+ 
+	tempHTML = tempHTML + '</table>';
+ 
+	document.all.SkillsCompactDiv.innerHTML = tempHTML;
+ 
+ 
+}
+ 
+ 
+ 
+function ACPrint()
+{
+	styleTag = ' style="background: LIGHTBLUE" ';
+ 
+	tempHTML = '<table><tr><td class="hpbb"><b>AC</b><font style="font-size:5pt" color="white"><br />Armour Class</font></td>';
+	tempHTML = tempHTML+'<td ';
+	if ( AC.totalModified() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 9pt"><b>'+AC.total()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>=</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AC.flatModified() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 9pt"><b>'+AC.flat()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>:</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AC.touchModified() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 9pt"><b>'+AC.touch()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>:</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>'+AC.base+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>'+AC.armor+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AC.abilityModified() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 9pt"><b>'+AC.ability()+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>'+AC.size+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>'+AC.naturalarmor+'</b></font></td><td align="center"><font style="font-size: 7pt"><b>+</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AC.miscModified() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 9pt"><b>'+AC.misc()+'</b></font></td><td align="center" width="5"><font style="font-size: 7pt"><b></b></font></td>';
+ 
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b><br /></b></font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>30</b></font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>-2</b></font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>';
+ 
+	// MAXDEX==0 means NO maxdex
+	if ( AC.maxdex != 0 )
+	   tempHTML = tempHTML + AC.maxdex;
+	tempHTML = tempHTML+'</b><br /></font></td><td align="center"><font style="font-size: 7pt"><b></b></font></td>';
+ 
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 9pt"><b>0</b></font></td></tr>';
+	tempHTML = tempHTML+'<tr><td align="center" width="50"><font style="font-size: 6pt"></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25" valign="top"><font style="font-size: 6pt"><b>TOTAL</b></font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25" valign="top"><font style="font-size: 6pt"><b>FLAT</b></font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25" valign="top"><font style="font-size: 6pt"><b>TOUCH</b></font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">BASE</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">ARMOR<br />BONUS</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">STAT<br />BONUS</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">SIZE<br />BONUS</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">NATURAL<br />ARMOR</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MISC<br />BONUS</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MISS<br />CHANCE</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">ARCANE<br />FAILURE</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">ARMOR<br />CHECK</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">MAX<br />DEX</font></td><td align="center"><font style="font-size: 6pt"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 4pt">SPELL<br />RESIST.</font></td>';
+	tempHTML = tempHTML+'</tr></table>';
+	document.all.ACDiv.innerHTML = tempHTML;
+}
+ 
+ 
+function InitPrint()
+{
+	styleTag = ' style="background: LIGHTBLUE" ';
+ 
+	tempHTML = '<table width="100%"><tr>';
+	tempHTML = tempHTML+'<td align="center" bgcolor="black"><font style="font-size:9pt" color="white"><b>INITIATIVE</b></font><font style="font-size:5pt" color="white"><br />Modifier</font></td>';
+ 
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AbArr[DEXindex].hasTempMod() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 10pt"><b>'+Init.initTotal()+'</b></font></td>';
+	tempHTML = tempHTML+'<td class="ach"><b>=</b></font></td>';
+ 
+ 
+	tempHTML = tempHTML+'<td ';
+	if ( AbArr[DEXindex].hasTempMod() )
+	   tempHTML = tempHTML+styleTag;
+	tempHTML = tempHTML+'align="center" class="border"><font style="font-size: 10pt"><b>'+AbArr[DEXindex].tempmodifier+'</b></font></td>';
+	tempHTML = tempHTML+'<td class="ach"><b>+</b></font></td>';
+ 
+	tempHTML = tempHTML+'<td align="center" class="border"><font style="font-size: 10pt"><b>'+Init.initBonus+'</b></font></td>';
+	tempHTML = tempHTML+'</tr><tr>';
+	tempHTML = tempHTML+'<td align="center" width="50"><font style="font-size: 7pt"></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25" valign="top"><font style="font-size: 7pt">TOTAL</font></td>';
+	tempHTML = tempHTML+'<td class="ach"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 5pt">DEX<br />MODIFIER</font></td>';
+	tempHTML = tempHTML+'<td class="ach"><b></b></font></td>';
+	tempHTML = tempHTML+'<td align="center" width="25"><font style="font-size: 5pt">MISC<br />MODIFIER</font></td>';
+	tempHTML = tempHTML+'</tr></table>';
+ 
+	document.all.InitDiv.innerHTML = tempHTML;
+}
+ 
+ 
+ 
+function HPPrint()
+{
+	document.getElementById("HP").innerHTML = HP.HPTotal();
+	if ( HP.HPTotal() != HP.HPTotalBase )
+		document.getElementById("HP").bgColor = 'LIGHTBLUE';
+	else
+		document.getElementById("HP").bgColor = "white";
+}
+ 
+ 
+ 
+ 
+ 
+function RagePrint()
+{
+
+}
+ 
+ 
+function WeaponPrint()
+{
+	var i = 0;
+ 
+	// Unarmed first
+	tempHTML = '<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="25" bgcolor="black" rowspan="2" width="40%"><font style="font-size:10pt" color="white"><b>HAND ATTACK</b></font></td><td align="center" bgcolor="black" width="20%" height="15"><font style="font-size:6pt" color="white"><b>TOTAL ATTACK BONUS</b></font></td><td align="center" bgcolor="black" width="20%" height="15"><font style="font-size:6pt" color="white"><b>DAMAGE</b></font></td><td align="center" bgcolor="black" width="20%" height="15"><font style="font-size:6pt" color="white"><b>CRITICAL</b></font></td></tr>';
+ 
+	tempHTML = tempHTML + '<tr><td align="center" bgcolor="';
+	if ( WeapArr[0].hasModifiedTH() )
+		tempHTML = tempHTML+'LIGHTBLUE';
+	else
+		tempHTML = tempHTML+'white';
+	tempHTML = tempHTML+'" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[0].modifyToHit() + '<br /></b></font></td>';
+ 
+ 
+	tempHTML = tempHTML + '<td align="center" bgcolor="';
+	if ( WeapArr[0].hasModifiedDam() )
+		tempHTML = tempHTML+'LIGHTBLUE';
+	else
+		tempHTML = tempHTML+'white';
+ 
+	tempHTML = tempHTML + '" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[0].modifyDamage() + '<br /></b></font></td>';
+	tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>20/x2<br /></b></font></td></tr></table>';
+ 
+	document.all.UnarmedDiv.innerHTML = tempHTML;
+ 
+	// OK, now compact weapons
+	tempHTML = '<table cellpadding="0" width="100%" cellspacing="0" border="0">';
+	tempHTML = tempHTML + '<tr><td bgcolor="black"><font style="font-size:7pt" color="white"><b>WEAPON<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>+HIT<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>DAMAGE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CRITICAL<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>HAND<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>RANGE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SIZE<br /></b></font></td></tr>';
+ 
+	for ( i=1; i<WeapArr.length; ++i )
+	{
+		tempHTML = tempHTML + '<tr><td colspan="8" class="topline"><font style="font-size:8pt" color="black"><b>';
+		tempHTML = tempHTML + WeapArr[i].name + '</b></font></td></tr><tr><td></td>';
+ 
+		// To hit
+		tempHTML = tempHTML + '<td align="center" bgcolor="';
+		if ( WeapArr[i].hasModifiedTH() )
+			tempHTML = tempHTML+'LIGHTBLUE';
+		else
+			tempHTML = tempHTML+'white';
+ 
+		tempHTML = tempHTML + '"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].modifyToHit() + '<br /></b></font></td>';
+ 
+ 
+		// Damage
+		tempHTML = tempHTML + '<td align="center" bgcolor="';
+		if ( WeapArr[i].hasModifiedDam() )
+			tempHTML = tempHTML+'LIGHTBLUE';
+		else
+			tempHTML = tempHTML+'white';
+		tempHTML = tempHTML+'"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].modifyDamage() + '<br /></b></font></td>';
+ 
+ 
+		tempHTML = tempHTML+'<td align="center"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].crit + '/x' + WeapArr[i].mult + '<br /></b></font></td>';
+		tempHTML = tempHTML+'<td align="center"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].hands + '<br /></b></font></td>';
+		tempHTML = tempHTML+'<td align="center"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].range + '<br /></b></font></td>';
+		tempHTML = tempHTML+'<td align="center"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].type + '<br /></b></font></td>';
+		tempHTML = tempHTML+'<td align="center"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].size + '<br /></b></font></td></tr>';
+		tempHTML = tempHTML+'<tr><td colspan="8"><center><font style="font-size:6pt" color="black">' + WeapArr[i].sprop + '</font></center></td></tr>';
+	}
+ 
+	tempHTML = tempHTML + '</table>';
+ 
+	document.all.WeaponsCompact.innerHTML = tempHTML;
+ 
+ 
+	// OK, now comprehensive weapons (part 1)
+	tempHTML = '';
+ 
+	for ( i=1; i<WeapArr.length; ++i )
+	{
+		tempHTML = tempHTML + '<br/><table cellpadding="0" width="100%" cellspacing="0" border="0">';
+		tempHTML = tempHTML + '<tr><td align="center" height="25" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>';
+		tempHTML = tempHTML + WeapArr[i].name + '<br /></b></font></td>';
+ 
+		// Misc table text
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="110" height="15"><font style="font-size:6pt" color="white"><b>TOTAL ATTACK BONUS</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>DAMAGE</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>CRITICAL</b></font></td></tr>';
+ 
+ 
+ 
+		// To hit
+		tempHTML = tempHTML + '<tr><td align="center" bgcolor="';
+		if ( WeapArr[i].hasModifiedTH() )
+			tempHTML = tempHTML+'LIGHTBLUE';
+		else
+			tempHTML = tempHTML+'white';
+ 
+		tempHTML = tempHTML + '" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].modifyToHit() + '<br /></b></font></td>';
+ 
+ 
+		// Damage
+		tempHTML = tempHTML + '<td align="center" bgcolor="';
+		if ( WeapArr[i].hasModifiedDam() )
+			tempHTML = tempHTML+'LIGHTBLUE';
+		else
+			tempHTML = tempHTML+'white';
+		tempHTML = tempHTML+'" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].modifyDamage() + '<br /></b></font></td>';
+ 
+		// crit info
+		tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].crit + '/x' + WeapArr[i].mult + '<br /></b></font></td></tr></table>';
+ 
+		// More text
+		tempHTML = tempHTML + '<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="50"><font style="font-size:6pt" color="white"><b>HAND</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" height="15" bgcolor="black" width="40"><font style="font-size:6pt" color="white"><b>RANGE</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="40" height="15"><font style="font-size:6pt" color="white"><b>SIZE</b></font></td>';
+		tempHTML = tempHTML + '<td align="center" bgcolor="black" width="167" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr>';
+ 
+		// Hand
+		tempHTML = tempHTML + '<tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].hands + '<br /></b></font></td>';
+		// Range
+		tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].range + '<br /></b></font></td>';
+		// Type
+		tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].type + '<br /></b></font></td>';
+		// Size
+		tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].size + '<br /></b></font></td>';
+		// SProp
+		tempHTML = tempHTML + '<td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>' + WeapArr[i].sprop + '<br /></b></font></td></tr>';
+ 
+		tempHTML = tempHTML + '</table>';
+ 
+		// Done with the first three weapons (which is all we can fit in the first part)?
+		if ( i == 4 )
+		{
+			document.all.WeaponsComprehensive.innerHTML = tempHTML;
+			tempHTML = '';
+		}
+	}
+ 
+ 
+	// Done with the first three weapons (which is all we can fit in the first part)?
+	if ( i <= 4 )
+		document.all.WeaponsComprehensive.innerHTML = tempHTML;
+	else
+		document.all.WeaponsExtra.innerHTML = tempHTML;
+ 
+}
+ 
+ 
+function NamePrint()
+{
+	nameStatus = charName + ' ';
+ 
+	parenFlag = 0;
+   for ( i=0; i<StateArr.length; ++i )
+      if ( StateArr[i].isActive )
+      {
+			if ( parenFlag == 0 )
+			{
+				nameStatus = nameStatus + '(' + StateArr[i].outputStateString();
+				parenFlag = 1;
+			}
+			else
+         	nameStatus = nameStatus + '/' + StateArr[i].outputStateString();
+		}
+ 
+	if ( parenFlag == 1 )
+	   nameStatus = nameStatus + ')';
+ 
+	document.getElementById('charName').innerHTML = '<B><FONT style="font-size:12pt">'+nameStatus+'</font></B>';
+}
+ 
+ 
+function FirstChar(s)
+{
+	return s.substr(0,1);
+}
+function StripZero(s)
+{
+	return s.replace(/\.0$/,'');
+}
+function RepeatString(str,times)
+{
+	// Deal with the possibility that times is a non-numeric string
+	if ( Math.round(times) != times )
+		return str;
+	else
+		times = Math.round(times);
+	var s = '';
+	for ( ;times>0; --times )
+	   s = s + str;
+	return s.replace(/\.0$/,'');
+}
+function RepeatStringToDocument(str,times)
+{
+	document.write( RepeatString(str,times) );
+	return;
+}
+function WriteCheckBoxesToDocument(times)
+{
+	RepeatStringToDocument('o',times);
+	return;
+}
+ 
+ 
+ 
+function Comprehensive()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'none';
+	document.getElementById('WeaponsComprehensive').style.display = 'inline';
+	document.getElementById('ArmourCompact').style.display = 'none';
+	document.getElementById('ArmourComprehensive').style.display = 'inline';
+	document.getElementById('BioComprehensive').style.display = 'inline';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'inline';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'inline';
+	document.getElementById('WeaponsExtra').style.display = 'inline';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+ 
+};
+function TwoPage()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('FeatsCompact').style.display = 'inline';
+	document.getElementById('FeatsComprehensive').style.display = 'none';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'inline';
+ 
+};
+function ThreePage()
+{
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'inline';
+	document.getElementById('SkillsCompact').style.display = 'none';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'none';
+	document.getElementById('DomainsCompact').style.display = 'none';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'inline';
+	document.getElementById('ThirdPage').style.display = 'inline';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'inline';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+ 
+};
+function Compact()
+{
+   // Force re-render?
+//   document.getElementById('FullHeader').style.display = 'none';
+	document.getElementById('FullHeader').style.display = 'inline';
+	document.getElementById('SkillsComprehensive').style.display = 'none';
+	document.getElementById('SkillsCompact').style.display = 'inline';
+	document.getElementById('WeaponsCompact').style.display = 'inline';
+	document.getElementById('WeaponsComprehensive').style.display = 'none';
+	document.getElementById('ArmourCompact').style.display = 'inline';
+	document.getElementById('ArmourComprehensive').style.display = 'none';
+	document.getElementById('BioComprehensive').style.display = 'none';
+	document.getElementById('EquipmentCompact').style.display = 'inline';
+	document.getElementById('DomainsCompact').style.display = 'inline';
+	document.getElementById('SpellBookComprehensive').style.display = 'none';
+	document.getElementById('SecondPage').style.display = 'none';
+	document.getElementById('ThirdPage').style.display = 'none';
+	document.getElementById('FeatsCompact').style.display = 'none';
+	document.getElementById('FeatsComprehensive').style.display = 'none';
+	document.getElementById('WeaponsExtra').style.display = 'none';
+	document.getElementById('SpellsSemicompact').style.display = 'none';
+ 
+};
+function MyPrint()
+{
+	document.getElementById('Config').style.display = 'none';
+	window.print();
+	document.getElementById('Config').style.display = 'block';
+};
+ 
+ 
+ 
+ 
+ 
+ 
+// ********************************************
+// This puts a '+' in front of a number if necessary
+// ********************************************
+function modPlusMinus( what )
+{
+   if ( what < 0 )
+      return what;
+   else
+      return "+" + what;
+};
+ 
+ 
+// ********************************************
+// This returns what without its first char
+// ********************************************
+function chopFirstChar( what )
+{
+   if ( what.length > 0 )
+      return what.substr(1,what.length-1);
+   else
+      return what;
+};
+ 
+ 
+ 
+ 
+// ********************************************
+// OK, this is where it gets gross.  This object
+// attempts to model weapons.
+// A variable of type Weapon supports the following
+// Only those marked with * should be modified after creation
+//  weapNum       int     RW Tells us where to render this weapon
+//  name          string  RW Weapon name as passed from PCGen.
+//  toHitBase     string  RW As passed from PCGen
+//  toHitBaseArr  string array RW  toHitBase split into individual "to hit" components
+//  damageBase    string  RW As passed from PCGen
+//  damageBaseArr string array RW  damageBase split into individual damage components
+//  category      string  RW "M"elee" or "R"anged"
+//  abilityNum    int     RW which stat number affects this weapon's "to hit" based upon cateogry
+//  hands         string  RW "B"oth, "O"ff, "T"wo-weapon, "P"rimary, "N"one
+//  range         string  RW As passed from PCGen.  For output purposes only.
+//  modifyToHit   string  RO Generate the weapon's (possibly modified) "to hit" string
+//  modifyDamage  string  RO Generate the weapon's (possibly modified) damage string
+//  hasModifiedTH bool    RO TRUE if TH modified from base
+//  hasModifiedDam bool   RO TRUE if Damage modified from base
+// *miscTHMod     int     RW Modify TH by some means other than stat.  This is an incremental change!!  e.g. If going from +2 to +4, put 2 here
+// *miscDamMod    int     RW Modify damage by some means other than stat.  This is an incremental change!!  e.g. If going from +4 to +2, put -2 here
+//  isMighty      bool    RO TRUE if this is a mighty ranged weapon
+//  maxMighty     int     RW maximum mighty bonus for this ranged weapon
+//  crit          string  RW Crit prob as passed by PCGen
+//  mult          string  RW Crit mult as passed by PCGen
+//  type          string  RW Type as passed by PCGen
+//  size          string  RW Size as passed by PCGen
+//  sprop         string  RW Special properties as passed by PCGen
+// *disabled      string  RW  If not empty, displays in place of "to hit" and damage.
+// ********************************************
+function Weapon( wNum, wName, wCategory, wToHit, wDam, wHands, wRange, wCrit, wMult, wType, wSize, wSprop )
+{
+   this.weapNum = wNum;
+   this.name = wName;
+   this.toHitBase = wToHit;
+   this.toHitBaseArr = this.toHitBase.split(";");
+   this.damageBase = wDam;
+   this.damageBaseArr = this.damageBase.split("/");
+ 
+	this.crit = wCrit;
+	this.mult = wMult;
+	this.type = wType;
+	this.size = wSize;
+	this.sprop = wSprop;
+ 
+ 
+   // Try to figure out if this is a melee or ranged weapon
+	if ( wCategory.search("Melee") != -1 )  // melee weapon?
+	   this.category = "M";
+	else
+		this.category = "R";
+ 
+	// Most weapons aren't mighty.
+	this.maxMighty = 0;
+	this.isMighty = WeaponIsMighty;
+ 
+	// Now, based on weapon type, choose the default ability affecting the "to Hit"
+	if ( this.category == "M" )
+		this.abilityNum = STRindex;
+	else
+	{
+		this.abilityNum = DEXindex;
+ 
+		// OK, this is a ranged weapon.  Is it mighty?  If so, then how mighty is it?
+		var mightyIndex = this.name.search(" Mighty" );  // < - note the space before Mighty!!
+		if ( mightyIndex > -1 )
+		{
+			var startingAt = mightyIndex-1;
+			while ( startingAt >= 0 )
+			{
+				if ( this.name.substr(startingAt,1) == "+" )
+				{
+					this.maxMighty = new Number( this.name.substr(startingAt+1,mightyIndex-startingAt) );
+					break;
+				}
+				else
+					startingAt--;
+			}
+		}
+	}
+ 
+ 
+	this.hands = FirstChar( wHands );
+	this.range = wRange;
+ 
+	this.miscTHMod = 0;
+	this.miscDamMod = 0;
+ 
+	this.hasModifiedTH = WeaponTHIsModified;
+	this.hasModifiedDam = WeaponDamageIsModified;
+ 
+	this.modifyDamage = WeaponModDamage;
+	this.modifyToHit = WeaponModToHit;
+ 
+	this.disabled = "";
+}
+ 
+ 
+function WeaponIsMighty()
+{
+	if ( this.category == 'R' && this.maxMighty>0 )
+	   return TRUE;
+	return FALSE;
+}
+ 
+ 
+function WeaponTHIsModified()
+{
+	if ( this.miscTHMod != 0 )
+	   return TRUE;
+	if ( this.disabled != "" )
+	   return TRUE;
+	return AbArr[this.abilityNum].hasTempMod();
+}
+ 
+ 
+function WeaponDamageIsModified()
+{
+	if ( this.miscDamMod != 0 )
+	   return TRUE;
+	if ( this.disabled != "" )
+	   return TRUE;
+	if ( this.category == "M" && AbArr[STRindex].hasTempMod() )
+		return TRUE;
+ 
+	// A mighty ranged weapon might have its damage changed by a STR change.
+	// Basically if the unmodified STR bonus was below max mighty or
+	// the newly modified STR is below max mighty
+	if ( this.isMighty() )
+	{
+		if ( AbArr[STRindex].modifier < this.maxMighty )
+			return TRUE;
+		if ( AbArr[STRindex].curmodifier() < this.maxMighty )
+			return TRUE;
+	}
+	else
+		return FALSE;
+}
+ 
+ 
+// ********************************************
+// Take an toHit string in the form "X[/X]..."
+// and apply a modifier to it.
+// astr is a toHit string        Ex. +4/-1
+// amod is a modifier to apply   Ex. -2
+// ********************************************
+function modToHitString( astr, amod )
+{
+  var attacks=astr.split("/");
+  var retval = "";
+  var i;
+ 
+  for (i=0; i < attacks.length; i++)
+  {
+     if ( i>0 )
+        retval = retval+'/';
+     var attNum = new Number(attacks[i]);
+     retval = retval+modPlusMinus( amod+attNum );
+  }
+ 
+   return retval;
+};
+ 
+ 
+// ********************************************
+// Take a damage string in the form "X[(+-)mod]"
+// and apply a modifier to it.
+// Note, there is a bit of strangeness here.
+// Since DnD uses the "Round down" rule, and
+// we're applying a partial modifier, AND
+// we might have to divide that modifier by
+// two in certain cases, its necessary to
+// tweak that modifier by just a bit to get
+// the rounding to come out right.
+// astr is a damage string       Ex. 5d6+4
+// amod is a modifier to apply   Ex. -2
+// addBns is a flag.
+//    'Y' means to apply the additional 1/2 amod for wielding in two hands.
+//    'N' means DON'T apply the additional bonus
+//    'B' means to only apply 1/2 amod (second weapon in the off hand)
+// ********************************************
+function modDamageString( astr, amod, addBns )
+{
+  var modRoundingAdjuster = 0;
+ 
+  // Sigh.  I wish 
+  if ( addBns == "Y" )
+     modRoundingAdjuster = 0.002;
+  if ( addBns == "T" )
+     modRoundingAdjuster = 0.002;
+ 
+  if ( addBns == "Y" )
+     amod = amod + Math.round((amod-modRoundingAdjuster)/2);
+  else if ( addBns == "T" )
+      amod = Math.round((amod-modRoundingAdjuster)/2);
+ 
+  var modLoc=astr.search("[\+-]");  // Look for either a + or a -
+  if ( modLoc == -1 )
+  {
+     return astr+modPlusMinus(amod);
+  }
+ 
+  // OK, we found a +/- at modLoc
+  var oldMod = new Number( astr.substr(modLoc+1,astr.length-(modLoc+1)) );
+ 
+  // Modifiers cancel?
+  if ( oldMod+amod == 0 )
+     return astr.substr(0,modLoc);
+  else
+     return astr.substr(0,modLoc) + modPlusMinus(oldMod+amod);
+};
+ 
+ 
+ 
+ 
+// ********************************************
+// Take an attack string in the form "X[;X]...
+// and apply a modifier to it by splitting at the
+// semicolon and passing each result down to
+// modToHitString to handle the possible multiple
+// attacks within each "hand."
+// astr is a toHit string        Ex. +4/-1;+3
+// amod is a modifier to apply   Ex. -2
+// ********************************************
+function WeaponModToHit()
+{
+ 
+	if ( this.disabled != "" )
+	   return this.disabled;
+ 
+	var retval = "";
+	var i;
+ 
+	// Figure out if anything has changed?
+	var aMod = this.miscTHMod + AbArr[this.abilityNum].curModifierDiff();
+ 
+	for (i=0; i < this.toHitBaseArr.length; i++)
+	{
+		if ( i>0 )
+			retval = retval+';';
+ 
+		if ( aMod == 0 )
+			retval = retval+this.toHitBaseArr[i];
+		else
+			retval = retval+modToHitString( this.toHitBaseArr[i], aMod );
+	}
+ 
+	return retval;
+};
+ 
+ 
+ 
+// ********************************************
+// Take a damage string in the form "X[/X]...
+// and apply a modifier to it by splitting at the
+// slash and passing each result down to
+// modDamageString to handle the possible multiple
+// attacks within each "hand."
+// If a melee weapon (weapType=="M") is used in
+// both hands (weapHands="B"), then apply a bonus
+// 1/2 of amod to the damage of the first attack
+// astr is a damage string       Ex. 5d6+4/3d10-4
+// amod is a modifier to apply   Ex. -2
+// weapHands is the first character of the string that tells how the weapon is
+//   wielded, so 'T'wo-handed, 'B'oth, 'N'either, 'P'rimary, 'O'ff hand
+// ********************************************
+function WeaponModDamage()
+{
+	if ( this.disabled != "" )
+	   return this.disabled;
+ 
+	var retval = "";
+	var i;
+ 
+	var aMod = 0;
+ 
+	// Figure out if anything has changed?
+	if ( this.isMighty() )
+	{
+		// I can only allow the difference between the (unmodified) str mod and the max mighty
+		// if that difference is positive.
+		// Case 1:
+		//   orig <= maxMighty  && new <= maxMighty
+		//   mod = AbArr[STRindex].curModifierDiff
+		// Case 2:
+		//   orig <= maxMighty  && new > maxMighty
+		//   mod = maxMighty - orig
+		// Case 3:
+		//   orig > maxMighty  && new <= maxMighty
+		//   mod = new - maxMighty
+		// Case 4:
+		//   orig > maxMighty  && new > maxMighty
+		//   mod = 0
+ 
+		aMod = 0;
+		// Case 1:
+		if ( AbArr[STRindex].modifier <= this.maxMighty && AbArr[STRindex].curmodifier() <= this.maxMighty )
+			aMod = AbArr[STRindex].curModifierDiff();
+		// Case 2:
+		else if ( AbArr[STRindex].modifier <= this.maxMighty && AbArr[STRindex].curmodifier() > this.maxMighty )
+			aMod = this.maxMighty - AbArr[STRindex].modifier;
+		// Case 3:
+		else if ( AbArr[STRindex].modifier > this.maxMighty && AbArr[STRindex].curmodifier() <= this.maxMighty )
+			aMod = AbArr[STRindex].curmodifier() - this.maxMighty;
+		// Case 4:
+		else // if ( AbArr[STRindex].modifier > this.maxMighty && AbArr[STRindex].curmodifier() > this.maxMighty )
+			aMod = 0;
+ 
+		aMod = aMod + this.miscDamMod;
+ 
+	}
+	else if ( this.category == "R" )  // Generally, non-mighty ranged weapons are unaffected by STR mod
+		aMod = this.miscDamMod;
+	else
+		aMod = this.miscDamMod + AbArr[STRindex].curModifierDiff();
+ 
+	// Decide if a partial modifier is going to have to be applied
+	// Specifically, wielding a melee weapon in both hands or
+	// as an off-hand weapon.
+	var addBns = "N";
+	if ( this.category=="M" && this.hands=="B" )
+		addBns = "Y";
+	else if ( this.category=="M" && this.hands=="O" )
+		addBns = "T";
+ 
+	// OK, now stitch together the damage string, taking any modifiers into account
+	for (i=0; i < this.damageBaseArr.length; i++)
+	{
+		if ( i>0 )
+			retval = retval+'/';
+ 
+		if ( aMod == 0 )
+			retval = retval + this.damageBaseArr[i];
+		else
+			retval = retval+modDamageString(this.damageBaseArr[i], aMod, addBns );
+ 
+		if ( this.category=="M" && this.hands=="T" )
+			addBns = "T";
+		else
+			addBns = "N";
+	}
+ 
+   return retval;
+};
+ 
+ 
+ 
+ 
+ 
+// ********************************************
+// This is the function that calculates and applies all the various modifiers for Barbarians
+// in each of the Normal, Raged and Fatigued states.
+// It is called via a CharState object
+// newRageState should be 0 (Normal), 1 (Raging) or 2 (Fatigued)
+// ********************************************
+function BarbMods( newRageState )
+{
+	// Choose a safe, default value
+	var nRageStatus = "";
+ 
+	// Edit the values
+	if ( newRageState == 0 )
+	  nRageStatus = "";
+	else if ( newRageState == 1 )
+	  nRageStatus = "Raging";
+	else if ( newRageState == 2 )
+	  nRageStatus = "Fatigued";
+ 
+ 
+ 
+  var temp = null;
+ 
+  if ( BarbLvl == null )
+     return;
+  if ( BarbLvl < 1 )
+     return;
+  if ( this.internalState == nRageStatus )
+     return;
+ 
+  // Assume normal case...
+  var strMod = 0;
+  var conMod = 0;
+  var dexMod = 0;
+  var strModMod = 0;
+  var conModMod = 0;
+  var dexModMod = 0;
+  var acMod = 0;
+  var willMod = 0;
+ 
+//  StatusBgColor = "white"
+ 
+ 
+  // Figure out what we have to do to "back out" old rage state
+  if ( this.internalState == "Raging" )  // Raging
+  {
+     strMod = -4;
+     conMod = -4;
+     strModMod = -2;
+     conModMod = -2;
+     acMod = +2;
+     willMod = -2;
+ 
+     if ( BarbLvl >= 15 )
+     {
+        strMod = -6;
+        conMod = -6;
+        strModMod = -3;
+        conModMod = -3;
+        willMod = -3;
+     }
+  }
+  else if ( this.internalState == "Fatigued" && BarbLvl<20 )  // Fatigued
+  {
+     strMod = +2;
+     conMod = 0;
+     dexMod = +2;
+     strModMod = +1;
+     conModMod = 0;
+     dexModMod = +1;
+     acMod = 0;
+  }
+ 
+ 
+  // OK, figure out various stat changes based on current Barbarian state
+  if ( nRageStatus == "Raging" )  // Raging
+  {
+     this.isActive = TRUE;
+     RageStatus = nRageStatus;
+	 this.internalState = nRageStatus;
+ 
+//	 StatusBgColor = "LIGHTPINK";
+ 
+     if ( BarbLvl >= 15 )
+     {
+        strMod = strMod+6;
+        conMod = conMod+6;
+        strModMod = strModMod+3;
+        conModMod = conModMod+3;
+        acMod = acMod-2;
+        willMod = willMod+3;
+     }
+     else
+     {
+		 strMod = strMod+4;
+		 conMod = conMod+4;
+		 strModMod = strModMod+2;
+		 conModMod = conModMod+2;
+		 acMod = acMod-2;
+		 willMod = willMod+2;
+     }
+  }
+  else if ( nRageStatus == "Fatigued" && BarbLvl<20 )  // Fatigued
+  {
+ 
+     this.isActive = TRUE;
+     RageStatus = nRageStatus;
+	 this.internalState = nRageStatus;
+ 
+     strMod = strMod-2;
+     conMod = conMod+0;
+     dexMod = dexMod-2;
+     strModMod = strModMod-1;
+     conModMod = conModMod+0;
+     dexModMod = dexModMod-1;
+     acMod = acMod+0;
+ 
+//     StatusBgColor = "LIGHTBLUE";
+  }
+  else
+  {
+     this.isActive = FALSE;
+     RageStatus = nRageStatus;
+  	 this.internalState = nRageStatus;
+  }
+ 
+  // STR
+   AbArr[STRindex].tempvalue = AbArr[STRindex].tempvalue + strMod;
+   AbArr[STRindex].tempmodifier = AbArr[STRindex].tempmodifier + strModMod;
+  // DEX
+   AbArr[DEXindex].tempvalue = AbArr[DEXindex].tempvalue + dexMod;
+   AbArr[DEXindex].tempmodifier = AbArr[DEXindex].tempmodifier + dexModMod;
+  // CON
+   AbArr[CONindex].tempvalue = AbArr[CONindex].tempvalue + conMod;
+   AbArr[CONindex].tempmodifier = AbArr[CONindex].tempmodifier + conModMod;
+ 
+  CheckArr[WILLindex].tempmodifier = CheckArr[WILLindex].tempmodifier+willMod;
+  AC.rageMod = AC.rageMod+acMod;
+ 
+  ABPrint();
+  ACPrint();
+  ComprehensiveSkillPrint();
+  CompactSkillPrint();
+  SavesPrint();
+  InitPrint();
+  HPPrint();
+  RagePrint();
+  ATKPrint();
+  WeaponPrint();
+  NamePrint();
+ 
+  return;
+ 
+};
+ 
+
+ 
+ 
+ 
+// ********************************************
+// This is the function that calculates and applies all the various modifiers for
+// fighting defensively in each of the Normal, defensive and total defense states.
+// It is called via a CharState object
+// newDefState should be 0 (Normal), 1 (Fighting Defensively) or 2 (Total Defense)
+// ********************************************
+function DefensiveCombatMods( newDefState )
+{
+	// Choose a safe, default value
+	var nDefStatus = "";
+ 
+	// Edit the values
+	if ( newDefState == 0 )
+	  nDefStatus = "";
+	else if ( newDefState == 1 )
+	  nDefStatus = "Defensive";
+	else if ( newDefState == 2 )
+	  nDefStatus = "Total Def";
+ 
+ 
+ 
+  var temp = null;
+ 
+  if ( this.internalState == nDefStatus )
+     return;
+ 
+	var i = 0;
+	var acMod = 0;
+	var tumbleRanks = 0;
+ 
+	for ( i=0; i<SkillArr.length; ++i )
+	{
+		if ( SkillArr[i].name == "Tumble" )
+		{
+			tumbleRanks = SkillArr[i].rank;
+			break;
+		}
+	}
+ 
+ 
+//	StatusBgColor = "white"
+ 
+ 
+	// Figure out what we have to do to "back out" old defense state
+	if ( this.internalState == "Defensive" )
+	{
+		for ( i=0; i<WeapArr.length; ++i )
+		{
+			WeapArr[i].miscTHMod = WeapArr[i].miscTHMod + 4;
+		}
+ 
+		if ( tumbleRanks >= 15 )
+			acMod = -4;
+		else if ( tumbleRanks >= 5 )
+			acMod = -3;
+		else
+			acMod = -2;
+	}
+	else if ( this.internalState == "Total Def" )
+	{
+		for ( i=0; i<WeapArr.length; ++i )
+		{
+			WeapArr[i].disabled = "";
+		}
+ 
+		if ( tumbleRanks >= 15 )
+			acMod = -8;
+		else if ( tumbleRanks >= 5 )
+			acMod = -6;
+		else
+			acMod = -4;
+	}
+ 
+ 
+  // OK, figure out various stat changes based on current defensive state
+  if ( nDefStatus == "Defensive" )
+  {
+		this.isActive = TRUE;
+ 		this.internalState = nDefStatus;
+ 
+//		StatusBgColor = "LIGHTPINK";
+ 
+		for ( i=0; i<WeapArr.length; ++i )
+		{
+			WeapArr[i].miscTHMod = WeapArr[i].miscTHMod - 4;
+		}
+ 
+		if ( tumbleRanks >= 15 )
+			acMod = acMod+4;
+		else if ( tumbleRanks >= 5 )
+			acMod = acMod+3;
+		else
+			acMod = acMod+2;
+  }
+  else if ( nDefStatus == "Total Def" )  // Total
+  {
+		this.isActive = TRUE;
+		this.internalState = nDefStatus;
+ 
+		for ( i=0; i<WeapArr.length; ++i )
+			WeapArr[i].disabled = "Total Defense";
+ 
+		if ( tumbleRanks >= 15 )
+			acMod = acMod+8;
+		else if ( tumbleRanks >= 5 )
+			acMod = acMod+6;
+		else
+			acMod = acMod+4;
+ 
+//		StatusBgColor = "LIGHTBLUE";
+  }
+  else
+  {
+		this.isActive = FALSE;
+		this.internalState = nDefStatus;
+  }
+ 
+  AC.defFightMod = AC.defFightMod+acMod;
+ 
+  ABPrint();
+  ACPrint();
+  ComprehensiveSkillPrint();
+  CompactSkillPrint();
+  SavesPrint();
+  InitPrint();
+  HPPrint();
+  RagePrint();
+  ATKPrint();
+  WeaponPrint();
+  NamePrint();
+ 
+  return;
+ 
+};
+ 
+ 
+// ********************************************
+// ********************************************
+function DefFightingButtons()
+{
+	document.write( "<TR>" );
+	document.write( '<TD align="center"><INPUT id=defFightButton1 type=button value="Normal Combat" name=defFightButton1 onclick="SetDefFighting(0);">&nbsp;<INPUT id=defFightButton2 type=button value="Fighting Defensively" name=defFightButton2 onclick="SetDefFighting(1);">&nbsp;<INPUT id=defFightButton3 type=button value="Total Defense" name=defFightButton3 onclick="SetDefFighting(2);">' );
+	document.write( "</TD></TR>" );
+};
+ 
+// ********************************************
+// ********************************************
+function SetDefFighting( defFightLvl )
+{
+ 
+   for ( i=0; i<StateArr.length; ++i )
+      if ( StateArr[i].name == "DefFighting" )
+         StateArr[i].activate( defFightLvl );
+};
+ 
+ 
+ 
+ 
+</script>
+<body onload="Compact();" onbeforeprint="document.getElementById('Config').style.display = 'none';" onafterprint="document.getElementById('Config').style.display = 'block';">
+ 
+
+ 
+<TABLE ID="Config" WIDTH="100%" BORDER=0 CELLSPACING=1 CELLPADDING=1>
+	<TR>
+		<TD align="center"><INPUT id=button3 type=button value="1 Page" name=button3 onclick="Compact();">&nbsp;<INPUT id=button2 type=button value="2 Page" name=button2 onclick="TwoPage();">&nbsp;<INPUT id=button2 type=button value="3-4 Page" name=button2 onclick="ThreePage();">&nbsp;<INPUT id=button1 type=button value="4 Page+" name=button1 onclick="Comprehensive();">&nbsp;<INPUT id=button4 type=button value="Print" name=button4 onclick="MyPrint();"></TD>
+	</TR>
+
+   <SCRIPT>DefFightingButtons();</SCRIPT>
+</TABLE>
+ 
+<SPAN></SPAN>
+ 
+<font style="font-size:6pt">
+<table id="FullHeader" cellpadding="0" cellspacing="4" border="0" width="100%">
+<tr>
+<td id=charName colspan="2" class="h"><B><FONT style="font-size:12pt">Suq&#39;Atma</font></B></td>
+<td colspan="2" class="h">Lee</td>
+<td class="h">Lawful Good</td>
+<td class="h">Al&#39;Akbar</td>
+<td class="h">0</td>
+<td id="CharacterImage" rowspan="7" align="center" width="1%" class="border"><font style="font-size:10pt"><A HREF="#Bio"><IMG SRC="" height="100" ALT="Click for Bio" BORDER="0" onerror="document.getElementById('CharacterImage').style.display = 'none';"></A><br /></font></td>
+</tr>
+<tr>
+<td colspan="2" class="hs">CHARACTER NAME</td>
+<td colspan="2" class="hs">PLAYER</td>
+<td class="hs">ALIGNMENT</td>
+<td class="hs">DEITY</td>
+<td class="hs">POINTS</td>
+</tr>
+<tr>
+<td colspan="1" class="h">Paladin (Monte&#39;s)5 Templar1</td>
+<td colspan="1" class="h">0</td>
+<td colspan="1" class="h">Human</td>
+<td class="h">M</td>
+<td class="h">6&#39; 4&quot;</td>
+<td class="h">205 lbs</td>
+<td class="h">Low-light, Normal</td>
+</tr>
+<tr>
+<td class="hs">CLASS</td>
+<td class="hs">EXPERIENCE</td>
+<td class="hs">RACE</td>
+<td class="hs">SIZE</td>
+<td class="hs">HEIGHT</td>
+<td class="hs">WEIGHT</td>
+<td class="hs">VISION</td>
+</tr>
+<tr>
+<td class="h">6</td>
+<td class="h">0</td>
+<td class="h">21</td>
+<td class="h">Male</td>
+<td class="h">Black</td>
+<td class="h">Black, Bald</td>
+<td class="h">8</td>
+</tr>
+<tr>
+<td class="hs">LEVEL</td>
+<td class="hs">NEXT LEVEL</td>
+<td class="hs">AGE</td>
+<td class="hs">GENDER</td>
+<td class="hs">EYES</td>
+<td class="hs">HAIR</td>
+<td class="hs">TURNS/DAY</td>
+</tr>
+<tr><td colspan="7"></td></tr>
+</table>  <!-- FullHeader table -->
+ 
+<!-- Main sheet layout -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+ 
+<!-- Ability table (first row of main table) -->
+	<td rowspan="2" valign="top">
+		<div id="AbilityDiv">
+		    <script language="Javascript">ABPrint();</script>
+		</div>
+	</td>
+ 
+<!-- HP Table (first row of main table) -->
+	<td colspan="2" valign="top">
+		<table>
+		<tr>
+			<td align="center" width="50"></td>
+			<td width="25" class="hph">     </td>
+			<td></td>
+			<td width="119" class="hphs"><br />WOUNDS/CURRENT HP</td>
+			<td></td>
+			<td width="119" class="hphs"><br />SUBDUAL DAMAGE</td>
+			<td></td>
+			<td width="60" class="hphs"><br />DAMAGE<br />REDUCTION</td>
+			<td></td>
+			<td width="60" class="hphs"><br />SPEED</td>
+		</tr>
+		<tr>
+			<td class="hpbb">HP<font style="font-size:5pt"><br />Hit Points</font></td>
+			<td id=HP class="hpb">56</td>
+			<td align="center"><br /></td>
+			<td class="hpb"><br /></td>
+			<td align="center"><br /></td>
+			<td class="hpb"><br /></td>
+			<td align="center"><br /></td>
+			<td class="hpb">&nbsp;&nbsp;</td>
+			<td align="center"><br /></td>
+			<td class="hpb">Walk 30&#39;, Fly 60&#39;</td>
+		</tr>
+		</table>
+ 
+<!--  START AC Table (first row of main table)-->
+		<div id="ACDiv">
+			 <script language="Javascript">ACPrint();</script>
+		</div>
+<!--  END AC Table -->
+ 
+	</td>
+</tr>  <!-- End of first row of main table -->
+ 
+<!-- Start of second row of main table -->
+<tr>
+<!-- This row will contain initiative. base attack, skills -->
+	<td valign="top">
+<!--  START Initiative Table (second row of main table) -->
+		<div id="InitDiv">
+			 <script language="Javascript">InitPrint();</script>
+		</div>
+<!--  END Initiative Table -->
+ 
+ 
+<!--  START Base Attack Table (second row of main table) -->
+		<table width="100%">
+		<tr>
+			<td align="center" bgcolor="black"><font style="font-size:9pt" color="white"><b>BASE ATTACK</b></font><font style="font-size:5pt" color="white"><br />Bonus</font></td>
+			<td align="center" width="94" class="border"><font style="font-size: 10pt"><b>+6/+1<br /></b></font></td>
+		</tr>
+		</table>
+<!--  END Base Attack Table (second row of main table) -->
+	</td>
+ 
+	<td rowspan="2" valign="top" width="50%">
+ 
+<!-- The table being started here called SkillsCompact is really a table containing all sorts of stuff -->
+<!-- for the "compact" version of the sheet. -->
+		<TABLE id="SkillsCompact" cellpadding="0" cellspacing="0" border="0">
+		<TR>
+			<TD>
+ 
+<!-- This table just contains and aligns the compact skills table -->
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td colspan="3" align="left" class="border" valign="top">
+ 
+<!-- START Compact Skills Table -->
+						<div id="SkillsCompactDiv">
+							<script language="Javascript">CompactSkillPrint();</script>
+						</div>
+<!-- END Compact Skills Table -->
+					</td>
+				</tr>
+				</table>
+<!-- End of table that just contains and aligns the compact skills table -->
+
+<!-- TEMPLATE table -->
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>TEMPLATES</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" width="70%" class="border"><font style="font-size: 8pt">Half-Celestial<br /></font></td>
+		</tr>
+		</table>
+<!-- END TEMPLATE table -->
+
+<!-- Start of special abilities table (still inside the SkillsCompact Table) -->
+				<table width="100%" cellspacing="0" cellpadding="2">
+				<tr>
+					<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>SPECIAL ABILITIES</b></font></td>
+				</tr>
+				<tr>
+					<td align="left" width="100%" class="border"><font style="font-size: 7pt">+4 Saves vs. Poison, Aura of Courage, Bird-like Wings, Detect Evil, Divine Grace, Divine Health, Immune to Acid/Cold/Disease/Electricity, Mettle, Smite Evil 1/day, Special Mount, Turn Undead 8/day</font></td>
+				</tr>
+				</table>
+<!-- End of Special Abilities table (still inside the SkillsCompact Table) -->
+ 
+<!-- Start of feats table (still inside the SkillsCompact Table) -->
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td colspan="1" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>FEATS</b></font></td>
+				</tr>
+				<tr>
+					<td align="left" width="100%" class="border"><font style="font-size: 7pt">Armor Proficiency (Heavy), Armor Proficiency (Light), Armor Proficiency (Medium), Divine Might, Endurance, Exotic Weapon Proficiency, Martial Weapon Proficiency, Power Attack, Shield Proficiency, Simple Weapon Proficiency, Weapon Focus (Falchion), Weapon Specialization--Templar (Sword (Long), Falchion)</font></td>
+				</tr>
+				</table>
+<!-- End of feats table (still inside the SkillsCompact Table) -->
+ 
+<!-- Start of languages table (still inside the SkillsCompact Table) -->
+				<table width="100%" cellspacing="0" cellpadding="3">
+				<tr>
+					<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>LANGUAGES</b></font></td>
+				</tr>
+				<tr>
+					<td valign="top" width="100%" class="border"><font style="font-size: 7pt">Common, Literacy<br /></font></td>
+				</tr>
+				</table>
+<!-- End of special abilities table (still inside the SkillsCompact Table) -->
+ 
+<!-- Start of psion abilities table (still inside the SkillsCompact Table) -->
+
+<!-- End of psion abilities table (still inside the SkillsCompact Table) -->
+ 
+<!-- Start of compact spells (still inside the SkillsCompact Table) -->
+
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td>
+				</tr>
+				</table>
+
+
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="white" colspan="2" class="border">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+						<tr>
+							<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Human</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+						</tr>
+						<tr>
+							<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 10 + Spell Level</font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+				<tr>
+					<td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">0:</font></td>
+					<td valign="top" align="left" class="borderbottom">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+						<tr>
+							<td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td>
+						</tr>
+<TR><TD width="27%" class="spcomp2">Aid</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;<TD width="27%" class="spcomp2">Detect Evil</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;<TD width="27%" class="spcomp2">Cure Serious Wounds</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TR><TR><TD width="27%" class="spcomp2">Neutralize Poison</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;<TD width="27%" class="spcomp2">Protection from Evil</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("3");</SCRIPT>&nbsp;<TD width="27%" class="spcomp2">Bless</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TR><TR><TD width="27%" class="spcomp2">Light</TD><TD class="spch2" align="right"><SCRIPT>WriteCheckBoxesToDocument("At Will");</SCRIPT>&nbsp;<TD width="27%" class="spcomp2"></TR>
+						</table>
+					</td>
+				</tr>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+				</table>  <!-- per class table(s) -->
+
+
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="white" colspan="2" class="border">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+						<tr>
+							<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Paladin (Monte&#39;s)</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+						</tr>
+						<tr>
+							<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 12 + Spell Level</font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+				</table>  <!-- per class table(s) -->
+
+			</td>
+		</tr>
+
+		</table>  <!-- End of compact skills table (finally!) -->
+ 
+<!-- We're back on the main table again -->
+ 
+<!-- START Comprehensive Skills Table (main table row 2) -->
+		<div id="SkillsComprehensive">
+			<script language="Javascript">ComprehensiveSkillPrint();</script>
+		</div>
+<!-- END Comprehensive Skills Table -->
+ 
+ 
+<!-- START Barb Rage Stats (main table row 2) -->
+		<div id="RageDiv">
+			<script language="Javascript">RagePrint();</script>
+		</div>
+ 
+<!-- END Barb Rage Stats -->
+ 
+ 
+	</td>
+</tr>
+<!-- End of main table row 2 -->
+ 
+<!-- Start of main table row 3 -->
+<tr>
+	<td colspan="2" valign="top">
+<!-- START Saving Throws Table (main table row 3) -->
+		<div id="SavesDiv">
+		<script language="Javascript">SavesPrint();</script>
+		</div>
+<!-- STOP Saving Throws Table -->
+ 
+ 
+<!-- START Base Combat Stats (main table row 3) -->
+		<div id="AttackDiv">
+			<script language="Javascript">ATKPrint();</script>
+		</div>
+<!-- STOP Base Combat Stats -->
+ 
+ 
+<!-- START Unarmed Combat Stats (main table row 3) -->
+		<div id="UnarmedDiv">
+<!-- will be filled in by call to WeaponPrint() -->
+		</div>
+<!-- STOP Unarmed Combat Stats -->
+ 
+ 
+<!-- START Compact Weapon Stats (main table row 3) -->
+		<div id="WeaponsCompact">
+<!-- will be filled in by call to WeaponPrint() -->
+		</div>
+<!-- STOP Compact Weapon Stats -->
+ 
+<!-- START Compact Armor stats (main table row 3) -->
+		<div id="ArmourCompact">
+		<table cellpadding="0" width="100%" cellspacing="0" border="0">
+		<tr>
+			<td bgcolor="black"><font style="font-size:7pt" color="white"><b>ARMOR<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>MAXDEX<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CHECK<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SPELL FAILURE<br /></b></font></td>
+		</tr>
+ <tr><td><font style="font-size:8pt" color="black"><b>*Breastplate +2 (Mithral)<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>Light<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+7<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+5<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>-1<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>15<br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr> 
+		<tr>
+			<td bgcolor="black"><font style="font-size:7pt" color="white"><b>SHIELD<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>TYPE<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>CHECK<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>SPELL FAILURE<br /></b></font></td>
+		</tr>
+ <tr><td><font style="font-size:8pt" color="black"><b>*Shield +1 (Large/Steel/Animated2)<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>Shield<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+3<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>-1<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>15<br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black">floats in front of character requiring no hands</font></td></tr> 
+		<tr>
+			<td bgcolor="black"><font style="font-size:7pt" color="white"><b>ITEMS<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b>AC<br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td><td bgcolor="black" align="center"><font style="font-size:4pt" color="white"><b><br /></b></font></td>
+		</tr>
+ <tr><td><font style="font-size:8pt" color="black"><b>*Ring of Protection +1<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+1<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr>  <tr><td><font style="font-size:8pt" color="black"><b>*Amulet of Natural Armor +2<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b>+2<br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr>  <tr><td><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td><td align="center"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr><tr><td colspan="6" align="center"><font style="font-size:8pt" color="black"></font></td></tr> 
+		</table>
+		</div>
+<!-- END Compact Armor stats (main table row 3) -->
+ 
+<!-- START Comprehensive Weapon Stats (part 1) (main table row 3) -->
+		<div id="WeaponsComprehensive">
+<!-- will be filled in by call to WeaponPrint() -->
+		</div>
+<!-- STOP Comprehensive Weapon Stats (part 1) -->
+ 
+<!-- START Comprehensive Armor stats (main table row 3) -->
+		<div id="ArmourComprehensive">
+<br/><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td align="center" height="20" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>*Breastplate +2 (Mithral)<br /></b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>ARMOR BONUS</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>MAX DEX BONUS</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>Light<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+7<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+5<br /></b></font></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="60"><font style="font-size:5pt" color="white"><b>CHECK PENALTY</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:5pt" color="white"><b>SPELL FAILURE</b></font></td><td align="center" bgcolor="black" width="237" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>-1<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>25<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr></table><br/><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td align="center" height="20" bgcolor="black" rowspan="2" width="125"><font style="font-size:10pt" color="white"><b>*Shield +1 (Large/Steel/Animated2)<br /></b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:6pt" color="white"><b>TYPE</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>ARMOR BONUS</b></font></td><td align="center" bgcolor="black" width="85" height="15"><font style="font-size:6pt" color="white"><b>MAX DEX BONUS</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>Shield<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>+3<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b><br /></b></font></td></tr></table><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" height="15" bgcolor="black" width="60"><font style="font-size:5pt" color="white"><b>CHECK PENALTY</b></font></td><td align="center" bgcolor="black" width="60" height="15"><font style="font-size:5pt" color="white"><b>SPELL FAILURE</b></font></td><td align="center" bgcolor="black" width="237" height="15"><font style="font-size:6pt" color="white"><b>SPECIAL PROPERTIES</b></font></td></tr><tr><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>-1<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>15<br /></b></font></td><td align="center" bgcolor="white" class="border"><font style="font-size:8pt" color="black"><b>floats in front of character requiring no hands<br /></b></font></td></tr></table>
+		</div>
+ 
+		<table id="EquipmentCompact" width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>EQUIPMENT (<SCRIPT language="Javascript">document.write(StripZero('73.0 lbs'));</SCRIPT> - <SCRIPT language="Javascript">document.write(StripZero('306.0'));</SCRIPT>/<SCRIPT language="Javascript">document.write(StripZero('613.0'));</SCRIPT>/<SCRIPT language="Javascript">document.write(StripZero('920.0'));</SCRIPT>)</b></font></td>
+		</tr>
+		<tr>
+			<td align="left" class="border">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Ring of Protection +1</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Belt of Giant Strength +4</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Hat of Disguise</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Amulet of Natural Armor +2</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Falchion +2 (Keen)</b></FONT><font style="font-size: 5pt"><br/>threat range doubled</font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('16'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Breastplate +2 (Mithral)</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('15'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Boots of Speed</b></FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT>&nbsp;&nbsp;</FONT></TD><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT> x <b>Shield +1 (Large/Steel/Animated2)</b></FONT><font style="font-size: 5pt"><br/>floats in front of character requiring no hands</font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('15'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR><TR><TD align="left" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT> x Shortspear</FONT><font style="font-size: 5pt"><br/></font></TD><TD align="right" valign="top"><font style="font-size: 7pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT>&nbsp;&nbsp;</FONT></TD></TR>
+				</table>
+			</td>
+		</tr>
+		</table>
+<!-- END Comprehensive Armor stats (main table row 3) -->
+ 
+ 
+<!-- START Domains stats (main table row 3) -->
+		<div id="DomainsCompact">
+
+		</div>
+<!-- END Domain stats (main table row 3) -->
+ 
+ 
+ 
+<!-- START Ammunition stats (main table row 3) -->
+		<font style="font-size:8pt"><center><b>AMMUNITION</b></center></font>
+		<table width="100%">
+		<tr>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+		</tr>
+		<tr>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+		</tr>
+		<tr>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+			<td width="45%" class="borderbottom"><font style="font-size: 7pt"> <SCRIPT LANGUAGE="Javascript">if(''!='') document.write('('+StripZero('')+')');</SCRIPT><br /></font></td>
+			<td valign="bottom" NOWRAP><font face="Wingdings" style="font-size: 5pt">ooooo ooooo<br />ooooo ooooo</font></td>
+		</tr>
+		</table>
+<!-- END Ammunition stats (main table row 3) -->
+	</td>
+</tr>
+</table>
+<!-- END MAIN TABLE -->
+ 
+<BR><CENTER><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></CENTER>
+<div id="SecondPage">
+ 
+<!-- 2nd page MAIN TABLE -->
+<table width="100%" border=0>
+<tr>
+	<!-- Equipment and weights table -->
+	<td colspan=2 width="100%" valign="top">
+		<table width="100%" cellspacing="0" cellpadding="2" border=0>
+			<tr>
+				<td bgcolor="black" align="center" colspan="10"><font color="white" style="font-size: 9pt"><b>EQUIPMENT</b></font></td>
+			</tr>
+			<tr>
+				<td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>ITEM</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>LOCATION</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>QTY</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>WT.</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>GP COST</b></font></td>
+				<td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>ITEM</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>LOCATION</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>QTY</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>WT.</b></font></td>
+				<td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><b>GP COST</b></font></td>
+			</tr>
+<tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Ring of Protection +1</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">2000<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Belt of Giant Strength +4</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">16000<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Hat of Disguise</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">2000<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Amulet of Natural Armor +2</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('0'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">8000<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Falchion +2 (Keen)</b><br /></font><font style="font-size: 5pt">threat range doubled</font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('16'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">18375<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Breastplate +2 (Mithral)</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('15'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">8350<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Boots of Speed</b><br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">8000<br /></font></td><td valign="top" width="38%" class="border"><font style="font-size: 8pt"><b>Shield +1 (Large/Steel/Animated2)</b><br /></font><font style="font-size: 5pt">floats in front of character requiring no hands</font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Equipped<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('1'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('15'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">9170<br /></font></td></tr><tr><td valign="top" width="38%" class="border"><font style="font-size: 8pt">Shortspear<br /></font><font style="font-size: 5pt"></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">Carried<br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt"><SCRIPT language="Javascript">document.write(StripZero('5'));</SCRIPT><br /></font></td><td valign="top" width="3%" class="border" align="center"><font style="font-size: 8pt">2<br /></font></td></tr>
+			<tr>
+				<td valign="top" width="41%" class="border" align="right" colspan="1"><font style="font-size: 8pt">TOTAL WEIGHT CARRIED/VALUE</font></td>
+				<td valign="top" width="3%" class="border" align="center" colspan="2" NOWRAP><font style="font-size: 8pt">73.0 lbs</font></td>
+				<td valign="top" width="3%" class="border" align="center" colspan="2" NOWRAP><font style="font-size: 8pt">71905 gp</font></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td width="50%" valign="top">
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="6"><font color="white" style="font-size: 9pt"><b>WEIGHT ALLOWANCE</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Light</B></font></td>
+			<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('306.0'));</SCRIPT></font></td>
+			<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Medium</B></font></td>
+			<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('613.0'));</SCRIPT></font></td>
+			<td valign="top" class="border" align="right"><font style="font-size: 8pt"><B>Heavy</B></font></td>
+			<td class="spname"><SCRIPT language="Javascript">document.write(StripZero('920.0'));</SCRIPT></font></td>
+		</tr>
+		</table>
+<!-- END Equipment and weights table -->
+ 
+		<div id="FeatsCompact">
+<!-- Compact feats table -->
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td colspan="1" bgcolor="black" align="center"><font style="font-size: 9pt" color="white"><b>FEATS</b></font></td>
+		</tr>
+		<tr>
+			<td align="left" class="border"><font style="font-size: 8pt">Armor Proficiency (Heavy), Armor Proficiency (Light), Armor Proficiency (Medium), Divine Might, Endurance, Exotic Weapon Proficiency, Martial Weapon Proficiency, Power Attack, Shield Proficiency, Simple Weapon Proficiency, Weapon Focus (Falchion), Weapon Specialization--Templar (Sword (Long), Falchion)</font></td>
+		</tr>
+		</table>
+		</div>
+<!-- END Compact feats table -->
+ 
+<!-- MONEY table -->
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>MONEY</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" class="border"><font style="font-size: 8pt">
+
+
+</font>
+			</td>
+		</tr>
+		</table>
+<!-- END MONEY table -->
+ 
+<!-- START Companions Tables -->
+
+
+
+ 
+<!-- TEMPLATE table -->
+		<table width="100%" cellspacing="0" cellpadding="2">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>SPECIAL ABILITIES</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" width="100%" class="border"><font style="font-size: 8pt">+4 Saves vs. Poison, Aura of Courage, Bird-like Wings, Detect Evil, Divine Grace, Divine Health, Immune to Acid/Cold/Disease/Electricity, Mettle, Smite Evil 1/day, Special Mount, Turn Undead 8/day</font></td>
+		</tr>
+		</table>
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>TEMPLATES</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" width="70%" class="border"><font style="font-size: 8pt">Half-Celestial<br /></font></td>
+		</tr>
+		</table>
+<!-- END TEMPLATE table -->
+ 
+<!-- MISC magic table -->
+
+<!-- END MISC magic table -->
+ 
+<!-- PROFICIENCIES table -->
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>PROFICIENCIES</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" class="border"><font style="font-size: 8pt">Armor Spikes, Axe, Axe (Throwing), Battleaxe, Bayonet, Blowgun, Club, Crossbow (Heavy), Crossbow (Light), Cutlass, Dagger, Dagger (Punching), Dagger (Thrown), Dart, Dizzy-Boff Stick, Falchion, Flail (Heavy), Flail (Light), Gauntlet, Gauntlet (Spiked), Glaive, Greataxe, Greatclub, Greathammer, Guisarme, Halberd, Halfspear, Hammer (Light), Handaxe, Javelin, Katana (2-H), Katana (Martial), Kusari-gama, Lance (Heavy), Lance (Light), Longbow, Longbow (Composite), Longspear, Mace (Heavy), Mace (Light), Maul, Mind-blade, Morningstar, Nagamaki, Naginata, Pick (Heavy), Pick (Light), Quarterstaff, Ranseur, Rapier, Saber, Sap, Scimitar, Scythe, Shieldbash, Shortbow, Shortbow (Composite), Shortspear, Sickle, Sling, Sword (Bastard/Martial), Sword (Great), Sword (Long), Sword (Short), Trident, Unarmed Strike, Wakizashi, Waraxe (Dwarven/Martial), Warhammer<br /></font></td>
+		</tr>
+		</table>
+<!-- END PROFICIENCIES table -->
+ 
+<!-- PROHIBITED table -->
+
+<!-- END PROHIBITED table -->
+ 
+<!-- LANGUAGES table -->
+		<table width="100%" cellspacing="0" cellpadding="3">
+		<tr>
+			<td bgcolor="black" align="center" colspan="1"><font color="white" style="font-size: 9pt"><b>LANGUAGES</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" class="border"><font style="font-size: 8pt">Common, Literacy<br /></font></td>
+		</tr>
+		</table>
+<!-- END LANGUAGES table -->
+ 
+<!-- Domains and powers tables -->
+
+<!-- END Domains and powers table -->
+ 
+<!-- Start Turning Table -->
+
+<!-- Stop Turning Table -->
+ 
+ 
+	</td>
+	<!-- Second column of 2nd page table -->
+	<td width="50%" valign="top">
+ 
+<!-- Psionic powerpoints Table -->
+
+<!-- END Psionic powerpoints Table -->
+ 
+<!-- Semicompact SPELLS Table This is displayed as part of the page 2 main table and only when on 2 page mode -->
+		<div id="SpellsSemicompact">
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td>
+		</tr>
+		</table>
+
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td bgcolor="white" colspan="2" class="border">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+				<tr>
+					<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Human</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+				</tr>
+				<tr>
+					<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 10 + Spell Level</font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+ 
+		<tr>
+			<td colspan="11" align="center" bgcolor="black"><font style="font-size:7pt" color="white"><b>Innate</b></font></td>
+		</tr>
+
+<!-- by-level detail -->
+		<tr>
+			<td align="left" valign="top" class="borderbottom"><font style="font-size:7pt" color="black">0:</font></td>
+			<td valign="top" align="left" class="borderbottom">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td>
+				</tr>
+<TR><TD width="27%" class="spcomp">Aid</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp">Detect Evil</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp">Cure Serious Wounds</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Neutralize Poison</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp">Protection from Evil</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("3");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp">Bless</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD></TR><TR><TD width="27%" class="spcomp">Light</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("At Will");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp"></TR>
+				</table>
+			</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+		<tr>
+			<td colspan="11" align="center" bgcolor="black"><font style="font-size:7pt" color="white"><b>Prepared</b></font></td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+		</table>  <!-- per class table(s) -->
+
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td bgcolor="white" colspan="2" class="border">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+				<tr>
+					<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Paladin (Monte&#39;s)</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+				</tr>
+				<tr>
+					<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 12 + Spell Level</font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+
+ 
+		<tr>
+			<td colspan="11" align="center" bgcolor="black"><font style="font-size:7pt" color="white"><b>Innate</b></font></td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+		<tr>
+			<td colspan="11" align="center" bgcolor="black"><font style="font-size:7pt" color="white"><b>Prepared</b></font></td>
+		</tr>
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+		</table>  <!-- per class table(s) -->
+
+		</div>
+<!-- END Semicompact SPELLS Table -->
+ 
+		<div id="FeatsComprehensive">
+<!-- Comprehensive FEATS Table -->
+		<table width="100%" cellspacing="0" cellpadding="2">
+		<tr>
+			<td bgcolor="black" align="center" colspan="2"><font color="white" style="font-size: 9pt"><b>FEATS</b></font></td>
+		</tr>
+		<tr>
+			<td valign="top" width="30%" class="border"><font style="font-size: 8pt"><b>NAME</b></font></td>
+			<td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt"><b>DESCRIPTION</b></font></td>
+		</tr>
+<tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Heavy)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Light)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Armor Proficiency (Medium)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Divine Might</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Endurance</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Exotic Weapon Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Martial Weapon Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Power Attack</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Shield Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Simple Weapon Proficiency</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Weapon Focus (Falchion)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See Text</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt">Weapon Specialization--Templar (Sword (Long), Falchion)</font></td><td valign="top" width="70%" class="border" align="left"><font style="font-size: 8pt">See page 37 of PHB. Specialize with Weapon Focus weapons only.</font></td></tr><tr><td valign="top" width="30%" class="border"><font style="font-size: 8pt"></tr>
+		</table>
+		</div>
+<!-- END Comprehensive FEATS Table -->
+ 
+<!-- Weapons spillover Table -->
+		<div id="WeaponsExtra">
+			<script language="Javascript">WeaponPrint();</script>
+		</div>
+<!-- END Weapons spillover Table -->
+	</td>
+</tr>
+</table>  <!-- End of 2nd page table -->
+<BR><CENTER><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></CENTER>
+</div>  <!-- id="SecondPage" -->
+ 
+<!-- 3-page spell listing Table    This is only displayed in 3-page mode -->
+<div id="ThirdPage">
+ 
+
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="black" align="center" colspan="11"><font style="font-size:9pt" color="white"><b>SPELLS</b></font></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+
+ 
+
+		<!-- per class table (s) -->
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="white" colspan="2" class="border">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+							<tr>
+								<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Human</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+							</tr>
+							<tr>
+								<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 10 + Spell Level</font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+</table> <!-- per class table(s) -->
+
+
+		<!-- per class table (s) -->
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="white" colspan="2" class="border">
+						<table cellpadding="0" cellspacing="0" border="0" width="100%">  <!-- Spell detail header -->
+							<tr>
+								<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Paladin (Monte&#39;s)</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+							</tr>
+							<tr>
+								<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 12 + Spell Level</font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+								<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+</table> <!-- per class table(s) -->
+
+<!-- Innate spell list header -->
+  <!-- This triggers even for a non-spell using class that has a spell-like item -->
+
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td bgcolor="white" colspan="2" class="border">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td bgcolor="black"><font style="font-size:8pt" color="white"><b>&nbsp;Templar</b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>0<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>1<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>2<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>3<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>4<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>5<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>6<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>7<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>8<br /></b></font></td><td align="center" bgcolor="black"><font style="font-size:4pt" color="white"><b>9<br /></b></font></td>
+				</tr>
+				<tr>
+					<td><font style="font-size:8pt" color="black" width="40%"><b>Spell DC</b> 12 + Spell Level</font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+					<td align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+
+<!-- Start Innate Spells detail -->
+
+
+		<tr>
+			<td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">1:</font></td>
+			<td valign="top" align="left" class="borderbottom">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td width="25%"></td><td width="25%"></td><td width="25%"></td><td width="25%"></td>
+				</tr>
+ 
+<TR><TD width="25%" class="spcomp3">Bless</TD><TD width="25%" class="spcomp3">Cause Fear</TD><TD width="25%" class="spcomp3">Command</TD><TD width="25%" class="spcomp3">Divine Favor</TD></TR><TR><TD width="25%" class="spcomp3">Entropic Shield</TD><TD width="25%" class="spcomp3">Magic Weapon</TD><TD width="25%" class="spcomp3">Mount</TD><TD width="25%" class="spcomp3">Shield of Faith</TD></TR><TR><TD width="25%" class="spcomp3"></TR>
+				</table>
+			</td>
+		</tr>
+
+
+
+
+
+
+
+
+
+<!-- End Innate Spells -->
+
+		</table> <!-- per class table(s) -->
+
+  <!-- If I started this table, then I need to finish it even if there were no innate spells -->
+	</td>
+</tr>
+<tr>
+	<td colspan="10" bgcolor="black">
+		<font style="font-size: 8pt" color="white">* = Domain Spell</font>
+	</td>
+</tr>
+<tr>
+	<td><font style="font-size: 2pt"><br /></font></td>
+</tr>
+<tr>
+	<td>
+<!-- <br /><hr /><center><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></center> -->
+<!-- <br style="page-break-after: always" /> -->
+
+<!-- ================================================================ -->
+<!-- Start Prepared Spells -->
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Human</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 10 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+ <!-- This is a sub-set of the enclosing filter -->
+		<tr>
+			<td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">0:</font></td>
+			<td valign="top" align="left" class="borderbottom">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td>
+				</tr>
+<TR><TD width="27%" class="spcomp3">Aid</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3">Detect Evil</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3">Cure Serious Wounds</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Neutralize Poison</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3">Protection from Evil</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("3");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3">Bless</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD></TR><TR><TD width="27%" class="spcomp3">Light</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("At Will");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3"></TR>
+				</table>
+			</td>
+		</tr>
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Paladin (Monte&#39;s)</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 12 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Templar</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 12 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Human</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 10 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">--<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Paladin (Monte&#39;s)</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 12 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+
+		<tr>
+		  <td colspan="10">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black"><b>&nbsp;Templar</b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>0<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>1<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>2<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>3<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>4<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>5<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>6<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>7<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>8<br /></b></font></td><td align="center" bgcolor="gray"><font style="font-size:4pt" color="black"><b>9<br /></b></font></td>
+			</tr>
+			<tr>
+				<td bgcolor="gray"><font style="font-size:8pt" color="black" width="40%"><b>&nbsp;Spell DC 12 + Spell level</font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">1<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+				<td bgcolor="gray" align="center" width="6%"><font style="font-size:8pt" color="black">0<br /></font></td>
+			</tr>
+			</table>
+		  </td>
+		</tr>
+ 
+
+
+ 
+
+
+ <!-- This is a sub-set of the enclosing filter -->
+		<tr>
+			<td align="left" valign="top" class="borderbottom"><font style="font-size:9pt" color="black">1:</font></td>
+			<td valign="top" align="left" class="borderbottom">
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr>
+					<td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td><td width="27%"></td><td width="6%"></td>
+				</tr>
+<TR><TD width="27%" class="spcomp3">Command</TD><TD class="spch3" align="right"><SCRIPT>WriteCheckBoxesToDocument("1");</SCRIPT>&nbsp;</TD><TD width="27%" class="spcomp3"></TR>
+				</table>
+			</td>
+		</tr>
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+<!-- End Prepared Spells -->
+ 
+<BR><CENTER><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></CENTER>
+ 
+</div> <!-- id="ThirdPage" -->
+ 
+ 
+ 
+ 
+ 
+<!-- 4+-page spell listing Table    This is only displayed in 4+-page mode -->
+<div id="SpellBookComprehensive">
+
+<br style="page-break-after: always" />
+
+	<!-- START Spell list Header Table -->
+	<table width="100%" cellspacing="0" cellpadding="2">
+	<tr>
+	<td colspan="11" class="sphead"><b>Human Spells</b></font></td>
+	</tr>
+	<tr>
+	<td bgcolor="black" class="sptop"><b>LEVEL</b></td>
+		<td bgcolor="black" class="sptop"><b>0</b></td>
+		<td bgcolor="black" class="sptop"><b>1</b></td>
+		<td bgcolor="black" class="sptop"><b>2</b></td>
+		<td bgcolor="black" class="sptop"><b>3</b></td>
+		<td bgcolor="black" class="sptop"><b>4</b></td>
+		<td bgcolor="black" class="sptop"><b>5</b></td>
+		<td bgcolor="black" class="sptop"><b>6</b></td>
+		<td bgcolor="black" class="sptop"><b>7</b></td>
+		<td bgcolor="black" class="sptop"><b>8</b></td>
+		<td bgcolor="black" class="sptop"><b>9</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>KNOWN</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>PER DAY</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+		<td class="sptab"><b>--</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>SPELL DC</b></td>
+		<td class="sptab"><b>10</b></td>
+		<td class="sptab"><b>11</b></td>
+		<td class="sptab"><b>12</b></td>
+		<td class="sptab"><b>13</b></td>
+		<td class="sptab"><b>14</b></td>
+		<td class="sptab"><b>15</b></td>
+		<td class="sptab"><b>16</b></td>
+		<td class="sptab"><b>17</b></td>
+		<td class="sptab"><b>18</b></td>
+		<td class="sptab"><b>19</b></td>
+	</tr>
+	</table>
+	<table width="100%" cellspacing="0" cellpadding="2" >
+	<tr>
+	<td class="spname"><b>NAME</b></font></td>
+	<td class="sptab"><b>SCHOOL</b></font></td>
+	<td class="sptab"><b>EFFECT</b></font></td>
+	<td class="sptab"><b>RANGE</b></font></td>
+	<td class="sptab"><b>CASTING TIME</b></font></td>
+	<td class="sptab"><b>DURATION</b></font></td>
+	<td class="sptab"><b>COMPs</b></font></td>
+	<td class="sptab"><b>SAVE</b></font></td>
+	<td class="sptab"><b>SR</b></font></td>
+	<td class="sptab"><b>SOURCE</b></font></td>
+	</tr>
+
+<!-- End Spell List Header Table -->
+<!-- Start Known Spells-->
+
+
+
+
+
+
+
+
+
+
+</table>
+
+<font style="font-size: 8pt"><B>* = Domain Spell<b></font>
+<br /><hr /><center><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></center>
+<br style="page-break-after: always" />
+
+
+	<!-- START Spell list Header Table -->
+	<table width="100%" cellspacing="0" cellpadding="2">
+	<tr>
+	<td colspan="11" class="sphead"><b>Paladin (Monte&#39;s) Spells</b></font></td>
+	</tr>
+	<tr>
+	<td bgcolor="black" class="sptop"><b>LEVEL</b></td>
+		<td bgcolor="black" class="sptop"><b>0</b></td>
+		<td bgcolor="black" class="sptop"><b>1</b></td>
+		<td bgcolor="black" class="sptop"><b>2</b></td>
+		<td bgcolor="black" class="sptop"><b>3</b></td>
+		<td bgcolor="black" class="sptop"><b>4</b></td>
+		<td bgcolor="black" class="sptop"><b>5</b></td>
+		<td bgcolor="black" class="sptop"><b>6</b></td>
+		<td bgcolor="black" class="sptop"><b>7</b></td>
+		<td bgcolor="black" class="sptop"><b>8</b></td>
+		<td bgcolor="black" class="sptop"><b>9</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>KNOWN</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>PER DAY</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>1</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+		<td class="sptab"><b>0</b></td>
+	</tr>
+	<tr>
+	<td class="sptab"><b>SPELL DC</b></td>
+		<td class="sptab"><b>12</b></td>
+		<td class="sptab"><b>13</b></td>
+		<td class="sptab"><b>14</b></td>
+		<td class="sptab"><b>15</b></td>
+		<td class="sptab"><b>16</b></td>
+		<td class="sptab"><b>17</b></td>
+		<td class="sptab"><b>18</b></td>
+		<td class="sptab"><b>19</b></td>
+		<td class="sptab"><b>20</b></td>
+		<td class="sptab"><b>21</b></td>
+	</tr>
+	</table>
+	<table width="100%" cellspacing="0" cellpadding="2" >
+	<tr>
+	<td class="spname"><b>NAME</b></font></td>
+	<td class="sptab"><b>SCHOOL</b></font></td>
+	<td class="sptab"><b>EFFECT</b></font></td>
+	<td class="sptab"><b>RANGE</b></font></td>
+	<td class="sptab"><b>CASTING TIME</b></font></td>
+	<td class="sptab"><b>DURATION</b></font></td>
+	<td class="sptab"><b>COMPs</b></font></td>
+	<td class="sptab"><b>SAVE</b></font></td>
+	<td class="sptab"><b>SR</b></font></td>
+	<td class="sptab"><b>SOURCE</b></font></td>
+	</tr>
+
+<!-- End Spell List Header Table -->
+<!-- Start Known Spells-->
+
+
+
+
+
+
+
+
+
+
+</table>
+
+<font style="font-size: 8pt"><B>* = Domain Spell<b></font>
+<br /><hr /><center><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></center>
+<br style="page-break-after: always" />
+
+ 
+<!-- End Known Spells -->
+ 
+
+
+<!-- START Spell list Header Table -->
+<table width="100%" cellspacing="0" cellpadding="2">
+	<tr>
+		<td><font style="font-size: 2pt"><br /></font></td>
+	</tr>
+<tr>
+<td colspan="11" class="sphead"><b>Templar Spells</b></font></td>
+</tr>
+<tr>
+<td bgcolor="black" class="sptop"><b>LEVEL</b></td>
+<td bgcolor="black" class="sptop"><b>0</b></td>
+<td bgcolor="black" class="sptop"><b>1</b></td>
+<td bgcolor="black" class="sptop"><b>2</b></td>
+<td bgcolor="black" class="sptop"><b>3</b></td>
+<td bgcolor="black" class="sptop"><b>4</b></td>
+<td bgcolor="black" class="sptop"><b>5</b></td>
+<td bgcolor="black" class="sptop"><b>6</b></td>
+<td bgcolor="black" class="sptop"><b>7</b></td>
+<td bgcolor="black" class="sptop"><b>8</b></td>
+<td bgcolor="black" class="sptop"><b>9</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>KNOWN</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>PER DAY</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>1</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+<td class="sptab"><b>0</b></td>
+</tr>
+<tr>
+<td class="sptab"><b>SPELL DC</b></td>
+<td class="sptab"><b>12</b></td>
+<td class="sptab"><b>13</b></td>
+<td class="sptab"><b>14</b></td>
+<td class="sptab"><b>15</b></td>
+<td class="sptab"><b>16</b></td>
+<td class="sptab"><b>17</b></td>
+<td class="sptab"><b>18</b></td>
+<td class="sptab"><b>19</b></td>
+<td class="sptab"><b>20</b></td>
+<td class="sptab"><b>21</b></td>
+</tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="2" class="breakhere">
+<tr>
+<td class="spname"><b>NAME</b></font></td>
+<td class="sptab"><b>SCHOOL</b></font></td>
+<td class="sptab"><b>EFFECT</b></font></td>
+<td class="sptab"><b>RANGE</b></font></td>
+<td class="sptab"><b>CASTING TIME</b></font></td>
+<td class="sptab"><b>DURATION</b></font></td>
+<td class="sptab"><b>COMPs</b></font></td>
+<td class="sptab"><b>SAVE</b></font></td>
+<td class="sptab"><b>SR</b></font></td>
+<td class="sptab"><b>SOURCE</b></font></td>
+</tr>
+
+<!-- End Spell List Header Table -->
+<!-- Start Innate Spells-->
+
+
+</table>
+&nbsp;
+<font style="font-size: 8pt"><B>* = Domain Spell<b></font>
+<br /><hr /><center><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></center>
+<br style="page-break-after: always" />
+
+<!-- ================================================================ -->
+ 
+<!-- Start Prepared Spells -->
+
+<table width="100%" cellspacing="0" cellpadding="2">
+	<tr>
+		<td colspan="11" align="center" bgcolor="black"><font color="white"><b>Innate</b></font></td>
+	</tr>
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Human (DC 10 + level)</font></td>
+	</tr>
+	<tr>
+
+
+		<td valign="top">
+			<table>
+				<tr>
+					<td valign="top" align="center" colspan="2"><font style="font-size: 9pt" color="black"><u>Level 0</u></font></td>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Aid
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Detect Evil
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Cure Serious Wounds
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Neutralize Poison
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+ooo</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Protection from Evil
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Bless
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Light
+					</td>
+				</tr>
+			</table>
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Paladin (Monte&#39;s) (DC 12 + level)</font></td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Templar (DC 12 + level)</font></td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+	<tr>
+		<td colspan="11" bgcolor="black">
+			<font style="font-size: 8pt" color="white">* = Domain Spell</font>
+		</td>
+	</tr>
+	<tr>
+		<td><br /></td>
+	</tr>
+		<td colspan="11" align="center" bgcolor="black"><font color="white"><b>Prepared</b></font></td>
+	</tr>
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Human (DC 10 + level)</font></td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Paladin (Monte&#39;s) (DC 12 + level)</font></td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+
+
+	<tr>
+		<td align="center" bgcolor="gray" colspan="11">	<font style="font-size: 9pt" color="black">Templar (DC 12 + level)</font></td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+		<td valign="top">
+			<table>
+				<tr>
+					<td valign="top" align="center" colspan="2"><font style="font-size: 9pt" color="black"><u>Level 1</u></font></td>
+				<tr>
+					<td align="right"><font face="Wingdings" style="font-size: 9pt">
+o</font>
+					</td>
+					<td><font style="font-size: 9pt" color="black">
+ Command
+					</td>
+				</tr>
+			</table>
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+	<tr>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+
+
+
+		</td>
+	</tr>
+
+
+	<tr>
+		<td colspan="11" bgcolor="black">
+			<font style="font-size: 8pt" color="white">* = Domain Spell</font>
+		</td>
+	</tr>
+	<tr>
+		<td><br /></td>
+	</tr>
+</table>
+<br /><hr /><center><font style="font-size: 7pt">PCGen Character Template by ROG, mods/maint by Arcady, Barak & Dimrill.  For suggestions please post to pcgen@yahoogroups.com with "OS Suggestion" in the subject line.</font></center>
+
+<!-- End Prepared Spells -->
+</div>
+<!-- END 4+-page spell listing Table    This is only displayed in 4+-page mode -->
+ 
+<div id="BioComprehensive"><A NAME="Bio"></A>
+<TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD colspan="2"><font style="font-size: 14pt">Suq&#39;Atma</font></td></tr>
+<TR><TD id="BioImage" CLASS="border" HEIGHT="400" width="1%"><IMG SRC="Suq&#39;Atma_Full.jpg" HEIGHT="400" alt="Suq&#39;Atma's portrait" onerror="document.getElementById('BioImage').style.display = 'none';"></TD><TD valign="top" width="99%">
+<TABLE width="100%" cellspacing="0" cellpadding="2">
+<TR><TD class="biodata">Human<br/></td></tr>
+<TR><TD CLASS="hs">RACE</td></tr>
+<TR><TD class="biodata">21<br/></td></tr>
+<TR><TD CLASS="hs">AGE</td></tr>
+<TR><TD class="biodata">6&#39; 4&quot;<br/></td></tr>
+<TR><TD CLASS="hs">HEIGHT</td></tr>
+<TR><TD class="biodata">205 lbs<br/></td></tr>
+<TR><TD CLASS="hs">WEIGHT</td></tr>
+<TR><TD class="biodata">Black<br/></td></tr>
+<TR><TD CLASS="hs">EYE COLOR</td></tr>
+<TR><TD class="biodata">Black<br/></td></tr>
+<TR><TD CLASS="hs">SKIN COLOR</td></tr>
+<TR><TD class="biodata">Black<br/></td></tr>
+<TR><TD CLASS="hs">HAIR COLOR</td></tr>
+<TR><TD class="biodata">Bald<br/></td></tr>
+<TR><TD CLASS="hs">HAIR LENGTH</td></tr>
+<TR><TD class="biodata"><br/></td></tr>
+<TR><TD CLASS="hs">PHOBIAS</td></tr>
+<TR><TD class="biodata"> <br/></td></tr>
+<TR><TD CLASS="hs">PERSONALITY TRAITS</td></tr>
+<TR><TD class="biodata"><br/></td></tr>
+<TR><TD CLASS="hs">INTERESTS</td></tr>
+<TR><TD class="biodata">Talks like Azeem out of Robin Hood <br/></td></tr>
+<TR><TD CLASS="hs">SPOKEN STYLE</td></tr>
+</TABLE>
+ 
+ 
+</TD></TR>
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Description</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt"></font>
+<TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Home</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt"> Zeif, Zeif</font>
+<TABLE  width="100%" cellspacing="0" cellpadding="2">
+<TR><TD CLASS="borderbottom" colspan="2"><font style="font-size: 14pt">Biography</font></td></tr>
+</TABLE>
+<font style="font-size: 9pt"></font>
+</div>
+</body>
+</html>
